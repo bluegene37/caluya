@@ -47,6 +47,8 @@
       
       <!-- Top Row: Province Identification & Slide Counter -->
       <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <!-- Gene - Oct 06, 2026: Added quick mobile app sample download chip to Hero badges -->
+        <!--
         <div class="flex flex-wrap items-center gap-2">
           <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/15 text-sky-300 border border-sky-400/30 backdrop-blur-md">
             <Anchor class="w-3.5 h-3.5 text-sky-400" />
@@ -56,6 +58,24 @@
             <ShieldCheck class="w-3.5 h-3.5 text-emerald-400" />
             <span>1st Class Island Municipality</span>
           </span>
+        </div>
+        -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/15 text-sky-300 border border-sky-400/30 backdrop-blur-md">
+            <Anchor class="w-3.5 h-3.5 text-sky-400" />
+            <span>Province of Antique • Western Visayas (Region VI)</span>
+          </span>
+          <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
+            <ShieldCheck class="w-3.5 h-3.5 text-emerald-400" />
+            <span>1st Class Island Municipality</span>
+          </span>
+          <button
+            @click="$emit('navigate', 'mobile-app')"
+            class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/40 backdrop-blur-md transition-colors cursor-pointer"
+          >
+            <Smartphone class="w-3.5 h-3.5 text-amber-400" />
+            <span>📱 Download Mobile App (Sample APK)</span>
+          </button>
         </div>
 
         <!-- Slide Index Counter & Pause Indicator -->
@@ -235,9 +255,17 @@
 <script setup>
 // Gene - Oct 06, 2026: Vue 3 composition setup for Big Hero Image Slider with Caluya Antique imagery
 import { ref, onMounted, onUnmounted } from 'vue';
+// Gene - Oct 06, 2026: Added Smartphone icon import for mobile app badge
+/*
 import { 
   Anchor, ShieldCheck, FileCheck, ArrowRight, Sparkles, 
   Compass, Waves, ChevronLeft, ChevronRight, Siren, HeartPulse, Ship 
+} from '@lucide/vue';
+*/
+import { 
+  Anchor, ShieldCheck, FileCheck, ArrowRight, Sparkles, 
+  Compass, Waves, ChevronLeft, ChevronRight, Siren, HeartPulse, Ship,
+  Smartphone
 } from '@lucide/vue';
 
 const emit = defineEmits(['navigate', 'open-proposal']);
@@ -315,8 +343,9 @@ const slides = [
     image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2200&q=85",
     primaryCta: "Access Citizen e-Services",
     primaryIcon: FileCheck,
-    primaryTarget: "services",
-    secondaryCta: "View LGU Proposal",
+    // Gene - Oct 06, 2026: Updated CTA to highlight Vice Mayor Proposal
+    // secondaryCta: "View LGU Proposal",
+    secondaryCta: "Vice Mayor Proposal",
     secondaryTarget: "proposal"
   }
 ];

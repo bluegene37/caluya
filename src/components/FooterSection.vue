@@ -7,10 +7,24 @@
         
         <!-- Brand Info -->
         <div class="space-y-4">
+          <!-- Gene - Oct 06, 2026: Replaced crab placeholder with official Caluya Municipal Seal logo -->
+          <!--
           <div class="flex items-center space-x-3">
             <div class="w-10 h-10 rounded-full bg-slate-900 border border-amber-400/50 flex items-center justify-center text-lg">
               🦀
             </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">Municipality of Caluya</h4>
+              <p class="text-[11px] text-slate-400">Province of Antique, Philippines</p>
+            </div>
+          </div>
+          -->
+          <div class="flex items-center space-x-3">
+            <img
+              src="/images/caluya-logo.png"
+              alt="Official Seal of Caluya, Antique"
+              class="w-12 h-12 rounded-full object-contain bg-white/10 p-0.5 border border-amber-400/60 shadow-md"
+            />
             <div>
               <h4 class="font-bold text-white text-sm">Municipality of Caluya</h4>
               <p class="text-[11px] text-slate-400">Province of Antique, Philippines</p>
@@ -87,6 +101,12 @@
             <li>
               <button @click="$emit('navigate', 'services')" class="hover:text-sky-400 transition-colors cursor-pointer">
                 Mayor's Action Desk (e-Reklamo)
+              </button>
+            </li>
+            <!-- Gene - Oct 06, 2026: Added Caluya Mobile App download link to FooterSection -->
+            <li>
+              <button @click="$emit('navigate', 'mobile-app')" class="text-emerald-400 hover:text-emerald-300 font-bold transition-colors cursor-pointer flex items-center space-x-1">
+                <span>📱 Download Mobile App (Sample APK)</span>
               </button>
             </li>
           </ul>

@@ -15,25 +15,38 @@
       @update:language="language = $event"
     />
     -->
-  <div 
-    :class="[
-      'min-h-screen flex flex-col transition-colors selection:bg-amber-400 selection:text-slate-950',
-      isDark ? 'dark dark-theme' : 'light-theme bg-slate-50 text-slate-900',
-      highContrast ? 'high-contrast-mode' : ''
-    ]"
-    :style="{ fontSize: `${fontSize}px` }"
-  >
-    <!-- Top Utility Bar (PST, Gale warning, Accessibility, Dark/Light Mode) -->
-    <TopBar 
-      :is-dark="isDark"
-      :high-contrast="highContrast"
-      :font-size="fontSize"
-      :language="language"
-      @toggle-theme="toggleTheme"
-      @toggle-contrast="highContrast = !highContrast"
-      @adjust-font="handleAdjustFont"
-      @update:language="language = $event"
-    />
+    <!-- Gene - Oct 06, 2026: Removed font, contrast, and language selection bindings per user request -->
+    <!--
+    <div 
+      :class="[
+        'min-h-screen flex flex-col transition-colors selection:bg-amber-400 selection:text-slate-950',
+        isDark ? 'dark dark-theme' : 'light-theme bg-slate-50 text-slate-900',
+        highContrast ? 'high-contrast-mode' : ''
+      ]"
+      :style="{ fontSize: `${fontSize}px` }"
+    >
+      <TopBar 
+        :is-dark="isDark"
+        :high-contrast="highContrast"
+        :font-size="fontSize"
+        :language="language"
+        @toggle-theme="toggleTheme"
+        @toggle-contrast="highContrast = !highContrast"
+        @adjust-font="handleAdjustFont"
+        @update:language="language = $event"
+      />
+    -->
+    <div 
+      :class="[
+        'min-h-screen flex flex-col transition-colors selection:bg-amber-400 selection:text-slate-950',
+        isDark ? 'dark dark-theme' : 'light-theme bg-slate-50 text-slate-900'
+      ]"
+    >
+      <!-- Top Utility Bar (PST, Gale warning, Dark/Light Mode) -->
+      <TopBar 
+        :is-dark="isDark"
+        @toggle-theme="toggleTheme"
+      />
 
     <!-- Main Navigation Header -->
     <HeaderNav 
@@ -77,6 +90,13 @@
 
       <!-- Citizen e-Services Hub -->
       <ServicesHub />
+
+      <!-- Gene - Oct 06, 2026: Added MobileAppSection for citizen mobile app dummy download and interactive preview -->
+      <!--
+      <IslandExplorer />
+      -->
+      <!-- Caluya e-Citizen Mobile App (Downloadable Sample Dummy APK) -->
+      <MobileAppSection />
 
       <!-- 18 Island Barangays Explorer -->
       <IslandExplorer />
@@ -123,7 +143,13 @@ import HeroSection from './components/HeroSection.vue';
 import EmergencyRescueHub from './components/EmergencyRescueHub.vue';
 import HealthServicesHub from './components/HealthServicesHub.vue';
 import PublicServicesDirectory from './components/PublicServicesDirectory.vue';
+// Gene - Oct 06, 2026: Added MobileAppSection import for citizen mobile app showcase and dummy APK download
+/*
 import ServicesHub from './components/ServicesHub.vue';
+import IslandExplorer from './components/IslandExplorer.vue';
+*/
+import ServicesHub from './components/ServicesHub.vue';
+import MobileAppSection from './components/MobileAppSection.vue';
 import IslandExplorer from './components/IslandExplorer.vue';
 import TourismShowcase from './components/TourismShowcase.vue';
 import TransparencySection from './components/TransparencySection.vue';
@@ -139,10 +165,6 @@ const toggleTheme = () => {
 
 const activeSection = ref('home');
 const isProposalOpen = ref(false);
-const highContrast = ref(false);
-const fontSize = ref(16);
-const language = ref('en');
-
 const handleNavigate = (sectionId) => {
   activeSection.value = sectionId;
   const el = document.getElementById(sectionId);
@@ -151,9 +173,16 @@ const handleNavigate = (sectionId) => {
   }
 };
 
+// Gene - Oct 06, 2026: Removed font, contrast, and language state per user request
+/*
+const highContrast = ref(false);
+const fontSize = ref(16);
+const language = ref('en');
+
 const handleAdjustFont = (delta) => {
   fontSize.value = Math.min(22, Math.max(13, fontSize.value + delta));
 };
+*/
 </script>
 
 <style>

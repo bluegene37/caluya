@@ -17,9 +17,24 @@ export const LGU_INFO = {
     title: "Municipal Mayor",
     message: "Welcome to the digital gateway of our beloved Caluya. As an island municipality with boundless potential, our administration is committed to bridging the seas through digital innovation—bringing honest, swift, and transparent public service directly to every household in all our 18 barangays across Caluya, Semirara, Sibay, and our sister islets.",
   },
+// Gene - Oct 06, 2026: Enhanced Vice Mayor and Sangguniang Bayan Presiding Officer profile
+/*
   viceMayor: {
     name: "Hon. Genevieve Lim-Reyes",
     title: "Municipal Vice Mayor & Presiding Officer",
+  },
+*/
+  viceMayor: {
+    name: "Hon. Genevive L. Reyes",
+    title: "Municipal Vice Mayor & Presiding Officer",
+    subtitle: "Presiding Officer, Sangguniang Bayan ng Caluya",
+    message: "As Presiding Officer of the Sangguniang Bayan, our legislative mandate is to champion progressive ordinances, enact impactful development resolutions, and ensure equitable fiscal appropriations for all 18 island barangays. Modernizing Caluya through e-governance guarantees every islander equal, dignified access to public services, disaster protection, and economic empowerment.",
+    office: "Office of the Municipal Vice Mayor / Legislative Building, Poblacion",
+    committees: [
+      "Committee on Rules, Ordinances & Legal Matters",
+      "Committee on Appropriations & Ways and Means",
+      "Committee on Information & Communications Technology (ICT)"
+    ]
   },
   sangguniangBayan: [
     "Hon. Mark Anthony Ecija",
@@ -256,6 +271,8 @@ export const TRANSPARENCY_DOCUMENTS = [
   }
 ];
 
+// Gene - Oct 06, 2026: Tailored Modernization & E-Governance Proposal for the Municipal Vice Mayor Hon. Genevive L. Reyes and the Sangguniang Bayan ng Caluya
+/*
 export const PROPOSAL_DATA = {
   title: "Modern LGU Digital Portal & Citizen Transformation Masterplan",
   preparedFor: "The Honorable Municipal Mayor Rigil Kent G. Lim, Vice Mayor, and Sangguniang Bayan Members",
@@ -335,6 +352,146 @@ export const PROPOSAL_DATA = {
     { item: "e-Services Modules (BPLO, Civil Registry, Assessor, MDRRMO)", cost: "Phased LGU Software Fund" },
     { item: "Staff Training & Department Admin Onboarding", cost: "Comprehensive Turnkey Handover" }
   ]
+};
+*/
+
+export const PROPOSAL_DATA = {
+  title: "Legislative & E-Governance Modernization Masterplan for Caluya",
+  subTitle: "Bridging 18 Island Barangays Through Sangguniang Bayan Policy & Modern Digital Administration",
+  preparedFor: "Hon. Genevive L. Reyes, Municipal Vice Mayor & Presiding Officer, Sangguniang Bayan ng Caluya",
+  targetOfficial: "Hon. Genevive L. Reyes",
+  targetRole: "Municipal Vice Mayor & Presiding Officer",
+  legislativeBody: "Sangguniang Bayan ng Caluya (18 Island Barangays)",
+  preparedBy: "Caluya Digital Modernization & E-Governance Taskforce",
+  date: "October 2026",
+  docReference: "PROP-SB-CALUYA-2026-01",
+  
+  vision: "To empower the Sangguniang Bayan under the leadership of Vice Mayor Genevive L. Reyes with a groundbreaking E-Governance ordinance and digital infrastructure that connects all 18 island barangays—eliminating perilous sea travel for municipal transactions, instituting 24/7 disaster lifelines, and advancing transparent council governance.",
+
+  executiveSummary: "To the Honorable Municipal Vice Mayor Genevive L. Reyes and the Honorable Members of the Sangguniang Bayan ng Caluya: The Municipality of Caluya is an archipelagic jewel in Antique with 18 barangays distributed across Caluya Island, Semirara Island, Sibay Island, and surrounding islets. For decades, geography has posed severe equity challenges: citizens in Semirara and Sibay routinely risk stormy sea crossings and incur ₱400 to ₱800 per round trip in motorized banca fares just to process routine business permits, request civil certificates, or file for medical crisis aid at Poblacion. As the Presiding Officer of the legislative branch, the Vice Mayor possesses the constitutional and statutory power under RA 7160 to sponsor the 'Caluya E-Governance & Ease of Doing Business Ordinance of 2026', author a Sangguniang Bayan Resolution approving this modern web portal, and allocate funding under the 20% Municipal Development Fund (MDF) and 5% MDRRM Fund. This proposal presents the complete legislative and technological masterplan to transform Caluya into Western Visayas' model Smart Island Municipality.",
+
+  legislativeActions: [
+    {
+      measure: "Proposed Municipal Ordinance No. 2026-01",
+      title: "The Caluya Smart Island E-Governance & Public Service Digitalization Act",
+      scope: "Mandating all municipal offices (BPLO, LCR, Treasury, Assessor, MSWDO) to accept digital filings, recognize electronic receipts, and provide free public service Wi-Fi at island barangay halls.",
+      sponsor: "Hon. Genevive L. Reyes (Vice Mayor & Presiding Officer)"
+    },
+    {
+      measure: "Draft Sangguniang Bayan Resolution No. 2026-042",
+      title: "Resolution Authorizing Local Chief Executive to Enter into E-Gov MOAs",
+      scope: "Authorizing the Municipal Mayor to enter into agreements with DICT (e-LGU and GovNet), LandBank of the Philippines (Link.BizPortal), and GCash/Maya for official payment gateway integration.",
+      sponsor: "Committee on Rules, Ordinances & Legal Matters"
+    },
+    {
+      measure: "Appropriation Ordinance CY 2026",
+      title: "Fiscal Allocation under the 20% Municipal Development Fund",
+      scope: "Appropriating support for secure government cloud hosting, automated SMS disaster gateways, and digital community kiosks for Semirara and Sibay islands.",
+      sponsor: "Committee on Appropriations, Ways and Means"
+    },
+    {
+      measure: "Legislative Oversight Mandate",
+      title: "Creation of SB Oversight Committee on ICT & E-Governance",
+      scope: "Establishing quarterly legislative review of online service turnaround times, citizen feedback metrics, and digital transparency compliance under DILG SGLG benchmarks.",
+      sponsor: "Sangguniang Bayan ng Caluya"
+    }
+  ],
+
+  pillars: [
+    {
+      num: "01",
+      title: "Legislative Transparency & Digital Ordinance System",
+      desc: "An open, searchable digital repository for all enacted Municipal Ordinances, SB Resolutions, session agendas, and committee hearing notices—giving all 18 barangay councils instant access to local laws.",
+      impact: "100% compliance with DILG Full Disclosure Policy (FDP), Ease of Doing Business (RA 11032), and Freedom of Information.",
+      viceMayorRole: "Presiding Officer's direct legislative showcase to all island constituents."
+    },
+    {
+      num: "02",
+      title: "Inter-Island Zero-Travel Citizen Services",
+      desc: "Full digitization of e-BPLS business permits, Civil Registry certificates, RPTax real property calculations, and MSWDO AICS social crisis aid without boarding sea vessels.",
+      impact: "Directly saves island households ~₱15,000,000 annually in aggregate motorized banca fares and lost workdays.",
+      viceMayorRole: "Fulfills the Sangguniang Bayan's mandate for social equity and poverty alleviation."
+    },
+    {
+      num: "03",
+      title: "MDRRMC Maritime Safety & Island Rescue Lifeline",
+      desc: "Centralized real-time weather, PAGASA gale warnings, VHF Marine Channel 16 monitoring, and Sea Ambulance medevac dispatch tracking across Caluya, Semirara, Sibay, and Sibato.",
+      impact: "Zero-casualty early warning dissemination and rapid sea evacuation response for coastal fisherfolk.",
+      viceMayorRole: "Legally backed by SB appropriation under the 5% Local Disaster Fund."
+    },
+    {
+      num: "04",
+      title: "Sustainable Island Economy & Tatusan Promotion",
+      desc: "Modern digital promotion of Caluya's cultural identity: Tatusan Festival, pristine Liwagao sandbar, Sibato reef sanctuaries, and the global export agar-agar (seaweed) mariculture.",
+      impact: "Attracts high-value eco-tourism and establishes direct institutional buyer linkages for Caluya seaweed farmers.",
+      viceMayorRole: "Sponsored through municipal tourism and marine environmental protection codes."
+    }
+  ],
+
+  technicalFeatures: [
+    {
+      name: "Island-Optimized Low-Bandwidth Architecture",
+      detail: "Ultra-fast Vue 3 responsive design engineered specifically for 3G/4G cellular connections across remote island barangays with aggressive caching and offline resilience."
+    },
+    {
+      name: "Sangguniang Bayan Digital Legislative Hall",
+      detail: "Searchable municipal legislative library with downloadable signed ordinance PDFs, resolution indexes, and live session announcements for civic transparency."
+    },
+    {
+      name: "24/7 MDRRMO OpCen & Sea Ambulance Tracker",
+      detail: "Live maritime safety status, PAGASA gale warnings, PCG vessel advisories, and emergency medevac request dispatch module."
+    },
+    {
+      name: "End-to-End E-Services with QR Code Authentication",
+      detail: "Digital permit applications (e-BPLS), Civil Registry requests, and tax calculators generating cryptographically verifiable QR codes."
+    },
+    {
+      name: "Multi-Channel Island Payment Integration",
+      detail: "Ready for integration with LandBank Link.BizPortal, GCash, Maya, and over-the-counter payments at rural island partner outlets."
+    }
+  ],
+
+  roadmap: [
+    {
+      phase: "Phase 1: Legislative Sponsorship & Portal Pilot",
+      timeline: "Months 1 - 2",
+      deliverables: "First reading of E-Governance Ordinance, SB Resolution adoption, launch of official portal, 18-barangay information directory, MDRRMO Gale Warning board."
+    },
+    {
+      phase: "Phase 2: Digital E-Services & Committee Rollout",
+      timeline: "Months 3 - 4",
+      deliverables: "e-BPLS permitting, online Civil Registry ordering, RPTax discount calculator, SMS alert integration, and barangay hall staff training."
+    },
+    {
+      phase: "Phase 3: Inter-Island Kiosks & Payment Gateways",
+      timeline: "Months 5 - 6",
+      deliverables: "LandBank Link.BizPortal and GCash gateway integration, deployment of solar-powered digital assistance kiosks at Semirara and Sibay ports."
+    }
+  ],
+
+  budgetPhasing: [
+    { item: "System Architecture, Design & Data Digitization", cost: "Included in Ready Prototype" },
+    { item: "Annual Cloud Infrastructure, .gov.ph Domain & SSL", cost: "₱45,000 / year (Under MDF)" },
+    { item: "Legislative Archive Digitization (Past Ordinances & Resolutions)", cost: "Sangguniang Bayan Capability Fund" },
+    { item: "Barangay Digital Kiosks (Semirara, Sibay, Sibato Pilot)", cost: "LGU Capital Outlay / 20% MDF" }
+  ],
+
+  draftResolution: {
+    title: "EXCERPT FROM THE MINUTES OF THE REGULAR SESSION OF THE SANGGUNIANG BAYAN NG CALUYA, PROVINCE OF ANTIQUE",
+    resolutionNo: "RESOLUTION NO. 2026-___",
+    series: "Series of 2026",
+    sponsor: "HON. GENEVIVE L. REYES (Municipal Vice Mayor & Presiding Officer)",
+    committee: "Committee on Rules, Ordinances & Legal Matters",
+    titleFull: "A RESOLUTION COMMENDING AND ADOPTING THE CALUYA SMART ISLAND E-GOVERNANCE MASTERPLAN, ENDORSING THE OFFICIAL LGU WEB PORTAL, AND RECOMMENDING PRIORITY APPROPRIATIONS UNDER THE 20% MUNICIPAL DEVELOPMENT FUND (MDF).",
+    whereasClauses: [
+      "WHEREAS, Section 16 of Republic Act No. 7160 (Local Government Code of 1991) mandates every local government unit to ensure the general welfare, promote health and safety, and preserve the convenience and comfort of its inhabitants;",
+      "WHEREAS, Republic Act No. 11032, also known as the Ease of Doing Business and Efficient Government Service Delivery Act of 2018, mandates all local government units to streamline and digitize public service transactions;",
+      "WHEREAS, the archipelagic geography of Caluya, comprising eighteen (18) barangays dispersed across Caluya, Semirara, Sibay, and outlying islets, requires our constituents to navigate hazardous seas and expend substantial travel funds to transact at the Municipal Hall in Poblacion;",
+      "WHEREAS, the adoption of an official, island-resilient LGU Web Portal will immediately deliver zero-travel public services, real-time PAGASA sea gale alerts, 24/7 MDRRMC sea ambulance dispatch, and full transparency of Sangguniang Bayan ordinances;",
+      "WHEREAS, the Sangguniang Bayan ng Caluya, under the leadership of Municipal Vice Mayor Hon. Genevive L. Reyes, affirms its firm commitment to modernizing local government administration through innovative digital public services;"
+    ],
+    resolvingClause: "NOW, THEREFORE, on motion of the Honorable Members of the Sangguniang Bayan, duly seconded: RESOLVED, AS IT IS HEREBY RESOLVED, to approve and adopt the Caluya Smart Island Digital Modernization Masterplan, and to authoritatively endorse the necessary budgetary appropriation under the CY 2026 Annual Investment Program (AIP)."
+  }
 };
 
 // Gene - Oct 06, 2026: Added comprehensive MDRRMO Rescue, Health Services, and Public Social Services data for all Caluya citizens

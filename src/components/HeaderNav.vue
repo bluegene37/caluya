@@ -106,7 +106,9 @@
       <div class="flex items-center justify-between h-20 gap-2 xl:gap-4">
         
         <!-- Logo & Municipal Seal Brand -->
-        <div class="flex items-center space-x-2.5 shrink-0 cursor-pointer" @click="handleNavClick('home')">
+        <div class="flex items-center space-x-2.5 sm:space-x-3 shrink-0 cursor-pointer" @click="handleNavClick('home')">
+          <!-- Gene - Oct 06, 2026: Replaced CSS seal placeholder with official Caluya Municipal Logo downloaded from e-LGU portal -->
+          <!--
           <div class="relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-cyan-700 via-sky-600 to-amber-500 p-0.5 shadow-md flex items-center justify-center">
             <div class="w-full h-full rounded-full bg-slate-900 flex flex-col items-center justify-center text-white relative overflow-hidden border border-amber-300/40">
               <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-amber-300 uppercase">CALUYA</span>
@@ -114,6 +116,17 @@
               <span class="text-[6px] sm:text-[7px] text-sky-200 tracking-wider">ANTIQUE</span>
             </div>
             <div class="absolute -bottom-1 -right-1 bg-amber-500 text-slate-950 text-[8px] sm:text-[9px] font-black px-1 rounded-full border border-white">
+              5711
+            </div>
+          </div>
+          -->
+          <div class="relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full p-0.5 bg-gradient-to-tr from-cyan-600 via-sky-500 to-amber-400 shadow-md">
+            <img
+              src="/images/caluya-logo.png"
+              alt="Official Seal of the Municipality of Caluya, Antique"
+              class="w-full h-full rounded-full object-contain bg-white shadow-inner"
+            />
+            <div class="absolute -bottom-1 -right-1 bg-amber-500 text-slate-950 text-[8px] sm:text-[9px] font-black px-1 rounded-full border border-white shadow-xs">
               5711
             </div>
           </div>
@@ -306,12 +319,27 @@ const navItems = [
   { id: 'leadership', label: 'Leadership' },
 ];
 */
+// Gene - Oct 06, 2026: Added Mobile App to navItems to enable direct navigation to citizen mobile app download section
+/*
 const navItems = [
   { id: 'home', label: 'Home' },
   { id: 'rescue', label: '🚨 Rescue & MDRRMO' },
   { id: 'health', label: 'Health Services' },
   { id: 'public-services', label: 'Public Assistance' },
   { id: 'services', label: 'Citizen e-Services' },
+  { id: 'islands', label: 'Barangays' },
+  { id: 'tourism', label: 'Tourism' },
+  { id: 'transparency', label: 'Transparency' },
+  { id: 'leadership', label: 'Leadership' },
+];
+*/
+const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'rescue', label: '🚨 Rescue' },
+  { id: 'health', label: 'Health' },
+  { id: 'public-services', label: 'Public Assistance' },
+  { id: 'services', label: 'e-Services' },
+  { id: 'mobile-app', label: '📱 Mobile App' },
   { id: 'islands', label: 'Barangays' },
   { id: 'tourism', label: 'Tourism' },
   { id: 'transparency', label: 'Transparency' },
