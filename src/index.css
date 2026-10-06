@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* Gene - Oct 06, 2026: Configured dark mode color-scheme and typography in layer base */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-serif-title {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-mono-tag {
+    font-family: 'Space Grotesk', monospace;
+  }
+}
+
+/* Glassmorphism and government seal accents */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Gene - Oct 06, 2026: Comprehensive Dark and Light mode theme definitions (Default: Light Mode) */
+.dark-theme {
+  background-color: #030712 !important;
+  color: #f9fafb !important;
+}
+
+.dark-theme .bg-white {
+  background-color: #111827 !important;
+  color: #f9fafb !important;
+}
+
+.dark-theme .bg-slate-50 {
+  background-color: #0b0f19 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark-theme .bg-slate-100 {
+  background-color: #111827 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark-theme .border-slate-200,
+.dark-theme .border-slate-100 {
+  border-color: #1f2937 !important;
+}
+
+.dark-theme .text-slate-900,
+.dark-theme .text-slate-950 {
+  color: #f9fafb !important;
+}
+
+.dark-theme .text-slate-800 {
+  color: #e5e7eb !important;
+}
+
+.dark-theme .text-slate-700 {
+  color: #d1d5db !important;
+}
+
+.dark-theme .text-slate-600,
+.dark-theme .text-slate-500 {
+  color: #9ca3af !important;
+}
+
+.dark-theme header {
+  background-color: rgba(17, 24, 39, 0.95) !important;
+  border-bottom-color: #1f2937 !important;
+}
+
+.dark-theme .hover\:bg-slate-50:hover,
+.dark-theme .hover\:bg-slate-100:hover {
+  background-color: #1f2937 !important;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+  border-color: #374151 !important;
+}
+
+.dark-theme table thead tr {
+  background-color: #111827 !important;
+  color: #9ca3af !important;
+}
