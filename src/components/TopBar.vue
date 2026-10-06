@@ -16,11 +16,24 @@
       </div>
 
       <!-- Center: Live MDRRMO Maritime Weather Advisory -->
+      <!-- Gene - Oct 06, 2026: Linked MDRRMO Sea Advisory banner directly to /rescue route -->
+      <!--
       <div class="hidden lg:flex items-center space-x-2 text-sky-300 bg-sky-950/60 px-2.5 py-0.5 rounded-full border border-sky-800/50">
         <Waves class="w-3.5 h-3.5 text-sky-400 animate-bounce" />
         <span class="font-medium">MDRRMO Sea Advisory:</span>
         <span class="text-slate-300">Calm to Moderate Seas (Wave height: 0.8–1.5m). All island sea lanes open.</span>
       </div>
+      -->
+      <router-link
+        to="/rescue"
+        class="hidden lg:flex items-center space-x-2 text-sky-300 bg-sky-950/60 hover:bg-sky-900/80 px-2.5 py-0.5 rounded-full border border-sky-800/50 transition-colors cursor-pointer"
+        title="View 24/7 Rescue & Sea Advisory Page"
+      >
+        <Waves class="w-3.5 h-3.5 text-sky-400 animate-bounce" />
+        <span class="font-medium">MDRRMO Sea Advisory:</span>
+        <span class="text-slate-300">Calm to Moderate Seas (Wave height: 0.8–1.5m). All island sea lanes open.</span>
+        <span class="text-[10px] text-amber-400 font-bold ml-1">View Live Board →</span>
+      </router-link>
 
       <!-- Gene - Oct 06, 2026: Removed font, contrast, and language selection controls per user request, retaining Light/Dark theme toggle -->
       <!--

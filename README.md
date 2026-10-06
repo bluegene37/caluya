@@ -92,6 +92,7 @@ Built into the header is an interactive **Vice Mayor Proposal** modal featuring:
 | Layer | Technology |
 |---|---|
 | **Framework** | [Vue 3](https://vuejs.org/) (Composition API, `<script setup>`) |
+| **Routing** | [Vue Router 4](https://router.vuejs.org/) (Multi-page declarative routing & page titles) |
 | **Build Tool** | [Vite 6](https://vitejs.dev/) (Lightning-fast HMR and bundling) |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) (Modern CSS tokens & responsive utilities) |
 | **Icons** | [Lucide Vue Next](https://lucide.dev/) (Crisp, accessible SVGs) |
@@ -113,9 +114,9 @@ Caluya/
 ├── src/
 │   ├── assets/
 │   │   └── main.css             # Tailwind CSS v4 setup & base rules
-│   ├── components/
+│   ├── components/              # Reusable functional modules
 │   │   ├── TopBar.vue           # PST Clock, Sea advisories
-│   │   ├── HeaderNav.vue        # Wide navbar, official logo, theme toggle, proposal trigger
+│   │   ├── HeaderNav.vue        # Wide navbar, official logo, theme toggle, multi-page router links
 │   │   ├── HeroSection.vue      # Big hero image slider with text overlays
 │   │   ├── EmergencyRescueHub.vue # 24/7 Rescue, Coast Guard, MDRRMO Gale Warning
 │   │   ├── HealthServicesHub.vue # RHU 1 & RHU 2 telemedicine, medicine inventory tracker
@@ -128,10 +129,23 @@ Caluya/
 │   │   ├── TransparencySection.vue # DILG Full Disclosure, BAC bids, SGLG mandates
 │   │   ├── ProposalModal.vue    # Vice Mayor slide deck & formal document
 │   │   └── FooterSection.vue    # Republic standards, FOI, Data Privacy, official seal
+│   ├── router/
+│   │   └── index.js             # Vue Router configuration for 10 distinct pages
+│   ├── views/                   # Dedicated page views
+│   │   ├── HomeView.vue         # Central portal directory & hero banner
+│   │   ├── RescueView.vue       # 24/7 Rescue & MDRRMO command page (/rescue)
+│   │   ├── HealthView.vue       # Municipal Health & RHU page (/health)
+│   │   ├── PublicServicesView.vue # Public Assistance & MSWDO page (/public-services)
+│   │   ├── ServicesView.vue     # Citizen e-Services page (/services)
+│   │   ├── MobileAppView.vue    # Caluya e-Citizen Mobile App download page (/mobile-app)
+│   │   ├── IslandsView.vue      # 18 Island Barangays Explorer page (/islands)
+│   │   ├── TourismView.vue      # Tourism & Tatusan Festival page (/tourism)
+│   │   ├── TransparencyView.vue # DILG Full Disclosure Seal page (/transparency)
+│   │   └── LeadershipView.vue   # LGU Leadership & Council page (/leadership)
 │   ├── data/
 │   │   └── caluyaData.js        # Comprehensive municipal dataset, emergency lines, proposal text
-│   ├── App.vue                  # Main application orchestrator & theme state
-│   └── main.js                  # Vue entrypoint
+│   ├── App.vue                  # Main application shell (<router-view> and layout)
+│   └── main.js                  # Vue 3 entrypoint with router installation
 ├── index.html                   # HTML template with Caluya branding
 ├── package.json                 # Project dependencies & scripts
 ├── vite.config.js               # Vite configuration

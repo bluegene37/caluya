@@ -72,43 +72,28 @@
       <LeadershipSection />
     </main> 
     -->
+    <!-- Main Page Content -->
+    <!-- Gene - Oct 06, 2026: Converted single-page stacked layout into multi-page Vue Router <router-view> per user request -->
+    <!--
     <main class="flex-grow">
-      <!-- Hero Section -->
       <HeroSection 
         @open-proposal="isProposalOpen = true"
         @navigate="handleNavigate"
       />
 
-      <!-- 24/7 Emergency, Rescue, and MDRRMO/DRRMC Hub -->
       <EmergencyRescueHub />
-
-      <!-- Municipal Health & Rural Health Units (RHU) Services -->
       <HealthServicesHub />
-
-      <!-- Public Assistance & Social Services (MSWDO, Agriculture, PESO) -->
       <PublicServicesDirectory />
-
-      <!-- Citizen e-Services Hub -->
       <ServicesHub />
-
-      <!-- Gene - Oct 06, 2026: Added MobileAppSection for citizen mobile app dummy download and interactive preview -->
-      <!--
-      <IslandExplorer />
-      -->
-      <!-- Caluya e-Citizen Mobile App (Downloadable Sample Dummy APK) -->
       <MobileAppSection />
-
-      <!-- 18 Island Barangays Explorer -->
       <IslandExplorer />
-
-      <!-- Tatusan Festival & Eco-Tourism Showcase -->
       <TourismShowcase />
-
-      <!-- Transparency Seal & DILG Full Disclosure -->
       <TransparencySection />
-
-      <!-- Municipal Leadership & Directory -->
       <LeadershipSection />
+    </main>
+    -->
+    <main class="flex-grow">
+      <router-view @open-proposal="isProposalOpen = true" />
     </main>
 
     <!-- Footer -->
@@ -163,14 +148,32 @@ const toggleTheme = () => {
   isDark.value = !isDark.value;
 };
 
+// Gene - Oct 06, 2026: Converted in-page scroll handleNavigate to Vue Router multi-page navigation
+/*
 const activeSection = ref('home');
-const isProposalOpen = ref(false);
 const handleNavigate = (sectionId) => {
   activeSection.value = sectionId;
   const el = document.getElementById(sectionId);
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' });
   }
+};
+*/
+import { useRouter, useRoute } from 'vue-router';
+const router = useRouter();
+const route = useRoute();
+
+const activeSection = ref('home');
+const isProposalOpen = ref(false);
+
+const handleNavigate = (target) => {
+  let targetPath = '/';
+  if (typeof target === 'string') {
+    targetPath = target === 'home' ? '/' : (target.startsWith('/') ? target : `/${target}`);
+  } else if (typeof target === 'object' && target.path) {
+    targetPath = target.path;
+  }
+  router.push(targetPath);
 };
 
 // Gene - Oct 06, 2026: Removed font, contrast, and language state per user request

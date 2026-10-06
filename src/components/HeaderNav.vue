@@ -367,6 +367,8 @@ const navItems = [
   { id: 'leadership', label: 'Leadership' },
 ];
 */
+// Gene - Oct 06, 2026: Converted navItems and handleNavClick to use Vue Router for distinct multi-page navigation
+/*
 const navItems = [
   { id: 'home', label: 'Home' },
   { id: 'rescue', label: '🚨 Rescue' },
@@ -387,5 +389,46 @@ const handleNavClick = (id) => {
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
   }
+};
+*/
+import { useRouter, useRoute } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
+
+const navItems = [
+  { id: 'home', path: '/', label: 'Home' },
+  { id: 'rescue', path: '/rescue', label: '🚨 Rescue' },
+  { id: 'health', path: '/health', label: 'Health' },
+  { id: 'public-services', path: '/public-services', label: 'Public Assistance' },
+  { id: 'services', path: '/services', label: 'e-Services' },
+  { id: 'mobile-app', path: '/mobile-app', label: '📱 Mobile App' },
+  { id: 'islands', path: '/islands', label: 'Barangays' },
+  { id: 'tourism', path: '/tourism', label: 'Tourism' },
+  { id: 'transparency', path: '/transparency', label: 'Transparency' },
+  { id: 'leadership', path: '/leadership', label: 'Leadership' },
+];
+
+const isActive = (item) => {
+  if (!route) return false;
+  if (item.path === '/') return route.path === '/';
+  return route.path.startsWith(item.path);
+};
+
+const handleNavClick = (target) => {
+  mobileMenuOpen.value = false;
+  let targetPath = '/';
+  let targetId = 'home';
+
+  if (typeof target === 'object' && target !== null) {
+    targetPath = target.path || '/';
+    targetId = target.id || 'home';
+  } else if (typeof target === 'string') {
+    targetPath = target === 'home' ? '/' : (target.startsWith('/') ? target : `/${target}`);
+    targetId = target;
+  }
+
+  router.push(targetPath);
+  emit('navigate', targetId);
 };
 </script>
