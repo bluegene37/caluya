@@ -249,8 +249,14 @@
               Created by: <strong class="text-amber-300">{{ PROPOSAL_DATA.company }}</strong> • Proponent: <strong class="text-white">{{ PROPOSAL_DATA.proponent }}</strong>
             </span>
             -->
+            <!--
             <span class="text-[10px] sm:text-[11px] text-slate-300 block truncate">
               Created & Developed by: <strong class="text-amber-300">{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }}) • Proponent: <strong class="text-white">{{ PROPOSAL_DATA.proponent }}</strong>
+            </span>
+            -->
+            <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from proposal, designating Raffy Suguilon as sole proponent for the proposal -->
+            <span class="text-[10px] sm:text-[11px] text-slate-300 block truncate">
+              Presented by: <strong class="text-amber-300">{{ PROPOSAL_DATA.company }}</strong> • Proponent: <strong class="text-white">{{ PROPOSAL_DATA.proponent }}</strong>
             </span>
           </div>
         </div>
@@ -682,11 +688,21 @@
                     <p class="text-slate-600 leading-relaxed"><strong>{{ PROPOSAL_DATA.proponent }}</strong> • <strong>{{ PROPOSAL_DATA.company }}</strong></p>
                   </div>
                   -->
+                  <!--
                   <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
                     <span class="font-bold text-slate-900 block mb-1">Proponent & Engineering</span>
                     <p class="text-slate-600 leading-relaxed">
                       Proponent: <strong>{{ PROPOSAL_DATA.proponent }}</strong><br/>
                       Creator: <strong>{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }})
+                    </p>
+                  </div>
+                  -->
+                  <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from Slide 0, designating Raffy Suguilon as sole proponent -->
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <span class="font-bold text-slate-900 block mb-1">Technology Proponent</span>
+                    <p class="text-slate-600 leading-relaxed">
+                      Proponent: <strong>{{ PROPOSAL_DATA.proponent }}</strong><br/>
+                      Platform: <strong>{{ PROPOSAL_DATA.company }}</strong>
                     </p>
                   </div>
                   <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
@@ -865,9 +881,20 @@
               </span>
             </div>
             -->
+            <!--
             <div class="mt-6 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
               <span class="font-medium text-slate-600">
                 Created & Developed by: <strong class="text-amber-600">{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }}) • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong>
+              </span>
+              <span class="font-semibold text-sky-800">
+                Presented for: <strong class="text-slate-900">{{ PROPOSAL_DATA.targetOfficial }}</strong> (Caluya, Antique)
+              </span>
+            </div>
+            -->
+            <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from slide deck bottom bar, crediting genexis.dev and Proponent Raffy Suguilon -->
+            <div class="mt-6 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
+              <span class="font-medium text-slate-600">
+                Created by: <strong class="text-amber-600">{{ PROPOSAL_DATA.company }}</strong> • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong>
               </span>
               <span class="font-semibold text-sky-800">
                 Presented for: <strong class="text-slate-900">{{ PROPOSAL_DATA.targetOfficial }}</strong> (Caluya, Antique)
@@ -1343,6 +1370,7 @@
               </div>
             </div>
             -->
+            <!--
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 pt-2 border-t border-slate-200">
               <div>
                 <strong class="text-slate-900 block">Addressed To:</strong>
@@ -1355,6 +1383,26 @@
               <div>
                 <strong class="text-slate-900 block">Creator & Developer:</strong>
                 <span>{{ PROPOSAL_DATA.creator }} ({{ PROPOSAL_DATA.company }})</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Scope of Coverage:</strong>
+                <span>All 18 Island Barangays of Caluya, Antique</span>
+              </div>
+            </div>
+            -->
+            <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from document metadata, crediting Proponent Raffy Suguilon and genexis.dev -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 pt-2 border-t border-slate-200">
+              <div>
+                <strong class="text-slate-900 block">Addressed To:</strong>
+                <span>{{ PROPOSAL_DATA.preparedFor }}</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Presented & Submitted By:</strong>
+                <span>{{ PROPOSAL_DATA.proponent }} ({{ PROPOSAL_DATA.proponentRole }})</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Development Organization:</strong>
+                <span>{{ PROPOSAL_DATA.company }}</span>
               </div>
               <div>
                 <strong class="text-slate-900 block">Scope of Coverage:</strong>
@@ -1521,12 +1569,23 @@
               </div>
             </div>
             -->
+            <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from signature block, crediting Proponent Raffy Suguilon and genexis.dev -->
+            <!--
             <div class="space-y-8 sm:space-y-12">
               <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Presented & Submitted By:</div>
               <div>
                 <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">{{ PROPOSAL_DATA.proponent }}</div>
                 <div class="text-slate-600 font-medium">{{ PROPOSAL_DATA.proponentRole }}</div>
                 <div class="text-[10px] text-sky-800 font-bold">Created & Developed by {{ PROPOSAL_DATA.creator }} ({{ PROPOSAL_DATA.company }})</div>
+              </div>
+            </div>
+            -->
+            <div class="space-y-8 sm:space-y-12">
+              <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Presented & Submitted By:</div>
+              <div>
+                <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">{{ PROPOSAL_DATA.proponent }}</div>
+                <div class="text-slate-600 font-medium">{{ PROPOSAL_DATA.proponentRole }}</div>
+                <div class="text-[10px] text-sky-800 font-bold">{{ PROPOSAL_DATA.company }}</div>
               </div>
             </div>
 
@@ -1575,10 +1634,27 @@
             </div>
           </div>
           -->
+          <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from document footer, showing genexis.dev and Proponent Raffy Suguilon -->
+          <!--
           <div class="pt-6 border-t-2 border-slate-900 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2">
             <div class="space-y-0.5">
               <div class="font-bold text-slate-900">
                 Created & Developed by: <span class="text-sky-900 font-extrabold">{{ PROPOSAL_DATA.creator }}</span> ({{ PROPOSAL_DATA.company }}) • Proponent: <span class="text-slate-950 font-extrabold">{{ PROPOSAL_DATA.proponent }}</span>
+              </div>
+              <div class="text-[11px] text-slate-500">
+                Working Prototype & Technology Pitch for the Municipality of Caluya, Antique
+              </div>
+            </div>
+            <div class="text-right font-mono text-[10px] text-slate-500">
+              <div>Ref: {{ PROPOSAL_DATA.docReference }}</div>
+              <div>Date: {{ PROPOSAL_DATA.date }}</div>
+            </div>
+          </div>
+          -->
+          <div class="pt-6 border-t-2 border-slate-900 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2">
+            <div class="space-y-0.5">
+              <div class="font-bold text-slate-900">
+                Presented by: <span class="text-sky-900 font-extrabold">{{ PROPOSAL_DATA.company }}</span> • Proponent: <span class="text-slate-950 font-extrabold">{{ PROPOSAL_DATA.proponent }}</span>
               </div>
               <div class="text-[11px] text-slate-500">
                 Working Prototype & Technology Pitch for the Municipality of Caluya, Antique
@@ -1644,10 +1720,35 @@
         </div>
       </div>
       -->
+      <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from modal bottom bar, crediting genexis.dev and Proponent Raffy Suguilon -->
+      <!--
       <div class="proposal-modal-footer px-4 sm:px-6 py-3 sm:py-3.5 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between text-xs flex-shrink-0 gap-2">
         <div class="flex items-center space-x-2 text-slate-600 min-w-0">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
           <span class="truncate">Created & Developed by: <strong class="text-amber-600">{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }}) • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong></span>
+        </div>
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+          <button
+            @click="handlePrint"
+            class="px-3 sm:px-3.5 py-1.5 rounded-xl font-bold bg-amber-400 hover:bg-amber-300 text-slate-950 flex items-center space-x-1.5 cursor-pointer text-xs shadow-sm transition-colors"
+            title="Download / Print Whole Proposal in PDF"
+          >
+            <Download class="w-3.5 h-3.5" />
+            <span>Download / Print PDF (Whole Proposal)</span>
+          </button>
+          <button
+            @click="$emit('close')"
+            class="px-3.5 sm:px-4 py-1.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer text-xs"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      -->
+      <div class="proposal-modal-footer px-4 sm:px-6 py-3 sm:py-3.5 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between text-xs flex-shrink-0 gap-2">
+        <div class="flex items-center space-x-2 text-slate-600 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+          <span class="truncate">Created by: <strong class="text-amber-600">{{ PROPOSAL_DATA.company }}</strong> • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong></span>
         </div>
         <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
           <button
@@ -1716,8 +1817,21 @@ const slides = [
 ];
 */
 
+// Gene - Oct 06, 2026: Updated slide deck to present genexis.dev prototype by Raffy Suguilon for Hon. Belfe S. Duran
+/*
 const slides = [
   { title: "Executive Presentation & Vision", subtitle: "Presented by Raffy Soquilon (genexis.dev) to Vice Mayor Hon. Belfe S. Duran" },
+  { title: "Archipelagic Context & Island Challenges", subtitle: "Connecting Caluya's 18 Island Barangays across Semirara, Sibay & Outlying Islets" },
+  { title: "The 4 Strategic System Pillars", subtitle: "Zero-Travel E-Services, Sea Safety Lifelines & Low-Bandwidth Tech" },
+  { title: "Working Prototype Demonstration", subtitle: "What genexis.dev Has Engineered & Made Ready for LGU Evaluation" },
+  { title: "Universal Island Inclusion & Citizen Relief", subtitle: "₱15M+ Annual Transport Savings for Island Families" },
+  { title: "Island-Optimized Architecture", subtitle: "Vue 3 Lightweight Engineering Tailored for Remote Maritime Connectivity" },
+  { title: "Collaborative Consultation & Next Steps", subtitle: "Demonstration Walkthrough, Department Alignment & Turnkey Handover" }
+];
+*/
+
+const slides = [
+  { title: "Executive Presentation & Vision", subtitle: "Presented by Raffy Suguilon (genexis.dev) to Vice Mayor Hon. Belfe S. Duran" },
   { title: "Archipelagic Context & Island Challenges", subtitle: "Connecting Caluya's 18 Island Barangays across Semirara, Sibay & Outlying Islets" },
   { title: "The 4 Strategic System Pillars", subtitle: "Zero-Travel E-Services, Sea Safety Lifelines & Low-Bandwidth Tech" },
   { title: "Working Prototype Demonstration", subtitle: "What genexis.dev Has Engineered & Made Ready for LGU Evaluation" },

@@ -292,8 +292,14 @@
               </router-link>
             </div>
             -->
+            <!-- Gene - Oct 06, 2026: Updated proposal banner copy to attribute genexis.dev and proponent Raffy Suguilon -->
+            <!--
             <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-3xl">
               Presented for the evaluation of Municipal Mayor <strong class="text-white font-extrabold">Hon. Rigil Kent G. Lim</strong>, Vice Mayor <strong class="text-amber-300 font-extrabold">Hon. Belfe S. Duran</strong> (Presiding Officer of the Sangguniang Bayan), and the municipal administration, this digital portal by <strong class="text-sky-300 font-bold">genexis.dev</strong> (proponent Raffy Soquilon) connects all 18 island barangays with zero-travel public services, 24/7 sea ambulance dispatch, and disaster alerts.
+            </p>
+            -->
+            <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+              Presented for the evaluation of Municipal Mayor <strong class="text-white font-extrabold">Hon. Rigil Kent G. Lim</strong>, Vice Mayor <strong class="text-amber-300 font-extrabold">Hon. Belfe S. Duran</strong> (Presiding Officer of the Sangguniang Bayan), and the municipal administration, this digital portal by <strong class="text-sky-300 font-bold">genexis.dev</strong> (proponent Raffy Suguilon) connects all 18 island barangays with zero-travel public services, 24/7 sea ambulance dispatch, and disaster alerts.
             </p>
 
             <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -344,9 +350,16 @@
                 <span>Technology by genexis.dev (Proponent: Raffy Soquilon)</span>
               </div>
               -->
+              <!--
               <div class="flex items-start space-x-2">
                 <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>Created & Developed by Gene Ray Medel (genexis.dev) • Proponent: Raffy Soquilon</span>
+              </div>
+              -->
+              <!-- Gene - Oct 06, 2026: Removed Gene Ray Medel from HomeView proposal callout, designating Raffy Suguilon as proponent -->
+              <div class="flex items-start space-x-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Technology by genexis.dev • Proponent: Raffy Suguilon</span>
               </div>
             </div>
           </div>

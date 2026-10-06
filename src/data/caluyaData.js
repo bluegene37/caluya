@@ -781,7 +781,8 @@ export const PROPOSAL_DATA = {
 };
 */
 
-// Gene - Oct 06, 2026: Updated PROPOSAL_DATA to clearly designate Raffy Soquilon as lead proponent, and Gene Ray Medel of genexis.dev as the creator and lead developer
+// Gene - Oct 06, 2026: Previous PROPOSAL_DATA with Gene Ray Medel attribution
+/*
 export const PROPOSAL_DATA = {
   title: "LGU Digital Transformation & E-Governance Platform Presentation",
   subTitle: "A Working Island-Resilient Public Service Prototype Developed for Caluya, Antique",
@@ -935,6 +936,164 @@ export const PROPOSAL_DATA = {
 
   budgetPhasing: [
     { item: "Interactive Portal Prototype (Created & Developed by Gene Ray Medel • genexis.dev)", cost: "Fully Developed Prototype Ready for Review" },
+    { item: "Annual Cloud Infrastructure, .gov.ph Domain & SSL", cost: "Estimated ~₱45,000 / year (Standard Gov Cloud)" },
+    { item: "Department Customization & Staff Training", cost: "Customizable based on LGU Scope & Needs" },
+    { item: "Barangay Digital Access Points (Pilot for Outlying Islands)", cost: "Optional Phase for Semirara & Sibay Halls" }
+  ]
+};
+*/
+
+// Gene - Oct 06, 2026: Designating Raffy Suguilon as sole proponent and genexis.dev as company, removing Gene Ray Medel from the proposal per user instruction
+export const PROPOSAL_DATA = {
+  title: "LGU Digital Transformation & E-Governance Platform Presentation",
+  subTitle: "A Working Island-Resilient Public Service Prototype Developed for Caluya, Antique",
+  company: "genexis.dev",
+  proponent: "Raffy Suguilon",
+  proponentRole: "Lead Proponent",
+  preparedBy: "Raffy Suguilon (Proponent) • genexis.dev",
+  preparedFor: "Hon. Belfe S. Duran, Municipal Vice Mayor & Presiding Officer, Sangguniang Bayan ng Caluya",
+  targetOfficial: "Hon. Belfe S. Duran",
+  targetRole: "Municipal Vice Mayor & Presiding Officer",
+  legislativeBody: "Sangguniang Bayan ng Caluya (18 Island Barangays)",
+  date: "October 2026",
+  docReference: "GENEXIS-CALUYA-2026-01",
+  
+  vision: "To present a practical, island-tailored digital public service platform built specifically for Caluya, Antique—connecting all 18 island barangays to eliminate unnecessary sea crossings for routine municipal transactions, strengthen maritime safety communications, and make local government services readily accessible to every constituent.",
+
+  executiveSummary: "To the Honorable Municipal Vice Mayor Belfe S. Duran and the Sangguniang Bayan ng Caluya: We respectfully present this working digital portal prototype developed for the archipelagic conditions of Caluya, Antique. This initiative is presented by proponent Raffy Suguilon of genexis.dev. With 18 barangays spread across Caluya Island, Semirara, Sibay, and outlying islets, islanders frequently spend ₱400 to ₱800 and face unpredictable sea conditions just to process business permits, civil documents, or emergency assistance at Poblacion. Rather than proposing abstract concepts, we have built a functional, mobile-friendly platform ready for your review—featuring zero-travel e-services, live MDRRMO sea ambulance dispatch tracking, PAGASA marine gale warning boards, transparent legislative archives, and community health lifelines. We submit this prototype for your kind evaluation as a practical, ready-to-deploy solution for Caluya.",
+
+  presentationNotes: [
+    {
+      point: "Respectful & Consultative Approach",
+      detail: "Presented by proponent Raffy Suguilon (genexis.dev) as a working software prototype ready for demonstration. We do not prescribe legislative mandates or dictate council policies; rather, we provide a functional solution for your review and guidance."
+    },
+    {
+      point: "Tailored for Caluya's Island Geography",
+      detail: "Every screen has been engineered around Caluya's unique geography—serving Caluya Island, Semirara Island, Sibay Island, Sibato, and Liwagao with mobile-first and low-bandwidth resilience."
+    },
+    {
+      point: "Ready for Demonstration & Testing",
+      detail: "The portal is fully interactive today. Sangguniang Bayan officials and department heads can test permit applications, emergency hotlines, and legislative document views immediately."
+    }
+  ],
+
+  pillars: [
+    {
+      num: "01",
+      title: "Inter-Island Zero-Travel Public Services",
+      desc: "Fully functional digital workflows for e-BPLS business permit inquiries, Civil Registry document requests, RPTax real property tax calculator, and MSWDO crisis aid filing.",
+      impact: "Saves island constituents ~₱15,000,000 annually in aggregate motorized pumpboat fares and lost working days.",
+      highlight: "Enables constituents in Semirara, Sibay, and Sibato to transact locally without boarding sea vessels."
+    },
+    {
+      num: "02",
+      title: "MDRRMC Maritime Safety & Rescue Lifeline",
+      desc: "Centralized disaster hub featuring live PAGASA gale warnings, Coast Guard sea advisory notices, VHF Marine Channel 16 monitoring, and 24/7 Sea Ambulance dispatch tracking.",
+      impact: "Zero-casualty early warning dissemination for coastal fisherfolk and rapid sea medevac coordination.",
+      highlight: "Engineered specifically for Caluya's challenging open sea lanes."
+    },
+    {
+      num: "03",
+      title: "Public Legislative & Administrative Transparency",
+      desc: "Searchable municipal archive organizing enacted municipal ordinances, Sangguniang Bayan resolutions, committee hearing schedules, and DILG Full Disclosure notices.",
+      impact: "Promotes open, transparent local governance and equips all 18 barangay councils with immediate access to municipal information.",
+      highlight: "Simple public access fostering civic trust and citizen engagement."
+    },
+    {
+      num: "04",
+      title: "Island-Optimized Low-Bandwidth Engineering",
+      desc: "Built with Vue 3 and modern web standards with minimal payload size, aggressive client-side caching, and offline-friendly data views for intermittent 3G/4G cellular networks.",
+      impact: "Ensures fast loading and reliable performance even in remote coastal barangays with spotty cellular coverage.",
+      highlight: "Designed and optimized by genexis.dev for real-world island environments."
+    }
+  ],
+
+  prototypeModules: [
+    {
+      category: "Frontline Citizen E-Services",
+      summary: "Zero-travel online services reducing transport burdens for island constituents.",
+      features: [
+        "e-BPLS Business Permit application checklist & fee estimator",
+        "Civil Registry document requests (Birth, Marriage, Death)",
+        "Real Property Tax (RPTax) calculator with island prompt-payment incentives",
+        "MSWDO AICS social crisis aid intake form & requirements guide"
+      ]
+    },
+    {
+      category: "Maritime Safety & Emergency OpCen",
+      summary: "Real-time safety and sea rescue lifeline for fisherfolk and passengers.",
+      features: [
+        "24/7 Sea Ambulance medevac dispatch tracking (Caluya & Semirara vessels)",
+        "PAGASA Gale Warning board & Philippine Coast Guard sea voyage advisories",
+        "Direct emergency hotlines (MDRRMO 911, VHF Ch 16, PCG, PNP, BFP)",
+        "Island Evacuation Center directory with capacity and amenity status"
+      ]
+    },
+    {
+      category: "Municipal Health & Community Services",
+      summary: "Healthcare schedules, medicine inventory, and social welfare programs.",
+      features: [
+        "RHU 1 (Poblacion) & RHU 2 (Semirara) 24/7 clinic & doctor schedules",
+        "Free municipal maintenance medicine inventory & pharmacy tracker",
+        "Animal bite clinic (anti-rabies) & immunization schedules",
+        "PESO local employment opportunities board & SMPC job listings"
+      ]
+    },
+    {
+      category: "Island Culture, Tourism & Fisheries",
+      summary: "Showcase of local heritage, ecotourism destinations, and mariculture.",
+      features: [
+        "Tatusan Festival cultural showcase & coconut crab conservation",
+        "Liwagao Island sandbar, Sibato reef, and ecotourism guide",
+        "Seaweed (agar-agar) mariculture & fisherfolk support registry",
+        "18 Island Barangays directory with profiles, captains, and contacts"
+      ]
+    }
+  ],
+
+  technicalFeatures: [
+    {
+      name: "Island-Optimized Lightweight Architecture",
+      detail: "Engineered by genexis.dev using Vue 3 and Vite for lightning-fast loads, minimal data usage, and smooth rendering on entry-level mobile devices across the islands."
+    },
+    {
+      name: "Responsive Mobile-First Design",
+      detail: "Clean layout tailored for smartphones, tablets, and desktops, ensuring all constituents can browse services comfortably without visual clutter."
+    },
+    {
+      name: "Bilingual Accessibility (English & Kinaray-a/Hiligaynon)",
+      detail: "Bilingual interface elements designed for inclusive usability by senior citizens, fisherfolk, and barangay leaders."
+    },
+    {
+      name: "Offline-Resilient Emergency Data",
+      detail: "Emergency hotlines, evacuation shelters, and clinic contacts are cached locally so they remain accessible even during temporary sea signal drops."
+    },
+    {
+      name: "Interoperable & National-Gateway Ready",
+      detail: "Built on modular standards ready for future integration with LandBank Link.BizPortal, GCash, Maya, and national DICT e-LGU systems whenever designated by the LGU."
+    }
+  ],
+
+  collaborativeSteps: [
+    {
+      step: "Phase 1: Working Prototype Review & Feedback",
+      timeline: "Immediate / Demonstration",
+      description: "Interactive walkthrough of the working portal with Vice Mayor Belfe S. Duran, Sangguniang Bayan members, and department heads to gather comments, local preferences, and specific municipal inputs."
+    },
+    {
+      step: "Phase 2: Tailoring to Department Requirements",
+      timeline: "Collaborative Customization",
+      description: "Aligning digital forms, local fee structures, and department checklists with Caluya's existing procedures and administrative guidelines."
+    },
+    {
+      step: "Phase 3: Turnkey Handover & Barangay Orientation",
+      timeline: "Deployment & Training",
+      description: "Assisting with official hosting (.gov.ph), conducting orientation for island barangay staff (Semirara, Sibay, Sibato), and providing full technical documentation to LGU personnel."
+    }
+  ],
+
+  budgetPhasing: [
+    { item: "Interactive Portal Prototype (genexis.dev • Proponent: Raffy Suguilon)", cost: "Fully Developed Prototype Ready for Review" },
     { item: "Annual Cloud Infrastructure, .gov.ph Domain & SSL", cost: "Estimated ~₱45,000 / year (Standard Gov Cloud)" },
     { item: "Department Customization & Staff Training", cost: "Customizable based on LGU Scope & Needs" },
     { item: "Barangay Digital Access Points (Pilot for Outlying Islands)", cost: "Optional Phase for Semirara & Sibay Halls" }

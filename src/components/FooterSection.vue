@@ -231,7 +231,13 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
         <div class="text-center sm:text-left">
           <span>© 2026 Municipality of Caluya, Antique. Republic of the Philippines. All rights reserved.</span>
+          <!-- Gene - Oct 06, 2026: Updated footer bottom attribution to include active https://genexis.dev link and attribute proponent Raffy Suguilon -->
+          <!--
           <span class="block text-slate-400 text-[11px] mt-0.5">Created & Developed by <strong class="text-sky-300">Gene Ray Medel</strong> (genexis.dev) • Proponent: <strong class="text-white">Raffy Soquilon</strong></span>
+          -->
+          <span class="block text-slate-400 text-[11px] mt-0.5">
+            Created & Developed by <strong class="text-sky-300">Gene Ray Medel</strong> • <a href="https://genexis.dev" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 underline font-semibold transition-colors">https://genexis.dev</a> • Proponent: <strong class="text-white">Raffy Suguilon</strong>
+          </span>
         </div>
         <div class="flex items-center space-x-3 text-slate-400 text-[11px]">
           <span>Freedom of Information (FOI)</span>
