@@ -145,6 +145,8 @@
         </div>
 
         <!-- Desktop Navigation Links (Expanded wide, no wrapping) -->
+        <!-- Gene - Oct 06, 2026: Converted nav buttons from scroll to multi-page route matching -->
+        <!--
         <nav class="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5 2xl:space-x-2 shrink-0">
           <button
             v-for="item in navItems"
@@ -154,6 +156,22 @@
               'px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-lg text-xs xl:text-[13px] 2xl:text-sm font-semibold transition-all whitespace-nowrap shrink-0 cursor-pointer',
               activeSection === item.id
                 ? 'text-sky-700 bg-sky-50 shadow-xs'
+                : 'text-slate-600 hover:text-sky-700 hover:bg-slate-100/70'
+            ]"
+          >
+            {{ item.label }}
+          </button>
+        </nav>
+        -->
+        <nav class="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5 2xl:space-x-2 shrink-0">
+          <button
+            v-for="item in navItems"
+            :key="item.id"
+            @click="handleNavClick(item)"
+            :class="[
+              'px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-lg text-xs xl:text-[13px] 2xl:text-sm font-semibold transition-all whitespace-nowrap shrink-0 cursor-pointer',
+              isActive(item)
+                ? 'text-sky-700 bg-sky-50 shadow-xs ring-1 ring-sky-200 font-bold'
                 : 'text-slate-600 hover:text-sky-700 hover:bg-slate-100/70'
             ]"
           >
@@ -222,6 +240,8 @@
 
     <!-- Mobile Drawer -->
     <div v-if="mobileMenuOpen" class="xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-fadeIn">
+      <!-- Gene - Oct 06, 2026: Converted mobile drawer nav buttons to use multi-page router active state -->
+      <!--
       <button
         v-for="item in navItems"
         :key="item.id"
@@ -230,6 +250,20 @@
           'block w-full text-left px-3 py-2.5 rounded-lg text-base font-semibold',
           activeSection === item.id
             ? 'text-sky-700 bg-sky-50'
+            : 'text-slate-700 hover:bg-slate-50'
+        ]"
+      >
+        {{ item.label }}
+      </button>
+      -->
+      <button
+        v-for="item in navItems"
+        :key="item.id"
+        @click="handleNavClick(item)"
+        :class="[
+          'block w-full text-left px-3 py-2.5 rounded-lg text-base font-semibold transition-colors',
+          isActive(item)
+            ? 'text-sky-700 bg-sky-50 font-bold border-l-4 border-sky-600'
             : 'text-slate-700 hover:bg-slate-50'
         ]"
       >
