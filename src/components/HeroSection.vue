@@ -23,6 +23,8 @@
   >
     <!-- Big Hero Background Carousel -->
     <div class="absolute inset-0 z-0">
+      <!-- Gene - Oct 06, 2026: Added vibrant fallback oceanic linear gradient alongside unsplash background image to guarantee instant visual rendering -->
+      <!--
       <div
         v-for="(slide, index) in slides"
         :key="index"
@@ -31,6 +33,19 @@
           currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
         ]"
         :style="{ backgroundImage: `url('${slide.image}')` }"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/70" />
+        <div class="absolute inset-0 bg-radial-at-c from-transparent via-slate-950/40 to-slate-950/90" />
+      </div>
+      -->
+      <div
+        v-for="(slide, index) in slides"
+        :key="index"
+        :class="[
+          'absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out',
+          currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+        ]"
+        :style="{ backgroundImage: `url('${slide.image}'), linear-gradient(135deg, #02203c 0%, #064e3b 40%, #09172a 100%)` }"
       >
         <!-- Dark gradient scrims & vignette for maximum text legibility -->
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/70" />

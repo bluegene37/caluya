@@ -9,8 +9,9 @@
     <!--
     <div class="w-full max-w-[1850px] mx-auto px-2.5 sm:px-4 lg:px-6 py-1.5 flex flex-wrap items-center justify-between gap-2">
     -->
+    <!-- Gene - Oct 06, 2026: Prevented top bar from wrapping by using flex items-center justify-between and responsive text -->
+    <!--
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2">
-      <!-- Left: Philippine Standard Time & Republic Badge -->
       <div class="flex items-center space-x-3">
         <div class="flex items-center space-x-1.5 text-amber-400 font-semibold tracking-wide">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -19,15 +20,6 @@
         <span class="font-mono text-slate-300 font-medium">{{ timeStr || 'Loading PST...' }}</span>
       </div>
 
-      <!-- Center: Live MDRRMO Maritime Weather Advisory -->
-      <!-- Gene - Oct 06, 2026: Linked MDRRMO Sea Advisory banner directly to /rescue route -->
-      <!--
-      <div class="hidden lg:flex items-center space-x-2 text-sky-300 bg-sky-950/60 px-2.5 py-0.5 rounded-full border border-sky-800/50">
-        <Waves class="w-3.5 h-3.5 text-sky-400 animate-bounce" />
-        <span class="font-medium">MDRRMO Sea Advisory:</span>
-        <span class="text-slate-300">Calm to Moderate Seas (Wave height: 0.8–1.5m). All island sea lanes open.</span>
-      </div>
-      -->
       <router-link
         to="/rescue"
         class="hidden lg:flex items-center space-x-2 text-sky-300 bg-sky-950/60 hover:bg-sky-900/80 px-2.5 py-0.5 rounded-full border border-sky-800/50 transition-colors cursor-pointer"
@@ -37,6 +29,29 @@
         <span class="font-medium">MDRRMO Sea Advisory:</span>
         <span class="text-slate-300">Calm to Moderate Seas (Wave height: 0.8–1.5m). All island sea lanes open.</span>
         <span class="text-[10px] text-amber-400 font-bold ml-1">View Live Board →</span>
+      </router-link>
+    -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-2 overflow-hidden">
+      <!-- Left: Philippine Standard Time & Republic Badge -->
+      <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+        <div class="flex items-center space-x-1.5 text-amber-400 font-semibold tracking-wide text-[11px] sm:text-xs">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="hidden sm:inline">PHILIPPINE STANDARD TIME:</span>
+          <span class="sm:hidden">PST:</span>
+        </div>
+        <span class="font-mono text-slate-300 font-medium text-[11px] sm:text-xs">{{ timeStr || 'Loading PST...' }}</span>
+      </div>
+
+      <!-- Center: Live MDRRMO Maritime Weather Advisory -->
+      <router-link
+        to="/rescue"
+        class="hidden md:flex items-center space-x-2 text-sky-300 bg-sky-950/60 hover:bg-sky-900/80 px-2.5 py-0.5 rounded-full border border-sky-800/50 transition-colors cursor-pointer shrink-0 truncate max-w-md lg:max-w-xl"
+        title="View 24/7 Rescue & Sea Advisory Page"
+      >
+        <Waves class="w-3.5 h-3.5 text-sky-400 animate-bounce shrink-0" />
+        <span class="font-medium text-[11px] shrink-0">MDRRMO Sea Advisory:</span>
+        <span class="text-slate-300 text-[11px] hidden xl:inline truncate">Calm Seas (0.8–1.5m). Sea lanes open.</span>
+        <span class="text-[10px] text-amber-400 font-bold ml-1 shrink-0">Live Board →</span>
       </router-link>
 
       <!-- Gene - Oct 06, 2026: Removed font, contrast, and language selection controls per user request, retaining Light/Dark theme toggle -->
