@@ -147,6 +147,149 @@
         </div>
       </div>
 
+      <!-- Gene - Oct 06, 2026: Added National Government Online Services (LTO, NBI, SSS, PhilHealth, Pag-IBIG, GSIS, PSA, DFA, BIR, PRC, DMW, COMELEC) & DICT eGov PH Super App Gateway -->
+      <div class="mt-16 pt-12 border-t border-slate-200">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-900 border border-blue-200 mb-2">
+              <Building2 class="w-3.5 h-3.5 text-blue-700" />
+              <span>Pambansang Tanggapan • National Agency Portals</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950">
+              National Government Online Portals
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl leading-relaxed">
+              Direct access to frontline national portals for Caluya residents across Semirara, Sibay, and Caluya Island. 
+              Process your LTO licenses, NBI clearances, SSS contributions, and PhilHealth claims online without taking expensive pumpboat trips to mainland Antique or Iloilo.
+            </p>
+          </div>
+          <div class="flex items-center space-x-2 text-xs font-semibold text-slate-600">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>All Portals Active & Verified 24/7</span>
+          </div>
+        </div>
+
+        <!-- eGov PH Super App Spotlight Banner -->
+        <div class="mb-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-sky-950 to-slate-950 text-white shadow-xl border border-sky-500/30">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-8 space-y-3">
+              <div class="inline-flex items-center space-x-2 px-3 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                <span>{{ EGOV_APP_DATA.republicNotice }}</span>
+              </div>
+              <h4 class="text-xl sm:text-2xl font-black text-white">
+                {{ EGOV_APP_DATA.name }} ({{ EGOV_APP_DATA.developer }})
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                {{ EGOV_APP_DATA.description }}
+              </p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                <div v-for="(h, idx) in EGOV_APP_DATA.highlights" :key="idx" class="flex items-start space-x-2 text-xs text-slate-300">
+                  <ShieldCheck class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <div>
+                    <strong class="text-white block text-[11px]">{{ h.title }}</strong>
+                    <span class="text-[10.5px] text-slate-400">{{ h.desc }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:col-span-4 lg:flex-col gap-2.5 justify-center">
+              <a
+                :href="EGOV_APP_DATA.googlePlayUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center space-x-2.5 px-4 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-600 transition-all shadow-md hover:scale-102"
+              >
+                <Smartphone class="w-4 h-4 text-emerald-400" />
+                <div class="text-left">
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">Android Users</span>
+                  <span class="block text-xs font-bold">Google Play Store</span>
+                </div>
+              </a>
+
+              <a
+                :href="EGOV_APP_DATA.appleAppStoreUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center space-x-2.5 px-4 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-600 transition-all shadow-md hover:scale-102"
+              >
+                <Download class="w-4 h-4 text-sky-400" />
+                <div class="text-left">
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">iOS / iPhone Users</span>
+                  <span class="block text-xs font-bold">Apple App Store</span>
+                </div>
+              </a>
+
+              <a
+                :href="EGOV_APP_DATA.webPortal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all shadow-md text-center"
+              >
+                <span>Visit Official eGov.gov.ph</span>
+                <ExternalLink class="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 National Agencies Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="p in NATIONAL_GOVERNMENT_PORTALS"
+            :key="p.id"
+            class="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider border font-mono" :class="p.badgeColor">
+                  {{ p.acronym }}
+                </span>
+                <span class="text-[11px] font-semibold text-slate-500">
+                  {{ p.category }}
+                </span>
+              </div>
+
+              <h4 class="mt-3 text-lg font-bold text-slate-900">
+                {{ p.portalName }}
+              </h4>
+              <p class="text-xs font-semibold text-sky-700">
+                {{ p.name }}
+              </p>
+              <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+                {{ p.desc }}
+              </p>
+
+              <div class="mt-4 pt-3 border-t border-slate-200/70">
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
+                  Available Online Services:
+                </span>
+                <ul class="space-y-1 text-[11px] text-slate-600">
+                  <li v-for="(svc, sIdx) in p.services" :key="sIdx" class="flex items-start space-x-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0 mt-1"></span>
+                    <span>{{ svc }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">Official Gov Portal</span>
+              <a
+                :href="p.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-sky-700 text-white text-xs font-bold transition-colors cursor-pointer shadow-xs"
+              >
+                <span>Launch Portal</span>
+                <ExternalLink class="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Interactive Modal: e-BPLS Simulator -->
@@ -543,13 +686,24 @@
 </template>
 
 <script setup>
-// Gene - Oct 06, 2026: Vue 3 composition setup for ServicesHub
+// Gene - Oct 06, 2026: Previous ServicesHub imports
+/*
 import { ref, computed } from 'vue';
 import { 
   FileCheck, Clock, ArrowRight, Calculator, ShieldCheck, 
   X, CheckCircle, Waves, AlertCircle, FileText, Send 
 } from '@lucide/vue';
 import { ONLINE_SERVICES, BARANGAYS_LIST } from '../data/caluyaData';
+*/
+
+// Gene - Oct 06, 2026: Vue 3 composition setup for ServicesHub with National Government Agency portals and eGov PH App
+import { ref, computed } from 'vue';
+import { 
+  FileCheck, Clock, ArrowRight, Calculator, ShieldCheck, 
+  X, CheckCircle, Waves, AlertCircle, FileText, Send,
+  Building2, ExternalLink, Smartphone, Download
+} from '@lucide/vue';
+import { ONLINE_SERVICES, BARANGAYS_LIST, NATIONAL_GOVERNMENT_PORTALS, EGOV_APP_DATA } from '../data/caluyaData';
 
 const activeModal = ref(null);
 

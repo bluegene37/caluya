@@ -1307,3 +1307,230 @@ export const PUBLIC_SERVICES_DATA = {
     water: { name: "Caluya Island Water System & Sanitation", contact: "+63 919-666-WATR", note: "Island potable water maintenance and delivery" }
   }
 };
+
+// Gene - Oct 06, 2026: Added comprehensive National Government Portals (LTO, NBI, SSS, PhilHealth, Pag-IBIG, GSIS, PSA, DFA, BIR, PRC, DMW) and DICT eGov PH Super App data for Caluya citizens
+
+export const EGOV_APP_DATA = {
+  name: "eGov PH Super App",
+  shortName: "eGov PH",
+  developer: "Department of Information and Communications Technology (DICT)",
+  republicNotice: "Official Super App of the Republic of the Philippines",
+  tagline: "One App for All Government Transactions",
+  description: "A centralized digital gateway connecting all national agencies and local government units. Integrates your Digital National ID (ePhilID), PhilHealth, SSS, GSIS, Pag-IBIG, eTravel, and local LGU services into a single unified mobile platform.",
+  webPortal: "https://egov.gov.ph/",
+  googlePlayUrl: "https://play.google.com/store/apps/details?id=egov.app",
+  appleAppStoreUrl: "https://apps.apple.com/ph/app/egov-ph/id1644797630",
+  highlights: [
+    { title: "Digital National ID (ePhilID)", desc: "Valid official government identification with verify-ready QR code." },
+    { title: "PhilHealth, SSS & GSIS In One Place", desc: "Instant view of membership records, contributions, and claims." },
+    { title: "eTravel QR Clearance", desc: "Fast-lane international & inter-island travel declaration." },
+    { title: "Interoperable LGU Services", desc: "Bridge Caluya local island services with national government databases." }
+  ]
+};
+
+export const NATIONAL_GOVERNMENT_PORTALS = [
+  {
+    id: "lto",
+    acronym: "LTO",
+    name: "Land Transportation Office",
+    portalName: "LTMS Online Portal",
+    url: "https://portal.lto.gov.ph/",
+    category: "Transport & Licensing",
+    badge: "Driver & Vehicles",
+    badgeColor: "bg-blue-100 text-blue-800 border-blue-200",
+    desc: "Driver's license renewal, student permit, motor vehicle registration, and theoretical exam appointment without leaving the island.",
+    services: [
+      "Driver's License Renewal & Applications",
+      "Motor Vehicle Registration Status",
+      "Online Theoretical Examination",
+      "Driver's License Demerit Points Check"
+    ]
+  },
+  {
+    id: "nbi",
+    acronym: "NBI",
+    name: "National Bureau of Investigation",
+    portalName: "NBI Clearance Online",
+    url: "https://clearance.nbi.gov.ph/",
+    category: "Security & Clearances",
+    badge: "Clearance & Identity",
+    badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-200",
+    desc: "Apply for or renew your NBI Clearance online with nationwide branch appointment booking and door-to-door delivery.",
+    services: [
+      "New NBI Clearance Application",
+      "Quick Online Renewal (Door-to-Door Delivery)",
+      "Branch Appointment Scheduling",
+      "Electronic Status Tracking"
+    ]
+  },
+  {
+    id: "sss",
+    acronym: "SSS",
+    name: "Social Security System",
+    portalName: "My.SSS Member Portal",
+    url: "https://member.sss.gov.ph/",
+    category: "Social Insurance",
+    badge: "Private Sector & Self-Employed",
+    badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-200",
+    desc: "View contribution records, apply for salary and calamity loans, file for maternity/sickness benefits, and monitor retirement funds.",
+    services: [
+      "Posted Contributions History",
+      "Online Salary & Calamity Loan Applications",
+      "Maternity, Sickness & Disability Claims",
+      "Retirement & Pension Benefit Filing"
+    ]
+  },
+  {
+    id: "philhealth",
+    acronym: "PhilHealth",
+    name: "Philippine Health Insurance Corporation",
+    portalName: "PhilHealth Member Portal",
+    url: "https://memberinquiry.philhealth.gov.ph/",
+    category: "Healthcare Coverage",
+    badge: "Universal Healthcare",
+    badgeColor: "bg-teal-100 text-teal-800 border-teal-200",
+    desc: "Download your official Member Data Record (MDR), check premium contributions, register for PhilHealth Konsulta, and verify claims.",
+    services: [
+      "Member Data Record (MDR) Download",
+      "Premium Payment & Contribution Verification",
+      "PhilHealth Konsulta Clinic Registration",
+      "Accredited Health Facilities & Hospital Search"
+    ]
+  },
+  {
+    id: "pagibig",
+    acronym: "Pag-IBIG",
+    name: "Home Development Mutual Fund (HDMF)",
+    portalName: "Virtual Pag-IBIG",
+    url: "https://www.pagibigfundservices.com/virtualpagibig/",
+    category: "Housing & Savings",
+    badge: "MP2 & Housing",
+    badgeColor: "bg-sky-100 text-sky-800 border-sky-200",
+    desc: "Manage regular savings and Modified Pag-IBIG II (MP2), apply for Multi-Purpose Loans (MPL), and compute housing loans online.",
+    services: [
+      "Modified Pag-IBIG II (MP2) Enrollment & Savings",
+      "Multi-Purpose Loan (MPL) Online Filing",
+      "Housing Loan Application & Amortization",
+      "Virtual Pag-IBIG Member Account Tracking"
+    ]
+  },
+  {
+    id: "gsis",
+    acronym: "GSIS",
+    name: "Government Service Insurance System",
+    portalName: "GSIS Touch & Web Portal",
+    url: "https://www.gsis.gov.ph/",
+    category: "Public Sector Insurance",
+    badge: "Government Employees",
+    badgeColor: "bg-amber-100 text-amber-800 border-amber-200",
+    desc: "For public school teachers, municipal staff, and government workers: access pension records, Multi-Purpose Loans, and life insurance.",
+    services: [
+      "GSIS Touch Mobile Services",
+      "Multi-Purpose Loan (MPL) Plus",
+      "Pensioner Annual Verification (APOR)",
+      "Retirement & Policy Loan Records"
+    ]
+  },
+  {
+    id: "psa",
+    acronym: "PSA",
+    name: "Philippine Statistics Authority",
+    portalName: "PSA Serbilis / Helpline",
+    url: "https://www.psaserbilis.com.ph/",
+    category: "Civil Registry Documents",
+    badge: "Birth & Marriage Certs",
+    badgeColor: "bg-rose-100 text-rose-800 border-rose-200",
+    desc: "Order certified true copies of Birth, Marriage, Death Certificates, and CENOMAR on official security paper delivered to your address.",
+    services: [
+      "Birth Certificate (Certificate of Live Birth)",
+      "Marriage Certificate",
+      "Certificate of No Marriage Record (CENOMAR)",
+      "Death Certificate Delivery"
+    ]
+  },
+  {
+    id: "dfa",
+    acronym: "DFA",
+    name: "Department of Foreign Affairs",
+    portalName: "DFA Passport Appointment",
+    url: "https://passport.gov.ph/",
+    category: "Consular & Travel",
+    badge: "Passports & Visas",
+    badgeColor: "bg-blue-100 text-blue-900 border-blue-300",
+    desc: "Schedule online appointments for new ePassport applications, renewals at consular offices (Iloilo/Kalibo), and document apostille.",
+    services: [
+      "Online Passport Appointment Booking",
+      "Passport Application Requirements Checklist",
+      "Passport Tracking & Delivery Status",
+      "Apostille & Document Authentication"
+    ]
+  },
+  {
+    id: "bir",
+    acronym: "BIR",
+    name: "Bureau of Internal Revenue",
+    portalName: "BIR eServices",
+    url: "https://www.bir.gov.ph/",
+    category: "Taxation & Revenue",
+    badge: "Taxes & TIN",
+    badgeColor: "bg-purple-100 text-purple-800 border-purple-200",
+    desc: "Electronic Tax Identification Number (eTIN) issuance, eBIRForms download, and electronic tax payment portals (eFPS).",
+    services: [
+      "Online eTIN Application",
+      "eBIRForms & Electronic Filing (eFPS)",
+      "Tax Clearance & Business Inquiries",
+      "Online Tax Calculator & Withholding Guide"
+    ]
+  },
+  {
+    id: "prc",
+    acronym: "PRC",
+    name: "Professional Regulation Commission",
+    portalName: "PRC LERIS Online",
+    url: "https://online.prc.gov.ph/",
+    category: "Professional Licensure",
+    badge: "Licensure & Board Exams",
+    badgeColor: "bg-cyan-100 text-cyan-800 border-cyan-200",
+    desc: "Online registration for board examinations (teachers, nurses, engineers), PRC license renewal, and verification of board ratings.",
+    services: [
+      "Board Licensure Exam Application",
+      "PRC Professional ID Card Renewal",
+      "Verification of Ratings & Good Standing",
+      "Continuing Professional Development (CPD) Tracking"
+    ]
+  },
+  {
+    id: "dmw",
+    acronym: "DMW / POEA",
+    name: "Department of Migrant Workers",
+    portalName: "DMW Online Services",
+    url: "https://onlineservices.dmw.gov.ph/",
+    category: "Overseas Employment",
+    badge: "OFW & Seafarers",
+    badgeColor: "bg-orange-100 text-orange-800 border-orange-200",
+    desc: "For Caluya seafarers and overseas workers: OFW e-Registration, Overseas Employment Certificate (OEC) issuance, and Balik-Manggagawa.",
+    services: [
+      "OFW e-Registration System",
+      "OEC / Balik-Manggagawa Processing",
+      "Seafarer Contract Verification",
+      "OFW Welfare & Legal Helpdesk"
+    ]
+  },
+  {
+    id: "comelec",
+    acronym: "COMELEC",
+    name: "Commission on Elections",
+    portalName: "COMELEC Precinct Finder",
+    url: "https://comelec.gov.ph/",
+    category: "Elections & Democracy",
+    badge: "Voter Registration",
+    badgeColor: "bg-red-100 text-red-800 border-red-200",
+    desc: "Verify your voter registration status and voting precinct assignments across the 18 island barangays of Caluya.",
+    services: [
+      "Online Precinct Finder & Voter Status",
+      "Voter Registration Schedules & Guidelines",
+      "Overseas Absentee Voting (OAV)",
+      "Caluya Municipal Election Office Directory"
+    ]
+  }
+];

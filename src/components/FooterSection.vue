@@ -170,6 +170,127 @@
       </div>
     </div>
 
+    <!-- Gene - Oct 06, 2026: Added National Government Agency Portals (LTO, NBI, SSS, PhilHealth, Pag-IBIG, GSIS, PSA, DFA, BIR, PRC, DMW, COMELEC) and DICT eGov PH Super App Gateway -->
+    <div class="border-t border-slate-800/90 bg-slate-900/60 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- eGov PH App Showcase Banner -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 border border-sky-500/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-3 sm:space-y-0 sm:space-x-4 max-w-2xl">
+            <div class="w-14 h-14 rounded-2xl bg-white p-1.5 shadow-md shrink-0 flex items-center justify-center">
+              <img
+                src="/images/caluya-logo.png"
+                alt="eGov PH Republic Logo"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div>
+              <div class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40 mb-1">
+                <span>{{ EGOV_APP_DATA.republicNotice }}</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-black text-white">
+                {{ EGOV_APP_DATA.name }}
+              </h3>
+              <p class="text-xs text-sky-400 font-semibold">
+                {{ EGOV_APP_DATA.developer }}
+              </p>
+              <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                {{ EGOV_APP_DATA.description }}
+              </p>
+            </div>
+          </div>
+
+          <!-- eGov App Download & Portal Links -->
+          <div class="flex flex-wrap items-center justify-center gap-2.5 shrink-0">
+            <a
+              :href="EGOV_APP_DATA.googlePlayUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-600 transition-all shadow-sm hover:scale-105"
+            >
+              <Smartphone class="w-4 h-4 text-emerald-400" />
+              <div class="text-left">
+                <span class="block text-[9px] uppercase tracking-wider text-slate-400">Get it on</span>
+                <span class="block text-xs font-bold leading-none">Google Play</span>
+              </div>
+            </a>
+
+            <a
+              :href="EGOV_APP_DATA.appleAppStoreUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-600 transition-all shadow-sm hover:scale-105"
+            >
+              <Download class="w-4 h-4 text-sky-400" />
+              <div class="text-left">
+                <span class="block text-[9px] uppercase tracking-wider text-slate-400">Download on</span>
+                <span class="block text-xs font-bold leading-none">App Store</span>
+              </div>
+            </a>
+
+            <a
+              :href="EGOV_APP_DATA.webPortal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all shadow-md hover:scale-105"
+            >
+              <span>Official eGov Portal</span>
+              <ExternalLink class="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- National Government Agency Links Grid -->
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-2">
+            <div>
+              <h4 class="text-sm font-extrabold text-white uppercase tracking-wider flex items-center space-x-2">
+                <Building2 class="w-4 h-4 text-sky-400" />
+                <span>National Government Agency Portals (Pambansang Tanggapan)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Official online services for LTO, NBI, SSS, PhilHealth, Pag-IBIG, GSIS, PSA, DFA, BIR, PRC, DMW, and COMELEC.
+              </p>
+            </div>
+            <span class="text-[11px] text-amber-400 font-semibold shrink-0">
+              Zero Sea-Travel National Access
+            </span>
+          </div>
+
+          <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <a
+              v-for="portal in NATIONAL_GOVERNMENT_PORTALS"
+              :key="portal.id"
+              :href="portal.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-sky-500 hover:bg-slate-800/80 transition-all flex flex-col justify-between"
+              :title="portal.desc"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-black text-xs font-mono text-sky-400 group-hover:text-amber-300 transition-colors">
+                    {{ portal.acronym }}
+                  </span>
+                  <ExternalLink class="w-3 h-3 text-slate-500 group-hover:text-sky-300 transition-colors" />
+                </div>
+                <div class="mt-1 font-bold text-slate-200 text-xs truncate group-hover:text-white">
+                  {{ portal.portalName }}
+                </div>
+                <p class="text-[10px] text-slate-400 line-clamp-2 mt-0.5 leading-snug">
+                  {{ portal.name }}
+                </p>
+              </div>
+              <span class="mt-2 text-[9px] font-semibold text-slate-500 group-hover:text-sky-400 block truncate">
+                {{ portal.badge }} →
+              </span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- Gene - Oct 06, 2026: Added genexis.dev and Raffy Soquilon proponent attribution in footer bottom bar -->
     <!--
     <div class="bg-slate-900 border-t border-slate-800/80 py-4">
@@ -260,6 +381,14 @@
 </template>
 
 <script setup>
-// Gene - Oct 06, 2026: Vue 3 composition setup for FooterSection
+// Gene - Oct 06, 2026: Previous FooterSection setup
+/*
+defineEmits(['navigate', 'open-proposal']);
+*/
+
+// Gene - Oct 06, 2026: Vue 3 composition setup for FooterSection with National Government Agency portals and eGov PH App
+import { ExternalLink, Smartphone, Download, Building2 } from '@lucide/vue';
+import { NATIONAL_GOVERNMENT_PORTALS, EGOV_APP_DATA } from '../data/caluyaData';
+
 defineEmits(['navigate', 'open-proposal']);
 </script>

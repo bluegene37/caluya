@@ -185,6 +185,60 @@
 
           </div>
 
+          <!-- Gene - Oct 06, 2026: Added DICT eGov PH Super App Companion Card in MobileAppSection -->
+          <div class="p-6 rounded-3xl bg-slate-800/90 border border-sky-400/30 backdrop-blur-md shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div class="flex items-center space-x-3.5">
+              <div class="w-13 h-13 rounded-2xl bg-white p-1.5 shadow-md shrink-0 flex items-center justify-center">
+                <img
+                  src="/images/caluya-logo.png"
+                  alt="eGov PH Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <div class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 mb-0.5">
+                  <span>{{ EGOV_APP_DATA.republicNotice }}</span>
+                </div>
+                <h4 class="text-base font-bold text-white">
+                  {{ EGOV_APP_DATA.name }} (DICT)
+                </h4>
+                <p class="text-xs text-slate-300 leading-snug">
+                  One Super App for Digital National ID (ePhilID), PhilHealth, SSS, GSIS, eTravel, and local LGU services.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center space-x-2 shrink-0 w-full sm:w-auto justify-end">
+              <a
+                :href="EGOV_APP_DATA.googlePlayUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-950 text-white text-xs font-bold border border-slate-700 transition-all flex items-center space-x-1.5"
+              >
+                <Smartphone class="w-3.5 h-3.5 text-emerald-400" />
+                <span>Google Play</span>
+              </a>
+              <a
+                :href="EGOV_APP_DATA.appleAppStoreUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-950 text-white text-xs font-bold border border-slate-700 transition-all flex items-center space-x-1.5"
+              >
+                <Download class="w-3.5 h-3.5 text-sky-400" />
+                <span>App Store</span>
+              </a>
+              <a
+                :href="EGOV_APP_DATA.webPortal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-2.5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all flex items-center space-x-1"
+                title="Visit eGov.gov.ph"
+              >
+                <ExternalLink class="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
         </div>
 
         <!-- Right: Interactive Mobile Phone Simulator Mockup (5 Cols) -->
@@ -264,7 +318,8 @@
                     </span>
                   </div>
 
-                  <!-- Quick Service Shortcuts Grid -->
+                  <!-- Gene - Oct 06, 2026: Updated quick service shortcuts in phone simulator to include eGov PH National Services -->
+                  <!--
                   <div class="grid grid-cols-2 gap-2 text-xs">
                     <button 
                       @click="activeScreen = 'id'"
@@ -282,6 +337,35 @@
                       <HeartPulse class="w-5 h-5 text-rose-400" />
                       <span class="font-bold text-[11px]">RHU Meds</span>
                       <span class="text-[9px] text-slate-400">Stock Check</span>
+                    </button>
+                  </div>
+                  -->
+                  <div class="grid grid-cols-3 gap-1.5 text-xs">
+                    <button 
+                      @click="activeScreen = 'id'"
+                      class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 flex flex-col items-center text-center space-y-0.5 cursor-pointer"
+                    >
+                      <ShieldCheck class="w-4 h-4 text-amber-400" />
+                      <span class="font-bold text-[10px]">Digital ID</span>
+                      <span class="text-[8px] text-slate-400">Citizen QR</span>
+                    </button>
+
+                    <button 
+                      @click="activeScreen = 'meds'"
+                      class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 flex flex-col items-center text-center space-y-0.5 cursor-pointer"
+                    >
+                      <HeartPulse class="w-4 h-4 text-rose-400" />
+                      <span class="font-bold text-[10px]">RHU Meds</span>
+                      <span class="text-[8px] text-slate-400">Stock Check</span>
+                    </button>
+
+                    <button 
+                      @click="activeScreen = 'egov'"
+                      class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 flex flex-col items-center text-center space-y-0.5 cursor-pointer"
+                    >
+                      <Building2 class="w-4 h-4 text-sky-400" />
+                      <span class="font-bold text-[10px]">eGov PH</span>
+                      <span class="text-[8px] text-slate-400">National</span>
                     </button>
                   </div>
 
@@ -383,9 +467,53 @@
                   </button>
                 </div>
 
+                <!-- Gene - Oct 06, 2026: Screen 4: eGov PH National Services in Simulated Phone -->
+                <div v-else-if="activeScreen === 'egov'" class="space-y-2.5 animate-fadeIn">
+                  <div class="p-3 rounded-2xl bg-gradient-to-r from-sky-900 to-indigo-900 border border-sky-400/30 text-white">
+                    <div class="flex items-center space-x-2">
+                      <Building2 class="w-4 h-4 text-amber-400" />
+                      <span class="font-bold text-xs uppercase tracking-wider">eGov PH National Services</span>
+                    </div>
+                    <p class="text-[10px] text-slate-200 mt-1 leading-snug">
+                      National portals accessible directly without pumpboat travel to mainland.
+                    </p>
+                  </div>
+
+                  <div class="space-y-1.5 text-xs">
+                    <a
+                      v-for="p in NATIONAL_GOVERNMENT_PORTALS.slice(0, 5)"
+                      :key="p.id"
+                      :href="p.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="p-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-sky-500 flex items-center justify-between text-slate-200 hover:text-white transition-colors block"
+                    >
+                      <div class="flex items-center space-x-2 min-w-0">
+                        <span class="px-1.5 py-0.5 rounded bg-sky-950 text-sky-400 font-mono font-bold text-[9px] border border-sky-800">
+                          {{ p.acronym }}
+                        </span>
+                        <div class="truncate">
+                          <span class="font-bold text-[11px] block truncate">{{ p.portalName }}</span>
+                          <span class="text-[9px] text-slate-400 block truncate">{{ p.category }}</span>
+                        </div>
+                      </div>
+                      <ExternalLink class="w-3 h-3 text-slate-400 shrink-0 ml-1" />
+                    </a>
+                  </div>
+
+                  <button
+                    @click="activeScreen = 'home'"
+                    class="w-full py-1 text-center text-xs text-sky-400 font-bold hover:underline"
+                  >
+                    ← Back to Dashboard
+                  </button>
+                </div>
+
               </div>
 
               <!-- Phone Bottom App Navigation Bar -->
+              <!-- Gene - Oct 06, 2026: Updated phone simulator bottom navigation to include eGov PH tab -->
+              <!--
               <div class="bg-slate-950 border-t border-slate-800/80 px-4 py-2.5 flex items-center justify-around text-slate-400">
                 <button 
                   @click="activeScreen = 'home'"
@@ -409,6 +537,40 @@
                 >
                   <HeartPulse class="w-4 h-4" />
                   <span class="text-[8px] mt-0.5">Health</span>
+                </button>
+              </div>
+              -->
+              <div class="bg-slate-950 border-t border-slate-800/80 px-3 py-2 flex items-center justify-around text-slate-400">
+                <button 
+                  @click="activeScreen = 'home'"
+                  :class="['flex flex-col items-center cursor-pointer', activeScreen === 'home' ? 'text-sky-400' : '']"
+                >
+                  <Smartphone class="w-4 h-4" />
+                  <span class="text-[8px] mt-0.5">Home</span>
+                </button>
+
+                <button 
+                  @click="activeScreen = 'id'"
+                  :class="['flex flex-col items-center cursor-pointer', activeScreen === 'id' ? 'text-sky-400' : '']"
+                >
+                  <ShieldCheck class="w-4 h-4" />
+                  <span class="text-[8px] mt-0.5">e-ID</span>
+                </button>
+
+                <button 
+                  @click="activeScreen = 'meds'"
+                  :class="['flex flex-col items-center cursor-pointer', activeScreen === 'meds' ? 'text-sky-400' : '']"
+                >
+                  <HeartPulse class="w-4 h-4" />
+                  <span class="text-[8px] mt-0.5">Health</span>
+                </button>
+
+                <button 
+                  @click="activeScreen = 'egov'"
+                  :class="['flex flex-col items-center cursor-pointer', activeScreen === 'egov' ? 'text-sky-400' : '']"
+                >
+                  <Building2 class="w-4 h-4" />
+                  <span class="text-[8px] mt-0.5">eGov PH</span>
                 </button>
               </div>
 
@@ -484,7 +646,8 @@
 </template>
 
 <script setup>
-// Gene - Oct 06, 2026: Vue 3 composition setup for MobileAppSection
+// Gene - Oct 06, 2026: Previous MobileAppSection imports
+/*
 import { ref } from 'vue';
 import { 
   Smartphone, 
@@ -500,6 +663,27 @@ import {
   AlertTriangle,
   X 
 } from '@lucide/vue';
+*/
+
+// Gene - Oct 06, 2026: Vue 3 composition setup for MobileAppSection with eGov PH Super App data and national portal links
+import { ref } from 'vue';
+import { 
+  Smartphone, 
+  Download, 
+  QrCode, 
+  ShieldCheck, 
+  WifiOff, 
+  Bell, 
+  Radio, 
+  HeartPulse, 
+  CheckCircle, 
+  Sparkles, 
+  AlertTriangle,
+  X,
+  Building2,
+  ExternalLink
+} from '@lucide/vue';
+import { EGOV_APP_DATA, NATIONAL_GOVERNMENT_PORTALS } from '../data/caluyaData';
 
 const activeScreen = ref('home');
 const showIosModal = ref(false);
