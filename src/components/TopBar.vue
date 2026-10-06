@@ -112,7 +112,8 @@
       </div>
       -->
 
-      <!-- Right: Clean Theme Toggle Only (Light / Dark Mode - placed on the right) -->
+      <!-- Gene - Oct 06, 2026: Made TopBar theme toggle compact and mobile-friendly on smaller screens -->
+      <!--
       <div class="flex items-center space-x-3 ml-auto shrink-0">
         <button
           @click="$emit('toggle-theme')"
@@ -122,6 +123,19 @@
           <Sun v-if="isDark" class="w-3.5 h-3.5 text-amber-400 animate-spin" style="animation-duration: 8s;" />
           <Moon v-else class="w-3.5 h-3.5 text-sky-400" />
           <span>{{ isDark ? 'Light Mode' : 'Dark Mode' }}</span>
+        </button>
+      </div>
+      -->
+      <div class="flex items-center space-x-2 sm:space-x-3 ml-auto shrink-0">
+        <button
+          @click="$emit('toggle-theme')"
+          class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 rounded-lg border border-slate-700 bg-slate-800 text-slate-200 hover:border-amber-400/60 hover:text-amber-300 transition-all cursor-pointer text-xs font-semibold"
+          :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+        >
+          <Sun v-if="isDark" class="w-3.5 h-3.5 text-amber-400 animate-spin" style="animation-duration: 8s;" />
+          <Moon v-else class="w-3.5 h-3.5 text-sky-400" />
+          <span class="hidden sm:inline">{{ isDark ? 'Light Mode' : 'Dark Mode' }}</span>
+          <span class="sm:hidden text-[10px]">{{ isDark ? 'Light' : 'Dark' }}</span>
         </button>
       </div>
     </div>

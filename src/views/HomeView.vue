@@ -62,6 +62,8 @@
     -->
 
     <!-- Citizen Emergency & Quick Action Bar -->
+    <!-- Gene - Oct 06, 2026: Optimized Citizen Emergency bar and Executive Leadership card for mobile screens -->
+    <!--
     <section class="bg-gradient-to-r from-sky-900 via-slate-900 to-indigo-950 text-white py-4 border-b border-slate-800 shadow-inner">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap items-center justify-between gap-4 text-xs">
@@ -107,7 +109,6 @@
       </div>
     </section>
 
-    <!-- Executive Leadership & Sangguniang Bayan Sponsorship Card -->
     <section class="py-12 bg-white border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-indigo-900 via-slate-900 to-sky-950 text-white shadow-xl relative overflow-hidden">
@@ -145,6 +146,93 @@
                 >
                   <Users class="w-4 h-4 text-sky-400" />
                   <span>Meet the Sangguniang Bayan Council</span>
+                </router-link>
+              </div>
+            </div>
+    -->
+    <section class="bg-gradient-to-r from-sky-900 via-slate-900 to-indigo-950 text-white py-3 sm:py-4 border-b border-slate-800 shadow-inner">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 text-xs">
+          <div class="flex items-center space-x-2 text-amber-400 font-bold uppercase tracking-wider text-[11px] sm:text-xs">
+            <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>24/7 Citizen Direct Lines:</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 sm:gap-3">
+            <a 
+              href="tel:09987654321" 
+              class="inline-flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 py-1.5 rounded-full bg-rose-600/30 hover:bg-rose-600/50 border border-rose-500/40 text-rose-200 text-[11px] sm:text-xs transition-colors"
+            >
+              <PhoneCall class="w-3.5 h-3.5 text-rose-400 animate-pulse shrink-0" />
+              <span>911 Hotline</span>
+            </a>
+
+            <router-link 
+              to="/rescue" 
+              class="inline-flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 py-1.5 rounded-full bg-sky-600/30 hover:bg-sky-600/50 border border-sky-500/40 text-sky-200 text-[11px] sm:text-xs transition-colors"
+            >
+              <Waves class="w-3.5 h-3.5 text-sky-400 shrink-0" />
+              <span>Sea Advisory</span>
+            </router-link>
+
+            <router-link 
+              to="/health" 
+              class="inline-flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 py-1.5 rounded-full bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-emerald-200 text-[11px] sm:text-xs transition-colors"
+            >
+              <HeartPulse class="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <span>RHU Meds</span>
+            </router-link>
+
+            <router-link 
+              to="/services" 
+              class="inline-flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 py-1.5 rounded-full bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-amber-200 text-[11px] sm:text-xs transition-colors"
+            >
+              <FileCheck class="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>e-BPLS</span>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Leadership & Sangguniang Bayan Sponsorship Card -->
+    <section class="py-8 sm:py-12 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-indigo-900 via-slate-900 to-sky-950 text-white shadow-xl relative overflow-hidden">
+          <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div class="absolute -left-16 -top-16 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+            <div class="lg:col-span-8 space-y-3 sm:space-y-4">
+              <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-wide uppercase bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                <Award class="w-3.5 h-3.5" />
+                <span>Leadership • Municipality of Caluya</span>
+              </div>
+
+              <h2 class="text-xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug sm:leading-tight">
+                Empowering 18 Island Barangays Through Zero-Travel E-Governance
+              </h2>
+
+              <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+                Led by our Municipal Mayor and <strong class="text-amber-300 font-extrabold">Vice Mayor Hon. Belfe S. Duran</strong> (Presiding Officer of the Sangguniang Bayan), Caluya is championing a landmark legislative initiative to eliminate costly inter-island pumpboat travel and deliver 24/7 emergency rescue, digital permits, and healthcare access directly to all citizens.
+              </p>
+
+              <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <button
+                  @click="$emit('open-proposal')"
+                  class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 shadow-lg shadow-amber-400/20 transition-all transform active:scale-95 cursor-pointer"
+                >
+                  <Sparkles class="w-4 h-4 text-slate-950" />
+                  <span>Review Vice Mayor's Proposal</span>
+                  <ArrowRight class="w-4 h-4 ml-1" />
+                </button>
+
+                <router-link
+                  to="/leadership"
+                  class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-colors"
+                >
+                  <Users class="w-4 h-4 text-sky-400" />
+                  <span>Sangguniang Bayan Council</span>
                 </router-link>
               </div>
             </div>

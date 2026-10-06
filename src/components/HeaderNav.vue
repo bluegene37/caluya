@@ -211,6 +211,8 @@
       <div class="flex items-center justify-between h-18 sm:h-20 gap-2">
         
         <!-- Logo & Municipal Seal Brand -->
+        <!-- Gene - Oct 06, 2026: Optimized seal logo sizing and title typography for mobile phone viewports -->
+        <!--
         <div class="flex items-center space-x-2 sm:space-x-3 shrink-0 cursor-pointer" @click="handleNavClick('home')">
           <div class="relative flex-shrink-0 w-11 h-11 sm:w-13 sm:h-13 rounded-full p-0.5 bg-gradient-to-tr from-cyan-600 via-sky-500 to-amber-400 shadow-md">
             <img
@@ -228,6 +230,31 @@
               Republic of the Philippines • Antique
             </span>
             <h1 class="text-base sm:text-lg 2xl:text-xl font-extrabold text-slate-900 leading-tight tracking-tight whitespace-nowrap">
+              Municipality of Caluya
+            </h1>
+            <span class="text-[10px] text-slate-500 hidden 2xl:inline-block font-medium whitespace-nowrap">
+              Official Gateway & E-Governance Platform
+            </span>
+          </div>
+        </div>
+        -->
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0 cursor-pointer" @click="handleNavClick('home')">
+          <div class="relative flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 2xl:w-13 2xl:h-13 rounded-full p-0.5 bg-gradient-to-tr from-cyan-600 via-sky-500 to-amber-400 shadow-md">
+            <img
+              src="/images/caluya-logo.png"
+              alt="Official Seal of the Municipality of Caluya, Antique"
+              class="w-full h-full rounded-full object-contain bg-white shadow-inner"
+            />
+            <div class="absolute -bottom-1 -right-1 bg-amber-500 text-slate-950 text-[7px] sm:text-[8px] font-black px-1 rounded-full border border-white shadow-xs">
+              5711
+            </div>
+          </div>
+
+          <div class="flex flex-col shrink-0">
+            <span class="text-[8px] sm:text-[10px] font-bold text-sky-800 tracking-wider uppercase whitespace-nowrap">
+              Republic of the Philippines • Antique
+            </span>
+            <h1 class="text-sm sm:text-lg 2xl:text-xl font-extrabold text-slate-900 leading-tight tracking-tight whitespace-nowrap">
               Municipality of Caluya
             </h1>
             <span class="text-[10px] text-slate-500 hidden 2xl:inline-block font-medium whitespace-nowrap">
@@ -276,7 +303,8 @@
             <span class="font-bold">911</span>
           </a>
 
-          <!-- Dark / Light Mode Switcher (Compact icon button at the far right) -->
+          <!-- Gene - Oct 06, 2026: Removed duplicate dark mode toggle in menu as requested since TopBar already provides it on the right -->
+          <!--
           <button
             @click="$emit('toggle-theme')"
             class="p-2 rounded-xl border border-slate-200 bg-slate-100 hover:bg-slate-200 text-slate-800 transition-all cursor-pointer shrink-0 shadow-xs"
@@ -285,9 +313,12 @@
             <Sun v-if="isDark" class="w-4 h-4 text-amber-500 animate-spin" style="animation-duration: 8s;" />
             <Moon v-else class="w-4 h-4 text-slate-700" />
           </button>
+          -->
         </div>
 
         <!-- Mobile / Tablet Menu Toggle Button (Visible below xl) -->
+        <!-- Gene - Oct 06, 2026: Enhanced mobile menu toggle and drawer with touch-friendly 44px tap targets, active indicators, and sleek visual hierarchy -->
+        <!--
         <div class="flex xl:hidden items-center space-x-2 shrink-0">
           <button
             @click="$emit('open-proposal')"
@@ -305,28 +336,32 @@
             <Menu v-else class="w-6 h-6" />
           </button>
         </div>
+        -->
+        <div class="flex xl:hidden items-center space-x-1.5 sm:space-x-2 shrink-0">
+          <button
+            @click="$emit('open-proposal')"
+            class="px-2 sm:px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-sky-600 hover:from-indigo-700 hover:to-sky-700 active:scale-95 transition-all flex items-center space-x-1 whitespace-nowrap shadow-xs cursor-pointer"
+          >
+            <FileText class="w-3.5 h-3.5" />
+            <span class="hidden xs:inline">SB </span>
+            <span>Proposal</span>
+          </button>
+          <button
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            class="p-2 rounded-xl text-slate-800 hover:bg-slate-100 active:bg-slate-200 cursor-pointer transition-colors"
+            :aria-label="mobileMenuOpen ? 'Close menu' : 'Open menu'"
+          >
+            <X v-if="mobileMenuOpen" class="w-5 h-5 text-slate-900" />
+            <Menu v-else class="w-5 h-5 text-slate-900" />
+          </button>
+        </div>
 
       </div>
     </div>
 
     <!-- Mobile Drawer -->
+    <!--
     <div v-if="mobileMenuOpen" class="xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-fadeIn">
-      <!-- Gene - Oct 06, 2026: Converted mobile drawer nav buttons to use multi-page router active state -->
-      <!--
-      <button
-        v-for="item in navItems"
-        :key="item.id"
-        @click="handleNavClick(item.id)"
-        :class="[
-          'block w-full text-left px-3 py-2.5 rounded-lg text-base font-semibold',
-          activeSection === item.id
-            ? 'text-sky-700 bg-sky-50'
-            : 'text-slate-700 hover:bg-slate-50'
-        ]"
-      >
-        {{ item.label }}
-      </button>
-      -->
       <button
         v-for="item in navItems"
         :key="item.id"
@@ -341,16 +376,6 @@
         {{ item.label }}
       </button>
       <div class="pt-3 border-t border-slate-100 flex flex-col space-y-2">
-        <!-- Gene - Oct 06, 2026: Added Theme Mode Switcher in mobile drawer -->
-        <button
-          @click="$emit('toggle-theme')"
-          class="w-full py-2.5 rounded-xl text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center space-x-2 border border-slate-300 transition-colors cursor-pointer"
-        >
-          <Sun v-if="isDark" class="w-4 h-4 text-amber-500 animate-spin" style="animation-duration: 8s;" />
-          <Moon v-else class="w-4 h-4 text-slate-700" />
-          <span>{{ isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode' }}</span>
-        </button>
-
         <button
           @click="mobileMenuOpen = false; $emit('open-proposal')"
           class="w-full py-2.5 rounded-xl text-sm font-bold text-white bg-indigo-600 flex items-center justify-center space-x-2 shadow-sm"
@@ -363,6 +388,41 @@
           class="w-full py-2 rounded-xl text-sm font-semibold text-rose-700 bg-rose-50 flex items-center justify-center space-x-2 border border-rose-200"
         >
           <PhoneCall class="w-4 h-4" />
+          <span>MDRRMO Emergency Hotline (911)</span>
+        </a>
+      </div>
+    </div>
+    -->
+    <div v-if="mobileMenuOpen" class="xl:hidden bg-white/98 backdrop-blur-lg border-b border-slate-200 px-4 pt-3 pb-6 space-y-1.5 shadow-2xl animate-fadeIn">
+      <button
+        v-for="item in navItems"
+        :key="item.id"
+        @click="handleNavClick(item)"
+        :class="[
+          'w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold transition-all cursor-pointer',
+          isActive(item)
+            ? 'text-sky-800 bg-sky-50 font-bold border-l-4 border-sky-600 shadow-xs'
+            : 'text-slate-700 hover:bg-slate-100/80 active:bg-slate-200/70'
+        ]"
+      >
+        <span>{{ item.label }}</span>
+        <span class="text-xs font-mono" :class="isActive(item) ? 'text-sky-600 font-bold' : 'text-slate-400'">→</span>
+      </button>
+
+      <div class="pt-3 border-t border-slate-100 flex flex-col space-y-2.5">
+        <button
+          @click="mobileMenuOpen = false; $emit('open-proposal')"
+          class="w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-sky-600 to-teal-600 hover:from-indigo-700 hover:to-teal-700 flex items-center justify-center space-x-2 shadow-md active:scale-98 transition-all cursor-pointer"
+        >
+          <Sparkles class="w-4 h-4 text-amber-300" />
+          <span>Vice Mayor's Modernization Proposal</span>
+        </button>
+
+        <a
+          href="tel:09987654321"
+          class="w-full py-2.5 rounded-xl text-sm font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 flex items-center justify-center space-x-2 border border-rose-200 transition-colors"
+        >
+          <PhoneCall class="w-4 h-4 text-rose-600 animate-pulse" />
           <span>MDRRMO Emergency Hotline (911)</span>
         </a>
       </div>

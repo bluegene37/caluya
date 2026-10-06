@@ -18,14 +18,10 @@
           </div>
         </div>
       -->
+      <!-- Gene - Oct 06, 2026: Optimized ProposalModal header, typography, and body padding for mobile screens -->
+      <!--
       <div class="px-6 py-4 bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800 flex-shrink-0">
         <div class="flex items-center space-x-3">
-          <!-- Gene - Oct 06, 2026: Replaced SB text badge with official Caluya Municipal Logo in modal header -->
-          <!--
-          <div class="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shadow-md">
-            SB
-          </div>
-          -->
           <img
             src="/images/caluya-logo.png"
             alt="Official Seal of Caluya"
@@ -46,7 +42,6 @@
         </div>
 
         <div class="flex items-center space-x-2">
-          <!-- View Mode Toggle -->
           <div class="hidden sm:flex items-center bg-slate-800 p-0.5 rounded-lg border border-slate-700 text-xs">
             <button
               @click="viewMode = 'deck'"
@@ -86,8 +81,72 @@
         </div>
       </div>
 
-      <!-- Modal Body Content -->
       <div class="flex-1 overflow-y-auto p-6 sm:p-8 bg-slate-50">
+      -->
+      <div class="px-4 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800 flex-shrink-0">
+        <div class="flex items-center space-x-2.5 sm:space-x-3">
+          <img
+            src="/images/caluya-logo.png"
+            alt="Official Seal of Caluya"
+            class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-contain bg-white p-0.5 border border-amber-400 shadow-md shrink-0"
+          />
+          <div>
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
+              <span class="text-[9px] sm:text-[10px] font-bold text-amber-300 uppercase tracking-wider block">Masterplan</span>
+              <span class="text-[8px] sm:text-[9px] px-1.5 py-0.5 rounded bg-sky-900 text-sky-200 border border-sky-700 font-mono">For Vice Mayor</span>
+            </div>
+            <h3 class="text-xs sm:text-base lg:text-lg font-extrabold text-white leading-tight">
+              Caluya Smart Island Proposal
+            </h3>
+            <span class="text-[10px] sm:text-[11px] text-slate-300 block">
+              Sponsored for: <strong class="text-amber-300">{{ PROPOSAL_DATA.preparedFor }}</strong>
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <!-- View Mode Toggle -->
+          <div class="hidden sm:flex items-center bg-slate-800 p-0.5 rounded-lg border border-slate-700 text-xs">
+            <button
+              @click="viewMode = 'deck'"
+              :class="[
+                'px-2.5 py-1 rounded font-bold transition-all cursor-pointer',
+                viewMode === 'deck' ? 'bg-amber-400 text-slate-950' : 'text-slate-300 hover:text-white'
+              ]"
+            >
+              Slide Deck
+            </button>
+            <button
+              @click="viewMode = 'document'"
+              :class="[
+                'px-2.5 py-1 rounded font-bold transition-all cursor-pointer',
+                viewMode === 'document' ? 'bg-amber-400 text-slate-950' : 'text-slate-300 hover:text-white'
+              ]"
+            >
+              Full Document
+            </button>
+          </div>
+
+          <button
+            @click="handlePrint"
+            class="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+            title="Print / Save to PDF"
+          >
+            <Printer class="w-4 h-4" />
+          </button>
+
+          <button
+            @click="$emit('close')"
+            class="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+            aria-label="Close"
+          >
+            <X class="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body Content -->
+      <div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50">
         
         <!-- SLIDE DECK MODE -->
         <div v-if="viewMode === 'deck'" class="flex flex-col h-full justify-between space-y-6">

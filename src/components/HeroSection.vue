@@ -58,23 +58,11 @@
     </div>
 
     <!-- Main Content Container -->
+    <!-- Gene - Oct 06, 2026: Optimized HeroSection for mobile phones with responsive typography, full-width thumb-friendly buttons, and horizontal scrollable tabs -->
+    <!--
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24 w-full flex-grow flex flex-col justify-between">
       
-      <!-- Top Row: Province Identification & Slide Counter -->
       <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <!-- Gene - Oct 06, 2026: Added quick mobile app sample download chip to Hero badges -->
-        <!--
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/15 text-sky-300 border border-sky-400/30 backdrop-blur-md">
-            <Anchor class="w-3.5 h-3.5 text-sky-400" />
-            <span>Province of Antique • Western Visayas (Region VI)</span>
-          </span>
-          <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
-            <ShieldCheck class="w-3.5 h-3.5 text-emerald-400" />
-            <span>1st Class Island Municipality</span>
-          </span>
-        </div>
-        -->
         <div class="flex flex-wrap items-center gap-2">
           <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/15 text-sky-300 border border-sky-400/30 backdrop-blur-md">
             <Anchor class="w-3.5 h-3.5 text-sky-400" />
@@ -93,7 +81,6 @@
           </button>
         </div>
 
-        <!-- Slide Index Counter & Pause Indicator -->
         <div class="flex items-center space-x-2 text-xs font-mono font-bold bg-slate-900/80 px-3 py-1 rounded-full border border-slate-700/80 backdrop-blur-md">
           <span class="text-amber-400">0{{ currentSlide + 1 }}</span>
           <span class="text-slate-500">/</span>
@@ -102,24 +89,19 @@
         </div>
       </div>
 
-      <!-- Middle: Dynamic Slide Headline & Beautiful Text Overlays -->
       <div class="max-w-4xl transition-all duration-700 transform">
-        <!-- Active Slide Badge -->
         <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-amber-400/20 text-amber-300 border border-amber-400/40 backdrop-blur-md mb-4 shadow-sm animate-fadeIn">
           <span>{{ slides[currentSlide].badge }}</span>
         </div>
 
-        <!-- Large Hero Display Title -->
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12] drop-shadow-md">
           {{ slides[currentSlide].title }}
         </h1>
 
-        <!-- Expressive Subtitle -->
         <p class="mt-4 text-base sm:text-lg lg:text-xl text-slate-200 max-w-2xl leading-relaxed drop-shadow-sm font-normal">
           {{ slides[currentSlide].subtitle }}
         </p>
 
-        <!-- Dynamic Action Buttons for Slide -->
         <div class="mt-8 flex flex-wrap items-center gap-3.5">
           <button
             @click="handlePrimaryAction(slides[currentSlide])"
@@ -140,10 +122,8 @@
         </div>
       </div>
 
-      <!-- Slider Interactive Navigation & Pill Selector -->
       <div class="mt-12 flex flex-col md:flex-row md:items-center justify-between gap-4 pt-6 border-t border-slate-800/70">
         
-        <!-- Slide Pills / Tabs -->
         <div class="flex flex-wrap items-center gap-2">
           <button
             v-for="(slide, sIdx) in slides"
@@ -151,6 +131,100 @@
             @click="goToSlide(sIdx)"
             :class="[
               'px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center space-x-2 border cursor-pointer',
+              currentSlide === sIdx
+                ? 'bg-amber-400 text-slate-950 border-amber-300 shadow-md scale-105'
+                : 'bg-slate-900/80 text-slate-300 border-slate-800 hover:border-slate-600 hover:text-white backdrop-blur-sm'
+            ]"
+          >
+            <span>{{ slide.tabName }}</span>
+            <span 
+              v-if="currentSlide === sIdx" 
+              class="inline-block w-1.5 h-1.5 rounded-full bg-slate-950"
+            />
+          </button>
+        </div>
+    -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-14 sm:pb-18 lg:pt-20 lg:pb-24 w-full flex-grow flex flex-col justify-between">
+      
+      <!-- Top Row: Province Identification & Slide Counter -->
+      <div class="flex flex-wrap items-center justify-between gap-2.5 mb-5 sm:mb-6">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-sky-500/15 text-sky-300 border border-sky-400/30 backdrop-blur-md">
+            <Anchor class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-400" />
+            <span class="hidden xs:inline">Province of Antique • Western Visayas</span>
+            <span class="xs:hidden">Antique (Region VI)</span>
+          </span>
+          <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
+            <ShieldCheck class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400" />
+            <span>1st Class Municipality</span>
+          </span>
+          <button
+            @click="$emit('navigate', 'mobile-app')"
+            class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/40 backdrop-blur-md transition-colors cursor-pointer"
+          >
+            <Smartphone class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" />
+            <span>Download Mobile App</span>
+          </button>
+        </div>
+
+        <!-- Slide Index Counter & Pause Indicator -->
+        <div class="flex items-center space-x-1.5 sm:space-x-2 text-[11px] sm:text-xs font-mono font-bold bg-slate-900/80 px-2.5 sm:px-3 py-1 rounded-full border border-slate-700/80 backdrop-blur-md">
+          <span class="text-amber-400">0{{ currentSlide + 1 }}</span>
+          <span class="text-slate-500">/</span>
+          <span class="text-slate-400">0{{ slides.length }}</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-0.5"></span>
+        </div>
+      </div>
+
+      <!-- Middle: Dynamic Slide Headline & Beautiful Text Overlays -->
+      <div class="max-w-4xl transition-all duration-700 transform">
+        <!-- Active Slide Badge -->
+        <div class="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-wide uppercase bg-amber-400/20 text-amber-300 border border-amber-400/40 backdrop-blur-md mb-3 sm:mb-4 shadow-sm animate-fadeIn">
+          <span>{{ slides[currentSlide].badge }}</span>
+        </div>
+
+        <!-- Large Hero Display Title (Mobile friendly 2xl scaling up to 6xl) -->
+        <h1 class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.18] sm:leading-[1.12] drop-shadow-md">
+          {{ slides[currentSlide].title }}
+        </h1>
+
+        <!-- Expressive Subtitle -->
+        <p class="mt-3 sm:mt-4 text-xs sm:text-base lg:text-xl text-slate-200 max-w-2xl leading-relaxed drop-shadow-sm font-normal">
+          {{ slides[currentSlide].subtitle }}
+        </p>
+
+        <!-- Dynamic Action Buttons for Slide (Thumb-friendly full width on mobile) -->
+        <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <button
+            @click="handlePrimaryAction(slides[currentSlide])"
+            class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3.5 sm:px-6 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-300 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-400/25 transition-all transform active:scale-95 cursor-pointer"
+          >
+            <component :is="slides[currentSlide].primaryIcon" class="w-4 h-4 text-slate-950" />
+            <span>{{ slides[currentSlide].primaryCta }}</span>
+            <ArrowRight class="w-4 h-4 ml-1" />
+          </button>
+
+          <button
+            @click="handleSecondaryAction(slides[currentSlide])"
+            class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3.5 sm:px-6 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700 hover:border-amber-400/50 shadow-lg backdrop-blur-md transition-all transform active:scale-95 cursor-pointer"
+          >
+            <Sparkles class="w-4 h-4 text-amber-300" />
+            <span>{{ slides[currentSlide].secondaryCta }}</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Slider Interactive Navigation & Pill Selector -->
+      <div class="mt-8 sm:mt-12 flex flex-col md:flex-row md:items-center justify-between gap-4 pt-4 sm:pt-6 border-t border-slate-800/70">
+        
+        <!-- Slide Pills / Tabs (Horizontally scrollable on mobile) -->
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-2 px-2 sm:mx-0 sm:px-0">
+          <button
+            v-for="(slide, sIdx) in slides"
+            :key="sIdx"
+            @click="goToSlide(sIdx)"
+            :class="[
+              'px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 border cursor-pointer shrink-0 whitespace-nowrap',
               currentSlide === sIdx
                 ? 'bg-amber-400 text-slate-950 border-amber-300 shadow-md scale-105'
                 : 'bg-slate-900/80 text-slate-300 border-slate-800 hover:border-slate-600 hover:text-white backdrop-blur-sm'
