@@ -121,3 +121,108 @@
   background-color: #111827 !important;
   color: #9ca3af !important;
 }
+
+/* Gene - Oct 06, 2026: Comprehensive @media print styling for downloading and printing the whole proposal document */
+@media print {
+  /* Hide the rest of the application when the proposal modal is open */
+  .proposal-open-print header,
+  .proposal-open-print nav,
+  .proposal-open-print main,
+  .proposal-open-print footer {
+    display: none !important;
+  }
+
+  body:has(.proposal-modal-overlay) header,
+  body:has(.proposal-modal-overlay) nav,
+  body:has(.proposal-modal-overlay) main,
+  body:has(.proposal-modal-overlay) footer {
+    display: none !important;
+  }
+
+  body, html {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Expand modal from fixed viewport container to full natural document flow */
+  .proposal-modal-overlay {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    inset: auto !important;
+    z-index: auto !important;
+  }
+
+  .proposal-modal-card {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .proposal-modal-scroll-area {
+    position: static !important;
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* Hide interactive UI buttons and deck view during print */
+  .proposal-modal-header,
+  .proposal-modal-footer,
+  .slide-deck-view,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Printable proposal styling */
+  .printable-proposal {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .printable-proposal table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .printable-proposal .signature-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+}
+

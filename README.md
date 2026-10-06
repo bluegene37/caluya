@@ -30,10 +30,15 @@ This project delivers:
 
 ---
 
-<!-- Gene - Oct 06, 2026: Updated README.md proposal section to attribute genexis.dev and proponent Raffy Soquilon presenting for Hon. Belfe S. Duran -->
+<!-- Gene - Oct 06, 2026: Updated README.md proposal section to attribute proponent Raffy Soquilon and creator & developer Gene Ray Medel of genexis.dev -->
+<!--
 ## 🏛️ E-Governance Proposal & Technology Presentation (genexis.dev)
 
 Built into the portal is an interactive **E-Governance Proposal** modal presented by proponent **Raffy Soquilon** (**genexis.dev**) for the kind evaluation of **Hon. Belfe S. Duran** (Municipal Vice Mayor & Presiding Officer) and the **Sangguniang Bayan ng Caluya**:
+-->
+## 🏛️ E-Governance Proposal & Technology Presentation (genexis.dev)
+
+Built into the portal is an interactive **E-Governance Proposal** modal presented by lead proponent **Raffy Soquilon**, created and developed by **Gene Ray Medel** of **genexis.dev**, for the kind evaluation of **Hon. Belfe S. Duran** (Municipal Vice Mayor & Presiding Officer) and the **Sangguniang Bayan ng Caluya**:
 - **7-Slide Interactive Presentation:** Clear, respectful demonstration showcasing what has been engineered—inter-island zero-travel e-services, live MDRRMO maritime rescue lifelines, transparent legislative archives, and ~₱15M annual sea fare savings for island families.
 - **Print-Ready Document View:** Formal letterhead layout with the official Caluya municipal seal, structured for council deliberations or PDF export (`window.print()`).
 - **Island-Optimized Architecture:** Lightweight Vue 3 + Vite implementation designed for low-bandwidth 3G/4G maritime connectivity with offline emergency caching.
@@ -203,9 +208,19 @@ This web application and digital governance proposal adhere to Republic of the P
 
 ---
 
+<!-- Gene - Oct 06, 2026: Updated Attribution & Credits to specify Raffy Soquilon as lead proponent and Gene Ray Medel of genexis.dev as creator and developer -->
+<!--
 ## 🤝 Attribution & Credits
 
 - **Municipality of Caluya Official Portal:** Assets and official seal referenced from [DICT e-LGU Caluya News](https://elgu-caluya-antique-news.e.gov.ph/home).
 - **Prepared for:** Office of the Municipal Vice Mayor **Hon. Belfe S. Duran** and the members of the **Sangguniang Bayan ng Caluya**, Province of Antique.
 - **Proponent & Company:** Submitted by **Raffy Soquilon** (Lead Proponent) • **genexis.dev**.
 - **Engineering & Implementation:** Designed and developed by **genexis.dev** (October 2026).
+-->
+## 🤝 Attribution & Credits
+
+- **Municipality of Caluya Official Portal:** Assets and official seal referenced from [DICT e-LGU Caluya News](https://elgu-caluya-antique-news.e.gov.ph/home).
+- **Prepared for:** Office of the Municipal Vice Mayor **Hon. Belfe S. Duran** and the members of the **Sangguniang Bayan ng Caluya**, Province of Antique.
+- **Lead Proponent:** Presented by **Raffy Soquilon** (Lead Proponent).
+- **Creator & Lead Developer:** Created, engineered, and developed by **Gene Ray Medel** of **genexis.dev** (October 2026).
+- **Technology Partner:** **genexis.dev**.

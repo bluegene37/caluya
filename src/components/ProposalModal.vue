@@ -153,6 +153,8 @@
       </div>
       -->
 
+      <!-- Gene - Oct 06, 2026: Enhanced header with proposal-modal-header class, Download PDF button, and scroll area hook -->
+      <!--
       <div class="px-3.5 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800 flex-shrink-0 gap-3">
         <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0 flex-1">
           <img
@@ -179,7 +181,6 @@
         </div>
 
         <div class="flex items-center space-x-1 sm:space-x-2 shrink-0">
-          <!-- View Mode Toggle -->
           <div class="hidden sm:flex items-center bg-slate-800/90 p-0.5 rounded-lg border border-slate-700 text-xs">
             <button
               @click="viewMode = 'deck'"
@@ -219,12 +220,89 @@
         </div>
       </div>
 
+      <div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50">
+        <div v-if="viewMode === 'deck'" class="flex flex-col h-full justify-between space-y-6">
+      -->
+
+      <div class="proposal-modal-header px-3.5 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800 flex-shrink-0 gap-3">
+        <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0 flex-1">
+          <img
+            src="/images/caluya-logo.png"
+            alt="Official Seal of Caluya"
+            class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-contain bg-white p-0.5 border border-amber-400 shadow-md shrink-0"
+          />
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span class="text-[9px] sm:text-[10px] font-extrabold text-amber-300 uppercase tracking-wider">
+                genexis.dev Prototype
+              </span>
+              <span class="text-[8px] sm:text-[9px] px-1.5 py-0.5 rounded bg-sky-900/90 text-sky-200 border border-sky-700/80 font-mono">
+                For Hon. Belfe S. Duran
+              </span>
+            </div>
+            <h3 class="text-xs sm:text-base lg:text-lg font-black text-white leading-tight truncate mt-0.5">
+              Caluya Digital Platform Presentation
+            </h3>
+            <!-- Gene - Oct 06, 2026: Updated header attribution to specify Gene Ray Medel of genexis.dev as creator & developer, and Raffy Soquilon as proponent -->
+            <!--
+            <span class="text-[10px] sm:text-[11px] text-slate-300 block truncate">
+              Created by: <strong class="text-amber-300">{{ PROPOSAL_DATA.company }}</strong> • Proponent: <strong class="text-white">{{ PROPOSAL_DATA.proponent }}</strong>
+            </span>
+            -->
+            <span class="text-[10px] sm:text-[11px] text-slate-300 block truncate">
+              Created & Developed by: <strong class="text-amber-300">{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }}) • Proponent: <strong class="text-white">{{ PROPOSAL_DATA.proponent }}</strong>
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-1 sm:space-x-2 shrink-0">
+          <!-- View Mode Toggle -->
+          <div class="hidden sm:flex items-center bg-slate-800/90 p-0.5 rounded-lg border border-slate-700 text-xs">
+            <button
+              @click="viewMode = 'deck'"
+              :class="[
+                'px-2.5 py-1 rounded font-bold transition-all cursor-pointer',
+                viewMode === 'deck' ? 'bg-amber-400 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
+              ]"
+            >
+              Slide Deck
+            </button>
+            <button
+              @click="viewMode = 'document'"
+              :class="[
+                'px-2.5 py-1 rounded font-bold transition-all cursor-pointer',
+                viewMode === 'document' ? 'bg-amber-400 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
+              ]"
+            >
+              Full Document
+            </button>
+          </div>
+
+          <button
+            @click="handlePrint"
+            class="flex items-center space-x-1.5 px-2.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-lg font-bold text-xs transition-colors cursor-pointer shadow-sm"
+            title="Download / Print Whole Proposal Document in PDF"
+          >
+            <Download class="w-3.5 h-3.5" />
+            <span class="hidden md:inline">Download PDF</span>
+          </button>
+
+          <button
+            @click="$emit('close')"
+            class="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+            aria-label="Close"
+          >
+            <X class="w-5 h-5" />
+          </button>
+        </div>
+      </div>
 
       <!-- Modal Body Content -->
-      <div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50">
+      <div class="proposal-modal-scroll-area flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50">
         
         <!-- SLIDE DECK MODE -->
-        <div v-if="viewMode === 'deck'" class="flex flex-col h-full justify-between space-y-6">
+        <div v-if="viewMode === 'deck'" class="slide-deck-view flex flex-col h-full justify-between space-y-6">
+
           
           <!-- Gene - Oct 06, 2026: Tailored Slide Deck for Municipal Vice Mayor Hon. Genevive L. Reyes and the Sangguniang Bayan ng Caluya -->
           <!--
@@ -597,9 +675,19 @@
                     <span class="font-bold text-slate-900 block mb-1">Target Beneficiary</span>
                     <p class="text-slate-600 leading-relaxed">42,895+ constituents across all 18 island barangays in Caluya, Antique.</p>
                   </div>
+                  <!-- Gene - Oct 06, 2026: Updated Slide 0 card to specify Raffy Soquilon as lead proponent and Gene Ray Medel (genexis.dev) as creator and developer -->
+                  <!--
                   <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
                     <span class="font-bold text-slate-900 block mb-1">Technology Proponent</span>
                     <p class="text-slate-600 leading-relaxed"><strong>{{ PROPOSAL_DATA.proponent }}</strong> • <strong>{{ PROPOSAL_DATA.company }}</strong></p>
+                  </div>
+                  -->
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <span class="font-bold text-slate-900 block mb-1">Proponent & Engineering</span>
+                    <p class="text-slate-600 leading-relaxed">
+                      Proponent: <strong>{{ PROPOSAL_DATA.proponent }}</strong><br/>
+                      Creator: <strong>{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }})
+                    </p>
                   </div>
                   <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
                     <span class="font-bold text-slate-900 block mb-1">Presented To</span>
@@ -755,9 +843,31 @@
             </div>
 
             <!-- Slide Bottom Bar -->
+            <!-- Gene - Oct 06, 2026: Updated slide deck bottom bar with explicit 'Created by: genexis.dev • Proponent: Raffy Soquilon' -->
+            <!--
             <div class="mt-6 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
               <span class="font-medium text-slate-600">
                 Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.preparedBy }}</strong>
+              </span>
+              <span class="font-semibold text-sky-800">
+                Presented for: <strong class="text-slate-900">{{ PROPOSAL_DATA.targetOfficial }}</strong> (Caluya, Antique)
+              </span>
+            </div>
+            -->
+            <!-- Gene - Oct 06, 2026: Updated slide deck bottom bar to specify Gene Ray Medel (genexis.dev) as creator & developer, and Raffy Soquilon as proponent -->
+            <!--
+            <div class="mt-6 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
+              <span class="font-medium text-slate-600">
+                Created by: <strong class="text-amber-600">{{ PROPOSAL_DATA.company }}</strong> • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong>
+              </span>
+              <span class="font-semibold text-sky-800">
+                Presented for: <strong class="text-slate-900">{{ PROPOSAL_DATA.targetOfficial }}</strong> (Caluya, Antique)
+              </span>
+            </div>
+            -->
+            <div class="mt-6 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
+              <span class="font-medium text-slate-600">
+                Created & Developed by: <strong class="text-amber-600">{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }}) • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong>
               </span>
               <span class="font-semibold text-sky-800">
                 Presented for: <strong class="text-slate-900">{{ PROPOSAL_DATA.targetOfficial }}</strong> (Caluya, Antique)
@@ -1212,6 +1322,8 @@
             <p class="text-xs sm:text-sm text-slate-600 font-medium">
               {{ PROPOSAL_DATA.subTitle }}
             </p>
+            <!-- Gene - Oct 06, 2026: Updated document metadata to specify Gene Ray Medel (genexis.dev) as creator & developer, and Raffy Soquilon as lead proponent -->
+            <!--
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 pt-2 border-t border-slate-200">
               <div>
                 <strong class="text-slate-900 block">Addressed To:</strong>
@@ -1224,6 +1336,25 @@
               <div>
                 <strong class="text-slate-900 block">Proponent Position:</strong>
                 <span>{{ PROPOSAL_DATA.proponentRole }}</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Scope of Coverage:</strong>
+                <span>All 18 Island Barangays of Caluya, Antique</span>
+              </div>
+            </div>
+            -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 pt-2 border-t border-slate-200">
+              <div>
+                <strong class="text-slate-900 block">Addressed To:</strong>
+                <span>{{ PROPOSAL_DATA.preparedFor }}</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Lead Proponent:</strong>
+                <span>{{ PROPOSAL_DATA.proponent }} ({{ PROPOSAL_DATA.proponentRole }})</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Creator & Developer:</strong>
+                <span>{{ PROPOSAL_DATA.creator }} ({{ PROPOSAL_DATA.company }})</span>
               </div>
               <div>
                 <strong class="text-slate-900 block">Scope of Coverage:</strong>
@@ -1379,12 +1510,23 @@
 
           <!-- Section 7: Formal Submission & Endorsement Block -->
           <div class="pt-8 border-t-2 border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-xs">
+            <!-- Gene - Oct 06, 2026: Updated signature block to show Raffy Soquilon as lead proponent and Gene Ray Medel of genexis.dev as creator and developer -->
+            <!--
             <div class="space-y-8 sm:space-y-12">
               <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Presented & Submitted By:</div>
               <div>
                 <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">{{ PROPOSAL_DATA.proponent }}</div>
                 <div class="text-slate-600 font-medium">{{ PROPOSAL_DATA.proponentRole }}</div>
                 <div class="text-[10px] text-sky-800 font-bold">{{ PROPOSAL_DATA.company }}</div>
+              </div>
+            </div>
+            -->
+            <div class="space-y-8 sm:space-y-12">
+              <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Presented & Submitted By:</div>
+              <div>
+                <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">{{ PROPOSAL_DATA.proponent }}</div>
+                <div class="text-slate-600 font-medium">{{ PROPOSAL_DATA.proponentRole }}</div>
+                <div class="text-[10px] text-sky-800 font-bold">Created & Developed by {{ PROPOSAL_DATA.creator }} ({{ PROPOSAL_DATA.company }})</div>
               </div>
             </div>
 
@@ -1416,11 +1558,45 @@
             </div>
           </div>
 
+          <!-- Gene - Oct 06, 2026: Updated document footer to specify Gene Ray Medel of genexis.dev as creator & developer, and Raffy Soquilon as proponent -->
+          <!--
+          <div class="pt-6 border-t-2 border-slate-900 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2">
+            <div class="space-y-0.5">
+              <div class="font-bold text-slate-900">
+                Created by: <span class="text-sky-900 font-extrabold">{{ PROPOSAL_DATA.company }}</span> (genexis.dev) • Proponent: <span class="text-slate-950 font-extrabold">{{ PROPOSAL_DATA.proponent }}</span>
+              </div>
+              <div class="text-[11px] text-slate-500">
+                Working Prototype & Technology Pitch for the Municipality of Caluya, Antique
+              </div>
+            </div>
+            <div class="text-right font-mono text-[10px] text-slate-500">
+              <div>Ref: {{ PROPOSAL_DATA.docReference }}</div>
+              <div>Date: {{ PROPOSAL_DATA.date }}</div>
+            </div>
+          </div>
+          -->
+          <div class="pt-6 border-t-2 border-slate-900 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2">
+            <div class="space-y-0.5">
+              <div class="font-bold text-slate-900">
+                Created & Developed by: <span class="text-sky-900 font-extrabold">{{ PROPOSAL_DATA.creator }}</span> ({{ PROPOSAL_DATA.company }}) • Proponent: <span class="text-slate-950 font-extrabold">{{ PROPOSAL_DATA.proponent }}</span>
+              </div>
+              <div class="text-[11px] text-slate-500">
+                Working Prototype & Technology Pitch for the Municipality of Caluya, Antique
+              </div>
+            </div>
+            <div class="text-right font-mono text-[10px] text-slate-500">
+              <div>Ref: {{ PROPOSAL_DATA.docReference }}</div>
+              <div>Date: {{ PROPOSAL_DATA.date }}</div>
+            </div>
+          </div>
+
         </div>
 
       </div>
 
       <!-- Modal Bottom Bar -->
+      <!-- Gene - Oct 06, 2026: Updated modal bottom bar with proposal-modal-footer class, explicit 'Created by: genexis.dev • Proponent: Raffy Soquilon', and Whole Proposal PDF download button -->
+      <!--
       <div class="px-4 sm:px-6 py-3 sm:py-3.5 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between text-xs flex-shrink-0 gap-2">
         <div class="flex items-center space-x-2 text-slate-600 min-w-0">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
@@ -1442,18 +1618,80 @@
           </button>
         </div>
       </div>
+      -->
+      <!-- Gene - Oct 06, 2026: Updated modal bottom bar to specify Gene Ray Medel of genexis.dev as creator & developer, and Raffy Soquilon as proponent -->
+      <!--
+      <div class="proposal-modal-footer px-4 sm:px-6 py-3 sm:py-3.5 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between text-xs flex-shrink-0 gap-2">
+        <div class="flex items-center space-x-2 text-slate-600 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+          <span class="truncate">Created by: <strong class="text-amber-600">{{ PROPOSAL_DATA.company }}</strong> • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong></span>
+        </div>
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+          <button
+            @click="handlePrint"
+            class="px-3 sm:px-3.5 py-1.5 rounded-xl font-bold bg-amber-400 hover:bg-amber-300 text-slate-950 flex items-center space-x-1.5 cursor-pointer text-xs shadow-sm transition-colors"
+            title="Download / Print Whole Proposal in PDF"
+          >
+            <Download class="w-3.5 h-3.5" />
+            <span>Download / Print PDF (Whole Proposal)</span>
+          </button>
+          <button
+            @click="$emit('close')"
+            class="px-3.5 sm:px-4 py-1.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer text-xs"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      -->
+      <div class="proposal-modal-footer px-4 sm:px-6 py-3 sm:py-3.5 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between text-xs flex-shrink-0 gap-2">
+        <div class="flex items-center space-x-2 text-slate-600 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+          <span class="truncate">Created & Developed by: <strong class="text-amber-600">{{ PROPOSAL_DATA.creator }}</strong> ({{ PROPOSAL_DATA.company }}) • Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.proponent }}</strong></span>
+        </div>
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+          <button
+            @click="handlePrint"
+            class="px-3 sm:px-3.5 py-1.5 rounded-xl font-bold bg-amber-400 hover:bg-amber-300 text-slate-950 flex items-center space-x-1.5 cursor-pointer text-xs shadow-sm transition-colors"
+            title="Download / Print Whole Proposal in PDF"
+          >
+            <Download class="w-3.5 h-3.5" />
+            <span>Download / Print PDF (Whole Proposal)</span>
+          </button>
+          <button
+            @click="$emit('close')"
+            class="px-3.5 sm:px-4 py-1.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer text-xs"
+          >
+            Close
+          </button>
+        </div>
+      </div>
 
     </div>
   </div>
 </template>
 
 <script setup>
-// Gene - Oct 06, 2026: Vue 3 composition setup for ProposalModal presenting genexis.dev prototype (Raffy Soquilon) to Hon. Belfe S. Duran
+// Gene - Oct 06, 2026: Previous imports and props setup
+/*
 import { ref } from 'vue';
 import { X, Printer, ChevronLeft, ChevronRight, CheckCircle, Award } from '@lucide/vue';
 import { PROPOSAL_DATA, LGU_INFO } from '../data/caluyaData';
 
 defineProps({
+  isOpen: {
+    type: Boolean,
+    default: false
+  }
+});
+*/
+
+// Gene - Oct 06, 2026: Vue 3 composition setup for ProposalModal with whole-document print, lifecycle listeners, and genexis.dev attribution
+import { ref, watch, nextTick, onMounted, onUnmounted } from 'vue';
+import { X, Printer, Download, ChevronLeft, ChevronRight, CheckCircle, Award } from '@lucide/vue';
+import { PROPOSAL_DATA, LGU_INFO } from '../data/caluyaData';
+
+const props = defineProps({
   isOpen: {
     type: Boolean,
     default: false
@@ -1488,7 +1726,63 @@ const slides = [
   { title: "Collaborative Consultation & Next Steps", subtitle: "Demonstration Walkthrough, Department Alignment & Turnkey Handover" }
 ];
 
+// Gene - Oct 06, 2026: Previous handlePrint implementation that only called window.print() directly
+/*
 const handlePrint = () => {
   window.print();
 };
+*/
+
+// Gene - Oct 06, 2026: Updated handlePrint and print lifecycle listeners to ensure the entire multi-page proposal document is mounted and saved to PDF without clipping to a single slide
+let savedModeBeforePrint = null;
+
+const handlePrint = async () => {
+  savedModeBeforePrint = viewMode.value;
+  viewMode.value = 'document';
+  await nextTick();
+  setTimeout(() => {
+    window.print();
+  }, 100);
+};
+
+const handleBeforePrint = () => {
+  if (props.isOpen) {
+    savedModeBeforePrint = viewMode.value;
+    viewMode.value = 'document';
+  }
+};
+
+const handleAfterPrint = () => {
+  if (savedModeBeforePrint !== null) {
+    viewMode.value = savedModeBeforePrint;
+    savedModeBeforePrint = null;
+  }
+};
+
+watch(() => props.isOpen, (newVal) => {
+  if (typeof document !== 'undefined') {
+    if (newVal) {
+      document.body.classList.add('proposal-open-print');
+    } else {
+      document.body.classList.remove('proposal-open-print');
+    }
+  }
+}, { immediate: true });
+
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('afterprint', handleAfterPrint);
+  }
+});
+
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('beforeprint', handleBeforePrint);
+    window.removeEventListener('afterprint', handleAfterPrint);
+    if (typeof document !== 'undefined') {
+      document.body.classList.remove('proposal-open-print');
+    }
+  }
+});
 </script>

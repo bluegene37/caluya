@@ -157,11 +157,51 @@
       </div>
     </div>
     -->
+    <!-- Gene - Oct 06, 2026: Updated bottom footer attribution to explicit 'Created by: genexis.dev • Proponent: Raffy Soquilon' -->
+    <!--
     <div class="bg-slate-900 border-t border-slate-800/80 py-4">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
         <div class="text-center sm:text-left">
           <span>© 2026 Municipality of Caluya, Antique. Republic of the Philippines. All rights reserved.</span>
           <span class="block text-slate-500 text-[10px] mt-0.5">Prototype engineered by <strong class="text-sky-300">genexis.dev</strong> • Proponent: <strong class="text-slate-300">Raffy Soquilon</strong></span>
+        </div>
+        <div class="flex items-center space-x-3 text-slate-400 text-[11px]">
+          <span>Freedom of Information (FOI)</span>
+          <span>•</span>
+          <span>Data Privacy Act (RA 10173)</span>
+          <span>•</span>
+          <button @click="$emit('open-proposal')" class="text-amber-400 hover:text-amber-300 font-bold hover:underline cursor-pointer">
+            Evaluation Proposal
+          </button>
+        </div>
+      </div>
+    </div>
+    -->
+    <!-- Gene - Oct 06, 2026: Updated footer bottom attribution to specify Gene Ray Medel (genexis.dev) as creator & developer, and Raffy Soquilon as proponent -->
+    <!--
+    <div class="bg-slate-900 border-t border-slate-800/80 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+        <div class="text-center sm:text-left">
+          <span>© 2026 Municipality of Caluya, Antique. Republic of the Philippines. All rights reserved.</span>
+          <span class="block text-slate-400 text-[11px] mt-0.5">Created by: <strong class="text-sky-300">genexis.dev</strong> • Proponent: <strong class="text-white">Raffy Soquilon</strong></span>
+        </div>
+        <div class="flex items-center space-x-3 text-slate-400 text-[11px]">
+          <span>Freedom of Information (FOI)</span>
+          <span>•</span>
+          <span>Data Privacy Act (RA 10173)</span>
+          <span>•</span>
+          <button @click="$emit('open-proposal')" class="text-amber-400 hover:text-amber-300 font-bold hover:underline cursor-pointer">
+            Evaluation Proposal
+          </button>
+        </div>
+      </div>
+    </div>
+    -->
+    <div class="bg-slate-900 border-t border-slate-800/80 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+        <div class="text-center sm:text-left">
+          <span>© 2026 Municipality of Caluya, Antique. Republic of the Philippines. All rights reserved.</span>
+          <span class="block text-slate-400 text-[11px] mt-0.5">Created & Developed by <strong class="text-sky-300">Gene Ray Medel</strong> (genexis.dev) • Proponent: <strong class="text-white">Raffy Soquilon</strong></span>
         </div>
         <div class="flex items-center space-x-3 text-slate-400 text-[11px]">
           <span>Freedom of Information (FOI)</span>

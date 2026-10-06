@@ -312,9 +312,16 @@
                 <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>₱15M+ Annual Sea Travel Fare Savings for Island Families</span>
               </div>
+              <!-- Gene - Oct 06, 2026: Updated technology attribution in HomeView proposal callout to specify Gene Ray Medel of genexis.dev as creator & developer and Raffy Soquilon as proponent -->
+              <!--
               <div class="flex items-start space-x-2">
                 <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>Technology by genexis.dev (Proponent: Raffy Soquilon)</span>
+              </div>
+              -->
+              <div class="flex items-start space-x-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Created & Developed by Gene Ray Medel (genexis.dev) • Proponent: Raffy Soquilon</span>
               </div>
             </div>
           </div>
