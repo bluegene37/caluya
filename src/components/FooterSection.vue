@@ -44,9 +44,17 @@
             Local Government (LGU)
           </h4>
           <ul class="space-y-2 text-xs">
+            <!-- Gene - Oct 06, 2026: Updated Mayor link to include Mayor Hon. Rigil Kent G. Lim and simplified Proposal button to 'Proposal' -->
+            <!--
             <li>
               <button @click="$emit('navigate', 'leadership')" class="hover:text-amber-400 transition-colors cursor-pointer">
                 Office of the Municipal Mayor
+              </button>
+            </li>
+            -->
+            <li>
+              <button @click="$emit('navigate', 'leadership')" class="hover:text-amber-400 transition-colors cursor-pointer">
+                Office of Municipal Mayor Hon. Rigil Kent G. Lim
               </button>
             </li>
             <li>
@@ -64,9 +72,16 @@
                 Bids and Awards Committee (BAC)
               </button>
             </li>
+            <!--
             <li>
               <button @click="$emit('open-proposal')" class="text-amber-300 font-bold hover:underline cursor-pointer">
                 📄 View LGU Modernization Proposal
+              </button>
+            </li>
+            -->
+            <li>
+              <button @click="$emit('open-proposal')" class="text-amber-300 font-bold hover:underline cursor-pointer">
+                📄 Proposal
               </button>
             </li>
           </ul>
@@ -98,9 +113,17 @@
                 MDRRMO Sea Lane & Gale Board
               </button>
             </li>
+            <!-- Gene - Oct 06, 2026: Updated link text to cite Mayor Hon. Rigil Kent G. Lim -->
+            <!--
             <li>
               <button @click="$emit('navigate', 'services')" class="hover:text-sky-400 transition-colors cursor-pointer">
                 Mayor's Action Desk (e-Reklamo)
+              </button>
+            </li>
+            -->
+            <li>
+              <button @click="$emit('navigate', 'services')" class="hover:text-sky-400 transition-colors cursor-pointer">
+                Mayor Hon. Rigil Kent G. Lim's Action Desk (e-Reklamo)
               </button>
             </li>
             <!-- Gene - Oct 06, 2026: Added Caluya Mobile App download link to FooterSection -->
@@ -130,8 +153,15 @@
               <span class="block text-slate-500 font-semibold">Marine Radio Frequency:</span>
               <span class="text-sky-300 font-mono">VHF Channel 16</span>
             </div>
+            <!-- Gene - Oct 06, 2026: Updated contact label to specify Office of Mayor Hon. Rigil Kent G. Lim -->
+            <!--
             <div>
               <span class="block text-slate-500 font-semibold">Official Email:</span>
+              <span class="text-slate-300">mayor.office@caluya-antique.gov.ph</span>
+            </div>
+            -->
+            <div>
+              <span class="block text-slate-500 font-semibold">Office of Mayor Hon. Rigil Kent G. Lim:</span>
               <span class="text-slate-300">mayor.office@caluya-antique.gov.ph</span>
             </div>
           </div>
@@ -208,8 +238,14 @@
           <span>•</span>
           <span>Data Privacy Act (RA 10173)</span>
           <span>•</span>
+          <!-- Gene - Oct 06, 2026: Updated proposal button label to 'Proposal' -->
+          <!--
           <button @click="$emit('open-proposal')" class="text-amber-400 hover:text-amber-300 font-bold hover:underline cursor-pointer">
             Evaluation Proposal
+          </button>
+          -->
+          <button @click="$emit('open-proposal')" class="text-amber-400 hover:text-amber-300 font-bold hover:underline cursor-pointer">
+            Proposal
           </button>
         </div>
       </div>

@@ -267,6 +267,8 @@
               </div>
             </div>
             -->
+            <!-- Gene - Oct 06, 2026: Updated narrative to include Municipal Mayor Hon. Rigil Kent G. Lim and simplified button label to 'Proposal' -->
+            <!--
             <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-3xl">
               Presented for the evaluation of <strong class="text-amber-300 font-extrabold">Vice Mayor Hon. Belfe S. Duran</strong> (Presiding Officer of the Sangguniang Bayan) and the municipal administration, this digital portal by <strong class="text-sky-300 font-bold">genexis.dev</strong> (proponent Raffy Soquilon) connects all 18 island barangays with zero-travel public services, 24/7 sea ambulance dispatch, and disaster alerts.
             </p>
@@ -278,6 +280,29 @@
               >
                 <Sparkles class="w-4 h-4 text-slate-950" />
                 <span>View genexis.dev Proposal</span>
+                <ArrowRight class="w-4 h-4 ml-1" />
+              </button>
+
+              <router-link
+                to="/leadership"
+                class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-colors"
+              >
+                <Users class="w-4 h-4 text-sky-400" />
+                <span>Sangguniang Bayan Council</span>
+              </router-link>
+            </div>
+            -->
+            <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+              Presented for the evaluation of Municipal Mayor <strong class="text-white font-extrabold">Hon. Rigil Kent G. Lim</strong>, Vice Mayor <strong class="text-amber-300 font-extrabold">Hon. Belfe S. Duran</strong> (Presiding Officer of the Sangguniang Bayan), and the municipal administration, this digital portal by <strong class="text-sky-300 font-bold">genexis.dev</strong> (proponent Raffy Soquilon) connects all 18 island barangays with zero-travel public services, 24/7 sea ambulance dispatch, and disaster alerts.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <button
+                @click="$emit('open-proposal')"
+                class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 shadow-lg shadow-amber-400/20 transition-all transform active:scale-95 cursor-pointer"
+              >
+                <Sparkles class="w-4 h-4 text-slate-950" />
+                <span>Proposal</span>
                 <ArrowRight class="w-4 h-4 ml-1" />
               </button>
 
@@ -618,11 +643,11 @@ const departments = [
   {
     path: '/leadership',
     title: 'LGU Leadership & Council',
-    // Gene - Oct 06, 2026: Updated Vice Mayor name to Hon. Belfe S. Duran per user verification
+    // Gene - Oct 06, 2026: Updated Mayor name to Hon. Rigil Kent G. Lim alongside Vice Mayor Hon. Belfe S. Duran
     /*
-    desc: 'Municipal Mayor, Vice Mayor Hon. Genevive L. Reyes, and Sangguniang Bayan councilors and committees.',
-    */
     desc: 'Municipal Mayor, Vice Mayor Hon. Belfe S. Duran, and Sangguniang Bayan councilors and committees.',
+    */
+    desc: 'Municipal Mayor Hon. Rigil Kent G. Lim, Vice Mayor Hon. Belfe S. Duran, and Sangguniang Bayan councilors and committees.',
     icon: Award,
     bgClass: 'bg-purple-50 border border-purple-200',
     iconClass: 'text-purple-600',

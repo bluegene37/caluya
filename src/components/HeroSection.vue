@@ -432,9 +432,9 @@ const slides = [
     image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2200&q=85",
     primaryCta: "Access Citizen e-Services",
     primaryIcon: FileCheck,
-    // Gene - Oct 06, 2026: Updated CTA to highlight Vice Mayor Proposal
-    // secondaryCta: "View LGU Proposal",
-    secondaryCta: "Vice Mayor Proposal",
+    // Gene - Oct 06, 2026: Updated secondaryCta label to simply 'Proposal'
+    // secondaryCta: "Vice Mayor Proposal",
+    secondaryCta: "Proposal",
     secondaryTarget: "proposal"
   }
 ];

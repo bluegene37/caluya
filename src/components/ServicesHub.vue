@@ -421,7 +421,11 @@
         <div class="flex items-center justify-between pb-4 border-b border-slate-100">
           <div class="flex items-center space-x-2 text-rose-800">
             <Send class="w-5 h-5 text-rose-600" />
+            <!-- Gene - Oct 06, 2026: Updated Helpdesk modal header to include Mayor Hon. Rigil Kent G. Lim -->
+            <!--
             <h3 class="font-extrabold text-lg">Mayor's Action Helpdesk (e-Reklamo)</h3>
+            -->
+            <h3 class="font-extrabold text-lg">Mayor Hon. Rigil Kent G. Lim's Action Helpdesk (e-Reklamo)</h3>
           </div>
           <button @click="activeModal = null" class="p-1 rounded-full text-slate-400 hover:text-slate-600 cursor-pointer">
             <X class="w-5 h-5" />
@@ -491,11 +495,20 @@
             >
               Cancel
             </button>
+            <!-- Gene - Oct 06, 2026: Updated button text to cite Mayor Hon. Rigil Kent G. Lim -->
+            <!--
             <button
               type="submit"
               class="px-5 py-2 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-xl shadow-md cursor-pointer"
             >
               Send to Mayor's Action Desk
+            </button>
+            -->
+            <button
+              type="submit"
+              class="px-5 py-2 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-xl shadow-md cursor-pointer"
+            >
+              Send to Mayor Hon. Rigil Kent G. Lim's Action Desk
             </button>
           </div>
         </form>
@@ -505,9 +518,16 @@
             <CheckCircle class="w-8 h-8" />
           </div>
           <h4 class="text-xl font-bold text-slate-900">Incident Ticket Dispatched!</h4>
+          <!-- Gene - Oct 06, 2026: Updated ticket confirmation notice to cite Mayor Hon. Rigil Kent G. Lim -->
+          <!--
           <p class="text-sm text-slate-600 max-w-md mx-auto">
             Ticket Reference: <strong className="font-mono text-rose-700">MAYOR-TKT-2026-1192</strong>.
             Your report has been directly logged into the Mayor's Executive Action Queue. An update will be sent via SMS to {{ reklamoData.contact || 'your number' }}.
+          </p>
+          -->
+          <p class="text-sm text-slate-600 max-w-md mx-auto">
+            Ticket Reference: <strong class="font-mono text-rose-700">MAYOR-TKT-2026-1192</strong>.
+            Your report has been directly logged into Mayor Hon. Rigil Kent G. Lim's Executive Action Queue. An update will be sent via SMS to {{ reklamoData.contact || 'your number' }}.
           </p>
           <button
             @click="ticketSubmitted = false; activeModal = null"

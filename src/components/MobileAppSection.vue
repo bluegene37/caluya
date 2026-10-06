@@ -88,8 +88,14 @@
                       v1.0.4-beta
                     </span>
                   </h3>
+                  <!-- Gene - Oct 06, 2026: Updated reference to Office of Mayor Hon. Rigil Kent G. Lim -->
+                  <!--
                   <p class="text-xs text-slate-400">
                     Official Prototype Package • Office of the Mayor & Sangguniang Bayan
+                  </p>
+                  -->
+                  <p class="text-xs text-slate-400">
+                    Official Prototype Package • Office of Mayor Hon. Rigil Kent G. Lim & Sangguniang Bayan
                   </p>
                 </div>
               </div>
@@ -281,7 +287,11 @@
 
                   <!-- Recent Municipal Notice -->
                   <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px]">
+                    <!-- Gene - Oct 06, 2026: Updated notice title to specify Office of Mayor Hon. Rigil Kent G. Lim -->
+                    <!--
                     <span class="text-[9px] text-amber-300 font-bold uppercase tracking-wider block">Notice from Mayor's Office</span>
+                    -->
+                    <span class="text-[9px] text-amber-300 font-bold uppercase tracking-wider block">Notice from Office of Mayor Hon. Rigil Kent G. Lim</span>
                     <p class="text-slate-300 mt-0.5 text-[10.5px]">
                       Weekly mobile health mission arrives in Sibay Island this Thursday. Bring your PhilHealth / Caluya e-ID.
                     </p>

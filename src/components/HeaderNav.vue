@@ -282,13 +282,22 @@
 
         <!-- Right Action Buttons (Compact, elegant, never exceeds container) -->
         <div class="hidden sm:flex items-center space-x-1.5 2xl:space-x-2 shrink-0">
-          <!-- Vice Mayor Proposal Button -->
+          <!-- Gene - Oct 06, 2026: Removed Vice Mayor text from proposal button, simplified label to 'Proposal' -->
+          <!--
           <button
             @click="$emit('open-proposal')"
             class="group relative inline-flex items-center space-x-1.5 px-2.5 py-1.5 2xl:px-3.5 2xl:py-2 rounded-xl text-xs 2xl:text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-sky-600 to-teal-600 hover:from-indigo-700 hover:to-teal-700 shadow-md hover:shadow-lg transition-all transform active:scale-95 cursor-pointer shrink-0 whitespace-nowrap"
           >
             <Sparkles class="w-3.5 h-3.5 text-amber-300 animate-spin" style="animation-duration: 4s;" />
             <span class="hidden lg:inline">Vice Mayor </span>
+            <span>Proposal</span>
+          </button>
+          -->
+          <button
+            @click="$emit('open-proposal')"
+            class="group relative inline-flex items-center space-x-1.5 px-3 py-1.5 2xl:px-3.5 2xl:py-2 rounded-xl text-xs 2xl:text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-sky-600 to-teal-600 hover:from-indigo-700 hover:to-teal-700 shadow-md hover:shadow-lg transition-all transform active:scale-95 cursor-pointer shrink-0 whitespace-nowrap"
+          >
+            <Sparkles class="w-3.5 h-3.5 text-amber-300 animate-spin" style="animation-duration: 4s;" />
             <span>Proposal</span>
           </button>
 
@@ -338,12 +347,22 @@
         </div>
         -->
         <div class="flex xl:hidden items-center space-x-1.5 sm:space-x-2 shrink-0">
+          <!-- Gene - Oct 06, 2026: Simplified mobile proposal button to just 'Proposal' -->
+          <!--
           <button
             @click="$emit('open-proposal')"
             class="px-2 sm:px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-sky-600 hover:from-indigo-700 hover:to-sky-700 active:scale-95 transition-all flex items-center space-x-1 whitespace-nowrap shadow-xs cursor-pointer"
           >
             <FileText class="w-3.5 h-3.5" />
             <span class="hidden xs:inline">SB </span>
+            <span>Proposal</span>
+          </button>
+          -->
+          <button
+            @click="$emit('open-proposal')"
+            class="px-2 sm:px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-sky-600 hover:from-indigo-700 hover:to-sky-700 active:scale-95 transition-all flex items-center space-x-1 whitespace-nowrap shadow-xs cursor-pointer"
+          >
+            <FileText class="w-3.5 h-3.5" />
             <span>Proposal</span>
           </button>
           <button
@@ -410,12 +429,22 @@
       </button>
 
       <div class="pt-3 border-t border-slate-100 flex flex-col space-y-2.5">
+        <!-- Gene - Oct 06, 2026: Updated mobile drawer proposal button label to 'Proposal' -->
+        <!--
         <button
           @click="mobileMenuOpen = false; $emit('open-proposal')"
           class="w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-sky-600 to-teal-600 hover:from-indigo-700 hover:to-teal-700 flex items-center justify-center space-x-2 shadow-md active:scale-98 transition-all cursor-pointer"
         >
           <Sparkles class="w-4 h-4 text-amber-300" />
           <span>Vice Mayor's Modernization Proposal</span>
+        </button>
+        -->
+        <button
+          @click="mobileMenuOpen = false; $emit('open-proposal')"
+          class="w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-sky-600 to-teal-600 hover:from-indigo-700 hover:to-teal-700 flex items-center justify-center space-x-2 shadow-md active:scale-98 transition-all cursor-pointer"
+        >
+          <Sparkles class="w-4 h-4 text-amber-300" />
+          <span>Proposal</span>
         </button>
 
         <a

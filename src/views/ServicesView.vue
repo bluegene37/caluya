@@ -17,8 +17,14 @@
             Citizen e-Services & Financial Calculators
           </h1>
         </div>
+        <!-- Gene - Oct 06, 2026: Updated Mayor reference to Mayor Hon. Rigil Kent G. Lim -->
+        <!--
         <p class="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
           Zero-contact municipal transactions complying with Republic Act No. 11032. Estimate business permits, calculate Real Property Tax, request civil certificates, and send direct feedback to the Mayor's Action Desk.
+        </p>
+        -->
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+          Zero-contact municipal transactions complying with Republic Act No. 11032. Estimate business permits, calculate Real Property Tax, request civil certificates, and send direct feedback to Mayor Hon. Rigil Kent G. Lim's Action Desk.
         </p>
       </div>
     </div>

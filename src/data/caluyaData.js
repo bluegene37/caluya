@@ -221,12 +221,25 @@ export const ONLINE_SERVICES = [
     fee: "Free Public Advisory",
     actionText: "View Live Board"
   },
+  // Gene - Oct 06, 2026: Updated Mayor Action Desk service entry to cite Mayor Hon. Rigil Kent G. Lim
+  /*
   {
     id: "mayors-action",
     code: "SVC-05",
     title: "e-Reklamo & Citizen Helpdesk",
     department: "Office of the Municipal Mayor",
     description: "Direct citizen feedback line. Report public service issues, emergency infrastructure concerns, or medical evacuation requests directly to the Mayor's desk.",
+    turnaround: "Response within 48 Hours",
+    fee: "Free Service",
+    actionText: "Submit Feedback"
+  },
+  */
+  {
+    id: "mayors-action",
+    code: "SVC-05",
+    title: "Mayor Hon. Rigil Kent G. Lim's Action Desk (e-Reklamo)",
+    department: "Office of Municipal Mayor Hon. Rigil Kent G. Lim",
+    description: "Direct citizen feedback line. Report public service issues, emergency infrastructure concerns, or medical evacuation requests directly to Mayor Hon. Rigil Kent G. Lim's executive desk.",
     turnaround: "Response within 48 Hours",
     fee: "Free Service",
     actionText: "Submit Feedback"
@@ -398,7 +411,9 @@ export const PROPOSAL_DATA = {
     {
       measure: "Draft Sangguniang Bayan Resolution No. 2026-042",
       title: "Resolution Authorizing Local Chief Executive to Enter into E-Gov MOAs",
-      scope: "Authorizing the Municipal Mayor to enter into agreements with DICT (e-LGU and GovNet), LandBank of the Philippines (Link.BizPortal), and GCash/Maya for official payment gateway integration.",
+      // Gene - Oct 06, 2026: Updated scope description to specify Municipal Mayor Hon. Rigil Kent G. Lim
+      // scope: "Authorizing the Municipal Mayor to enter into agreements with DICT (e-LGU and GovNet), LandBank of the Philippines (Link.BizPortal), and GCash/Maya for official payment gateway integration.",
+      scope: "Authorizing Municipal Mayor Hon. Rigil Kent G. Lim to enter into agreements with DICT (e-LGU and GovNet), LandBank of the Philippines (Link.BizPortal), and GCash/Maya for official payment gateway integration.",
       sponsor: "Committee on Rules, Ordinances & Legal Matters"
     },
     {

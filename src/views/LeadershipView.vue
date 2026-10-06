@@ -23,8 +23,14 @@
           The executive and legislative officials of the Municipality of Caluya, Antique. Led by the Office of the Municipal Mayor, Vice Mayor Hon. Genevive L. Reyes, and the 10 honorable members of the Sangguniang Bayan council.
         </p>
         -->
+        <!-- Gene - Oct 06, 2026: Updated description to include Municipal Mayor Hon. Rigil Kent G. Lim -->
+        <!--
         <p class="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
           The executive and legislative officials of the Municipality of Caluya, Antique. Led by the Office of the Municipal Mayor, Vice Mayor Hon. Belfe S. Duran, and the 10 honorable members of the Sangguniang Bayan council.
+        </p>
+        -->
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+          The executive and legislative officials of the Municipality of Caluya, Antique. Led by Municipal Mayor Hon. Rigil Kent G. Lim, Vice Mayor Hon. Belfe S. Duran, and the 10 honorable members of the Sangguniang Bayan council.
         </p>
       </div>
     </div>
