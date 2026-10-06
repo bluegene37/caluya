@@ -213,6 +213,8 @@
                 Empowering 18 Island Barangays Through Zero-Travel E-Governance
               </h2>
 
+              <!-- Gene - Oct 06, 2026: Updated proposal banner copy to attribute genexis.dev and proponent Raffy Soquilon presenting for Hon. Belfe S. Duran -->
+              <!--
               <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-3xl">
                 Led by our Municipal Mayor and <strong class="text-amber-300 font-extrabold">Vice Mayor Hon. Belfe S. Duran</strong> (Presiding Officer of the Sangguniang Bayan), Caluya is championing a landmark legislative initiative to eliminate costly inter-island pumpboat travel and deliver 24/7 emergency rescue, digital permits, and healthcare access directly to all citizens.
               </p>
@@ -264,6 +266,58 @@
                 </div>
               </div>
             </div>
+            -->
+            <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+              Presented for the evaluation of <strong class="text-amber-300 font-extrabold">Vice Mayor Hon. Belfe S. Duran</strong> (Presiding Officer of the Sangguniang Bayan) and the municipal administration, this digital portal by <strong class="text-sky-300 font-bold">genexis.dev</strong> (proponent Raffy Soquilon) connects all 18 island barangays with zero-travel public services, 24/7 sea ambulance dispatch, and disaster alerts.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <button
+                @click="$emit('open-proposal')"
+                class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 shadow-lg shadow-amber-400/20 transition-all transform active:scale-95 cursor-pointer"
+              >
+                <Sparkles class="w-4 h-4 text-slate-950" />
+                <span>View genexis.dev Proposal</span>
+                <ArrowRight class="w-4 h-4 ml-1" />
+              </button>
+
+              <router-link
+                to="/leadership"
+                class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-colors"
+              >
+                <Users class="w-4 h-4 text-sky-400" />
+                <span>Sangguniang Bayan Council</span>
+              </router-link>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 bg-slate-800/50 backdrop-blur-md rounded-2xl p-6 border border-slate-700/60 space-y-4">
+            <div class="flex items-center space-x-3 pb-3 border-b border-slate-700/60">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-md">
+                VM
+              </div>
+              <div>
+                <div class="text-xs uppercase tracking-wider text-amber-400 font-bold">Municipal Vice Mayor</div>
+                <div class="text-base font-extrabold text-white">Hon. Belfe S. Duran</div>
+                <div class="text-[11px] text-slate-400">Presiding Officer, Sangguniang Bayan</div>
+              </div>
+            </div>
+
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex items-start space-x-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Target: Zero-Travel Services for 18 Island Barangays</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>₱15M+ Annual Sea Travel Fare Savings for Island Families</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Technology by genexis.dev (Proponent: Raffy Soquilon)</span>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>

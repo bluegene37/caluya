@@ -140,7 +140,8 @@
       </div>
     </div>
 
-    <!-- Republic Standards Bottom Bar -->
+    <!-- Gene - Oct 06, 2026: Added genexis.dev and Raffy Soquilon proponent attribution in footer bottom bar -->
+    <!--
     <div class="bg-slate-900 border-t border-slate-800/80 py-4">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
         <div>
@@ -152,6 +153,24 @@
           <span>Data Privacy Act (RA 10173)</span>
           <span>•</span>
           <span>Bagong Pilipinas</span>
+        </div>
+      </div>
+    </div>
+    -->
+    <div class="bg-slate-900 border-t border-slate-800/80 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+        <div class="text-center sm:text-left">
+          <span>© 2026 Municipality of Caluya, Antique. Republic of the Philippines. All rights reserved.</span>
+          <span class="block text-slate-500 text-[10px] mt-0.5">Prototype engineered by <strong class="text-sky-300">genexis.dev</strong> • Proponent: <strong class="text-slate-300">Raffy Soquilon</strong></span>
+        </div>
+        <div class="flex items-center space-x-3 text-slate-400 text-[11px]">
+          <span>Freedom of Information (FOI)</span>
+          <span>•</span>
+          <span>Data Privacy Act (RA 10173)</span>
+          <span>•</span>
+          <button @click="$emit('open-proposal')" class="text-amber-400 hover:text-amber-300 font-bold hover:underline cursor-pointer">
+            Evaluation Proposal
+          </button>
         </div>
       </div>
     </div>

@@ -30,13 +30,14 @@ This project delivers:
 
 ---
 
-## 🏛️ Executive Proposal for the Vice Mayor
+<!-- Gene - Oct 06, 2026: Updated README.md proposal section to attribute genexis.dev and proponent Raffy Soquilon presenting for Hon. Belfe S. Duran -->
+## 🏛️ E-Governance Proposal & Technology Presentation (genexis.dev)
 
-Built into the header is an interactive **Vice Mayor Proposal** modal featuring:
-- **7-Slide Legislative Pitch Deck:** Clear presentation addressing island isolation, economic benefits (~₱15M annual citizen savings on boat fares), and phased rollout across all 18 barangays.
-- **Draft Sangguniang Bayan Resolution:** Modeled as **SB Resolution No. 2026-088 (Series of 2026)** sponsored by Vice Mayor Hon. Belfe S. Duran and the Committee on Rules, Laws & Ordinances.
-- **Print-Ready Document Letterhead:** Formal layout formatted with the official Caluya municipal seal, ready for council deliberations or PDF export (`window.print()`).
-- **Fiscal Feasibility:** Grounded in statutory mandates (RA 7160 Local Government Code, RA 11032 Ease of Doing Business, and DILG SGLG compliance).
+Built into the portal is an interactive **E-Governance Proposal** modal presented by proponent **Raffy Soquilon** (**genexis.dev**) for the kind evaluation of **Hon. Belfe S. Duran** (Municipal Vice Mayor & Presiding Officer) and the **Sangguniang Bayan ng Caluya**:
+- **7-Slide Interactive Presentation:** Clear, respectful demonstration showcasing what has been engineered—inter-island zero-travel e-services, live MDRRMO maritime rescue lifelines, transparent legislative archives, and ~₱15M annual sea fare savings for island families.
+- **Print-Ready Document View:** Formal letterhead layout with the official Caluya municipal seal, structured for council deliberations or PDF export (`window.print()`).
+- **Island-Optimized Architecture:** Lightweight Vue 3 + Vite implementation designed for low-bandwidth 3G/4G maritime connectivity with offline emergency caching.
+- **Consultative, Non-Directive Approach:** Presents a working, testable software prototype ready for demonstration and feedback, rather than imposing legislative mandates.
 
 ---
 
@@ -206,4 +207,5 @@ This web application and digital governance proposal adhere to Republic of the P
 
 - **Municipality of Caluya Official Portal:** Assets and official seal referenced from [DICT e-LGU Caluya News](https://elgu-caluya-antique-news.e.gov.ph/home).
 - **Prepared for:** Office of the Municipal Vice Mayor **Hon. Belfe S. Duran** and the members of the **Sangguniang Bayan ng Caluya**, Province of Antique.
-- **Author Attribution:** Designed and developed by **Gene** (October 2026).
+- **Proponent & Company:** Submitted by **Raffy Soquilon** (Lead Proponent) • **genexis.dev**.
+- **Engineering & Implementation:** Designed and developed by **genexis.dev** (October 2026).

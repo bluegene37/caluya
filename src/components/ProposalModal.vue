@@ -1,7 +1,13 @@
 <!-- Gene - Oct 06, 2026: Vue 3 ProposalModal component for LGU Caluya Modernization Proposal -->
 <template>
+  <!-- Gene - Oct 06, 2026: Added proposal-modal-overlay and proposal-modal-card classes for whole-page PDF print/download support -->
+  <!--
   <div v-if="isOpen" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
     <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+  -->
+  <div v-if="isOpen" class="proposal-modal-overlay fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
+    <div class="proposal-modal-card bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+
       
       <!-- Gene - Oct 06, 2026: Updated ProposalModal header to highlight Vice Mayor Hon. Genevive L. Reyes and legislative pitch -->
       <!--
@@ -83,6 +89,8 @@
 
       <div class="flex-1 overflow-y-auto p-6 sm:p-8 bg-slate-50">
       -->
+      <!-- Gene - Oct 06, 2026: Updated ProposalModal header to feature genexis.dev and proponent Raffy Soquilon presenting respectfully to Hon. Belfe S. Duran, preventing any element overlap -->
+      <!--
       <div class="px-4 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800 flex-shrink-0">
         <div class="flex items-center space-x-2.5 sm:space-x-3">
           <img
@@ -105,7 +113,6 @@
         </div>
 
         <div class="flex items-center space-x-1 sm:space-x-2">
-          <!-- View Mode Toggle -->
           <div class="hidden sm:flex items-center bg-slate-800 p-0.5 rounded-lg border border-slate-700 text-xs">
             <button
               @click="viewMode = 'deck'"
@@ -144,6 +151,74 @@
           </button>
         </div>
       </div>
+      -->
+
+      <div class="px-3.5 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800 flex-shrink-0 gap-3">
+        <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0 flex-1">
+          <img
+            src="/images/caluya-logo.png"
+            alt="Official Seal of Caluya"
+            class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-contain bg-white p-0.5 border border-amber-400 shadow-md shrink-0"
+          />
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span class="text-[9px] sm:text-[10px] font-extrabold text-amber-300 uppercase tracking-wider">
+                genexis.dev Prototype
+              </span>
+              <span class="text-[8px] sm:text-[9px] px-1.5 py-0.5 rounded bg-sky-900/90 text-sky-200 border border-sky-700/80 font-mono">
+                For Hon. Belfe S. Duran
+              </span>
+            </div>
+            <h3 class="text-xs sm:text-base lg:text-lg font-black text-white leading-tight truncate mt-0.5">
+              Caluya Digital Platform Presentation
+            </h3>
+            <span class="text-[10px] sm:text-[11px] text-slate-300 block truncate">
+              Proponent: <strong class="text-white">{{ PROPOSAL_DATA.proponent }}</strong> ({{ PROPOSAL_DATA.company }}) • For: <strong class="text-amber-300">{{ PROPOSAL_DATA.targetOfficial }}</strong>
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-1 sm:space-x-2 shrink-0">
+          <!-- View Mode Toggle -->
+          <div class="hidden sm:flex items-center bg-slate-800/90 p-0.5 rounded-lg border border-slate-700 text-xs">
+            <button
+              @click="viewMode = 'deck'"
+              :class="[
+                'px-2.5 py-1 rounded font-bold transition-all cursor-pointer',
+                viewMode === 'deck' ? 'bg-amber-400 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
+              ]"
+            >
+              Slide Deck
+            </button>
+            <button
+              @click="viewMode = 'document'"
+              :class="[
+                'px-2.5 py-1 rounded font-bold transition-all cursor-pointer',
+                viewMode === 'document' ? 'bg-amber-400 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
+              ]"
+            >
+              Full Document
+            </button>
+          </div>
+
+          <button
+            @click="handlePrint"
+            class="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+            title="Print / Save to PDF"
+          >
+            <Printer class="w-4 h-4" />
+          </button>
+
+          <button
+            @click="$emit('close')"
+            class="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+            aria-label="Close"
+          >
+            <X class="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
 
       <!-- Modal Body Content -->
       <div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50">
@@ -289,7 +364,8 @@
           </div>
           -->
 
-          <!-- New Upgraded Slide Deck for Vice Mayor & SB -->
+          <!-- Gene - Oct 06, 2026: Refactored Slide Deck to present what genexis.dev and proponent Raffy Soquilon have developed for Hon. Belfe S. Duran and the Sangguniang Bayan, ensuring non-overlapping responsive layout and respectful presentation tone -->
+          <!--
           <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm min-h-[420px] flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -313,7 +389,6 @@
                 {{ slides[currentSlide].subtitle }}
               </p>
 
-              <!-- Slide 0: Executive Briefing for Vice Mayor -->
               <div v-if="currentSlide === 0" class="space-y-4">
                 <div class="p-4 rounded-2xl bg-gradient-to-r from-sky-50 to-indigo-50 border border-sky-200">
                   <div class="flex items-center justify-between mb-1">
@@ -344,16 +419,11 @@
                   <Award class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong class="text-emerald-900 block">Historic Opportunity for the Sangguniang Bayan:</strong>
-                    <!-- Gene - Oct 06, 2026: Updated Vice Mayor name to Hon. Belfe S. Duran per user verification -->
-                    <!--
-                    <span>Through Vice Mayor Genevive L. Reyes's sponsorship, Caluya can become the first island municipality in Antique with zero-travel digital public services and live sea-lane disaster monitoring.</span>
-                    -->
                     <span>Through Vice Mayor Belfe S. Duran's sponsorship, Caluya can become the first island municipality in Antique with zero-travel digital public services and live sea-lane disaster monitoring.</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Slide 1: Core Problem: Island Disconnect -->
               <div v-else-if="currentSlide === 1" class="space-y-3.5">
                 <div class="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs">
                   <strong class="text-rose-900 block mb-1">1. Prohibitive Inter-Island Sea Travel Expenses:</strong>
@@ -369,7 +439,6 @@
                 </div>
               </div>
 
-              <!-- Slide 2: The 4 Strategic Pillars -->
               <div v-else-if="currentSlide === 2" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div
                   v-for="p in PROPOSAL_DATA.pillars"
@@ -394,7 +463,6 @@
                 </div>
               </div>
 
-              <!-- Slide 3: Sangguniang Bayan Legislative Agenda -->
               <div v-else-if="currentSlide === 3" class="space-y-3">
                 <div
                   v-for="(act, idx) in PROPOSAL_DATA.legislativeActions"
@@ -410,7 +478,6 @@
                 </div>
               </div>
 
-              <!-- Slide 4: Draft Sangguniang Bayan Resolution -->
               <div v-else-if="currentSlide === 4" class="space-y-3">
                 <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs space-y-3 font-serif">
                   <div class="text-center border-b border-amber-200/80 pb-2">
@@ -432,7 +499,6 @@
                 </div>
               </div>
 
-              <!-- Slide 5: Technical Architecture -->
               <div v-else-if="currentSlide === 5" class="space-y-2.5">
                 <div
                   v-for="(feat, idx) in PROPOSAL_DATA.technicalFeatures"
@@ -447,7 +513,6 @@
                 </div>
               </div>
 
-              <!-- Slide 6: Phased Roadmap & Public ROI -->
               <div v-else-if="currentSlide === 6" class="space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                   <div v-for="(r, idx) in PROPOSAL_DATA.roadmap" :key="idx" class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
@@ -485,6 +550,221 @@
               <span class="font-semibold text-sky-800">Sangguniang Bayan ng Caluya • Antique</span>
             </div>
           </div>
+          -->
+
+          <!-- New Clean Slide Deck Presentation by genexis.dev (Proponent: Raffy Soquilon) -->
+          <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-slate-200 shadow-sm min-h-[380px] sm:min-h-[420px] flex flex-col justify-between">
+            <div class="space-y-4">
+              <!-- Slide Header -->
+              <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+                <div class="flex items-center space-x-2">
+                  <span class="text-xs font-black text-sky-900 uppercase tracking-wider">
+                    Slide {{ currentSlide + 1 }} of {{ slides.length }}
+                  </span>
+                  <span class="text-[10px] bg-sky-100 text-sky-900 font-extrabold px-2 py-0.5 rounded-full border border-sky-200">
+                    genexis.dev Prototype
+                  </span>
+                </div>
+                <span class="text-xs text-slate-500 font-mono">
+                  Ref: {{ PROPOSAL_DATA.docReference }}
+                </span>
+              </div>
+
+              <!-- Slide Title & Subtitle -->
+              <div>
+                <h4 class="text-lg sm:text-2xl font-black text-slate-950 leading-snug">
+                  {{ slides[currentSlide].title }}
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+                  {{ slides[currentSlide].subtitle }}
+                </p>
+              </div>
+
+              <!-- SLIDE 0: Executive Presentation & Vision -->
+              <div v-if="currentSlide === 0" class="space-y-3.5">
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-sky-50 via-slate-50 to-indigo-50 border border-sky-200">
+                  <div class="flex flex-wrap items-center justify-between gap-1 mb-1.5">
+                    <span class="text-xs font-bold text-sky-900 uppercase tracking-wider">Vision for Caluya E-Governance</span>
+                    <span class="text-[10px] text-amber-900 bg-amber-100 font-bold px-2 py-0.5 rounded-full">Submitted for Evaluation</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
+                    "{{ PROPOSAL_DATA.vision }}"
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs">
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <span class="font-bold text-slate-900 block mb-1">Target Beneficiary</span>
+                    <p class="text-slate-600 leading-relaxed">42,895+ constituents across all 18 island barangays in Caluya, Antique.</p>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <span class="font-bold text-slate-900 block mb-1">Technology Proponent</span>
+                    <p class="text-slate-600 leading-relaxed"><strong>{{ PROPOSAL_DATA.proponent }}</strong> • <strong>{{ PROPOSAL_DATA.company }}</strong></p>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <span class="font-bold text-slate-900 block mb-1">Presented To</span>
+                    <p class="text-slate-600 leading-relaxed"><strong>{{ PROPOSAL_DATA.targetOfficial }}</strong>, Vice Mayor & Sangguniang Bayan</p>
+                  </div>
+                </div>
+
+                <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-950 flex items-start space-x-2">
+                  <Award class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong class="text-emerald-900 block">A Working Solution Ready Today:</strong>
+                    <span>Instead of abstract concepts, genexis.dev has developed this live prototype to demonstrate how modern web technology can immediately serve the island communities of Caluya.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDE 1: Archipelagic Context & Island Challenges -->
+              <div v-else-if="currentSlide === 1" class="space-y-3">
+                <div class="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs">
+                  <strong class="text-rose-950 font-bold block mb-1">1. High Inter-Island Sea Travel Expenses:</strong>
+                  <p class="text-rose-900 leading-relaxed">Citizens from Semirara, Sibay, and Sibato spend ₱400–₱800 per round-trip motorized pumpboat voyage just to apply for basic business permits, civil registry certificates, or tax clearances at Poblacion.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs">
+                  <strong class="text-amber-950 font-bold block mb-1">2. Monsoon Vulnerabilities & Stranded Travelers:</strong>
+                  <p class="text-amber-900 leading-relaxed">Sudden habagat/amihan gale warnings cancel passenger boat sailings with zero digital notice, leaving island constituents stranded at ports without lodging or emergency support.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-sky-50 border border-sky-200 text-xs">
+                  <strong class="text-sky-950 font-bold block mb-1">3. Distance in Public Information Access:</strong>
+                  <p class="text-sky-900 leading-relaxed">Constituents and barangay councils in outlying islands frequently lack instant access to municipal ordinances, resolutions, social aid programs, and visiting doctor schedules.</p>
+                </div>
+              </div>
+
+              <!-- SLIDE 2: The 4 Strategic System Pillars -->
+              <div v-else-if="currentSlide === 2" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div
+                  v-for="p in PROPOSAL_DATA.pillars"
+                  :key="p.num"
+                  class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-center space-x-2 text-sky-900 font-extrabold text-xs">
+                      <span class="w-5 h-5 rounded-full bg-sky-200 text-sky-950 flex items-center justify-center text-[10px] font-black shrink-0">{{ p.num }}</span>
+                      <span class="leading-snug">{{ p.title }}</span>
+                    </div>
+                    <p class="mt-2 text-xs text-slate-600 leading-relaxed">{{ p.desc }}</p>
+                  </div>
+                  <div class="mt-2.5 pt-2 border-t border-slate-200/60 space-y-1">
+                    <div class="text-[10px] font-semibold text-emerald-700">
+                      Impact: {{ p.impact }}
+                    </div>
+                    <div class="text-[10px] font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
+                      {{ p.highlight }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDE 3: Working Prototype Showcase -->
+              <div v-else-if="currentSlide === 3" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div
+                  v-for="(mod, idx) in PROPOSAL_DATA.prototypeModules"
+                  :key="idx"
+                  class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between text-xs"
+                >
+                  <div>
+                    <div class="font-extrabold text-sky-950 text-xs flex items-center space-x-1.5 pb-1 border-b border-slate-200/80">
+                      <CheckCircle class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>{{ mod.category }}</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 font-medium mt-1 mb-2">{{ mod.summary }}</p>
+                    <ul class="space-y-1">
+                      <li v-for="(feat, fIdx) in mod.features" :key="fIdx" class="text-slate-700 text-[11px] flex items-start space-x-1.5">
+                        <span class="text-sky-600 font-bold shrink-0">•</span>
+                        <span>{{ feat }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDE 4: Connecting All 18 Island Barangays -->
+              <div v-else-if="currentSlide === 4" class="space-y-3.5">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="font-black text-sky-900 text-xs mb-1">Caluya Island Cluster</div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                      Poblacion, Dawis, Imba, Masidlakon, Sabang, Salacay, Banago
+                    </p>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="font-black text-sky-900 text-xs mb-1">Semirara Island Cluster</div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                      Semirara, Alegria, Tinogboc (Energy center & industrial hub)
+                    </p>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="font-black text-sky-900 text-xs mb-1">Sibay & Outlying Islets</div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                      Bacong, Bonbon, Dionela, Harigue, Hininga-an, San Jose, Sibato, Sibolo
+                    </p>
+                  </div>
+                </div>
+
+                <div class="p-3.5 bg-sky-50 rounded-xl border border-sky-200 text-xs text-sky-950 space-y-1">
+                  <strong class="text-sky-900 block">Universal Island Access:</strong>
+                  <p class="leading-relaxed">Every resident, whether at Poblacion or across the sea in Sibay or Semirara, has the exact same access to municipal documents, weather alerts, and emergency dispatch.</p>
+                </div>
+
+                <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-950">
+                  <strong class="text-emerald-900 block mb-0.5">Estimated ₱15,000,000 Annual Citizen Relief:</strong>
+                  <span>Eliminating repetitive inter-island pumpboat travel for routine permits and paperwork directly protects household incomes across all 18 barangays.</span>
+                </div>
+              </div>
+
+              <!-- SLIDE 5: Island-Optimized Technical Architecture -->
+              <div v-else-if="currentSlide === 5" class="space-y-2.5">
+                <div
+                  v-for="(feat, idx) in PROPOSAL_DATA.technicalFeatures"
+                  :key="idx"
+                  class="p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs"
+                >
+                  <div class="font-bold text-slate-900 flex items-center space-x-1.5">
+                    <CheckCircle class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>{{ feat.name }}</span>
+                  </div>
+                  <p class="mt-1 text-slate-600 pl-5 leading-relaxed">{{ feat.detail }}</p>
+                </div>
+              </div>
+
+              <!-- SLIDE 6: Collaborative Next Steps & Phasing -->
+              <div v-else-if="currentSlide === 6" class="space-y-3.5">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                  <div v-for="(step, idx) in PROPOSAL_DATA.collaborativeSteps" :key="idx" class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                      <div class="text-[10px] font-bold text-sky-700 uppercase tracking-wider">{{ step.timeline }}</div>
+                      <div class="font-bold text-slate-900 text-xs mt-0.5">{{ step.step }}</div>
+                      <p class="text-[11px] text-slate-600 mt-1 leading-relaxed">{{ step.description }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-3.5 bg-slate-100 rounded-xl border border-slate-200 text-xs text-slate-800 space-y-1">
+                  <div class="font-bold text-slate-900 flex items-center space-x-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Ready for Demonstration & Guidance:</span>
+                  </div>
+                  <p class="leading-relaxed">
+                    genexis.dev is prepared to walk through the live portal with Vice Mayor Belfe S. Duran, the Sangguniang Bayan, and municipal department officers at your convenience to incorporate any local preferences.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Slide Bottom Bar -->
+            <div class="mt-6 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
+              <span class="font-medium text-slate-600">
+                Proponent: <strong class="text-slate-900">{{ PROPOSAL_DATA.preparedBy }}</strong>
+              </span>
+              <span class="font-semibold text-sky-800">
+                Presented for: <strong class="text-slate-900">{{ PROPOSAL_DATA.targetOfficial }}</strong> (Caluya, Antique)
+              </span>
+            </div>
+          </div>
+
 
           <!-- Slide Controls -->
           <div class="flex items-center justify-between pt-2">
@@ -637,27 +917,10 @@
         </div>
         -->
 
-        <!-- FULL FORMAL DOCUMENT VIEW (PRINT-READY) FOR VICE MAYOR & SANGGUNIANG BAYAN -->
+        <!-- Gene - Oct 06, 2026: Refactored Formal Document View, Bottom Bar and Script to respectfully present genexis.dev prototype by proponent Raffy Soquilon for Hon. Belfe S. Duran, with non-overlapping responsive layout -->
+        <!--
         <div v-else class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 text-slate-900 printable-proposal">
           
-          <!-- Document Header -->
-          <!-- Gene - Oct 06, 2026: Enhanced printable document header with official Caluya Municipal seal letterhead -->
-          <!--
-          <div class="text-center border-b-2 border-slate-900 pb-6 space-y-2">
-            <div class="text-xs font-bold uppercase tracking-widest text-slate-500">
-              REPUBLIKA NG PILIPINAS • LALAWIGAN NG ANTIQUE
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950">
-              SANGGUNIANG BAYAN NG CALUYA
-            </h2>
-            <div class="text-xs font-semibold text-sky-900 uppercase tracking-wider">
-              TANGGAPAN NG PANGALAWANG PUNONG BAYAN AT PRESIDING OFFICER
-            </div>
-            <div class="text-[11px] font-mono text-slate-500 pt-1">
-              LEGISLATIVE MASTERPLAN & E-GOVERNANCE PROPOSAL • {{ PROPOSAL_DATA.date }} • REF: {{ PROPOSAL_DATA.docReference }}
-            </div>
-          </div>
-          -->
           <div class="text-center border-b-2 border-slate-900 pb-6 space-y-2">
             <div class="flex items-center justify-center mb-2">
               <img
@@ -680,7 +943,6 @@
             </div>
           </div>
 
-          <!-- Title & Metadata -->
           <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
             <div class="inline-block px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-black uppercase tracking-wider">
               Official Legislative Pitch for Sangguniang Bayan Sponsorship
@@ -711,7 +973,6 @@
             </div>
           </div>
 
-          <!-- Section 1: Executive Summary -->
           <div class="space-y-3">
             <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5 flex items-center justify-between">
               <span>1. Executive Summary & Archipelagic Context</span>
@@ -722,7 +983,6 @@
             </p>
           </div>
 
-          <!-- Section 2: Legislative Sponsorship Agenda -->
           <div class="space-y-3">
             <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5 flex items-center justify-between">
               <span>2. Sangguniang Bayan Legislative Action Agenda</span>
@@ -744,7 +1004,6 @@
             </div>
           </div>
 
-          <!-- Section 3: The 4 Strategic Modernization Pillars -->
           <div class="space-y-3">
             <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5">
               3. Strategic Modernization Pillars
@@ -774,7 +1033,6 @@
             </div>
           </div>
 
-          <!-- Section 4: Full Draft Sangguniang Bayan Resolution -->
           <div class="space-y-3">
             <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5 flex items-center justify-between">
               <span>4. Complete Draft Sangguniang Bayan Resolution</span>
@@ -805,7 +1063,6 @@
             </div>
           </div>
 
-          <!-- Section 5: Technical Specifications -->
           <div class="space-y-3">
             <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5">
               5. Island-Resilient Technical Architecture & Security
@@ -822,7 +1079,6 @@
             </div>
           </div>
 
-          <!-- Section 6: Phased Implementation Roadmap & Budget -->
           <div class="space-y-3">
             <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5">
               6. Phased Implementation Roadmap & Budget Phasing
@@ -841,7 +1097,6 @@
               </div>
             </div>
 
-            <!-- Budget Table -->
             <div class="pt-3">
               <table class="w-full text-xs text-left border border-slate-200 rounded-xl overflow-hidden">
                 <thead class="bg-slate-100 text-slate-700">
@@ -860,7 +1115,6 @@
             </div>
           </div>
 
-          <!-- Section 7: Formal Signatures & Endorsement Block -->
           <div class="pt-8 border-t-2 border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-8 text-xs">
             <div class="space-y-12">
               <div>Presented & Submitted By:</div>
@@ -898,25 +1152,291 @@
 
         </div>
 
+        <div class="px-6 py-3.5 bg-white border-t border-slate-200 flex items-center justify-between text-xs flex-shrink-0">
+          <div class="flex items-center space-x-2 text-slate-500">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Ready for Vice Mayor sponsorship & Sangguniang Bayan session</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <button
+              @click="handlePrint"
+              class="px-3.5 py-1.5 rounded-xl font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center space-x-1.5 cursor-pointer"
+            >
+              <Printer class="w-3.5 h-3.5" />
+              <span>Print / PDF Document</span>
+            </button>
+            <button
+              @click="$emit('close')"
+              class="px-4 py-1.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+        -->
+
+        <!-- FULL FORMAL DOCUMENT VIEW (PRINT-READY) FOR EVALUATION BY HON. BELFE S. DURAN & SANGGUNIANG BAYAN -->
+        <div v-else class="bg-white p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-6 sm:space-y-8 text-slate-900 printable-proposal">
+          
+          <!-- Document Header -->
+          <div class="text-center border-b-2 border-slate-900 pb-5 sm:pb-6 space-y-2">
+            <div class="flex items-center justify-center mb-2">
+              <img
+                src="/images/caluya-logo.png"
+                alt="Official Seal of Caluya, Antique"
+                class="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow"
+              />
+            </div>
+            <div class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-slate-500">
+              REPUBLIKA NG PILIPINAS • LALAWIGAN NG ANTIQUE • BAYAN NG CALUYA
+            </div>
+            <h2 class="text-xl sm:text-3xl font-black text-slate-950">
+              SANGGUNIANG BAYAN NG CALUYA
+            </h2>
+            <div class="text-xs sm:text-sm font-bold text-sky-900 uppercase tracking-wider">
+              Tanggapan ng Pangalawang Punong Bayan at Presiding Officer
+            </div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-slate-500 pt-1">
+              PROTOTYPE PRESENTATION & TECHNOLOGY PROPOSAL • {{ PROPOSAL_DATA.date }} • REF: {{ PROPOSAL_DATA.docReference }}
+            </div>
+          </div>
+
+          <!-- Title & Metadata Box -->
+          <div class="bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 space-y-3">
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-900 text-[10px] font-extrabold uppercase tracking-wider">
+              Working Prototype Submitted by genexis.dev for Evaluation
+            </div>
+            <h3 class="text-base sm:text-xl font-black text-slate-950 uppercase leading-snug">
+              {{ PROPOSAL_DATA.title }}
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 font-medium">
+              {{ PROPOSAL_DATA.subTitle }}
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 pt-2 border-t border-slate-200">
+              <div>
+                <strong class="text-slate-900 block">Addressed To:</strong>
+                <span>{{ PROPOSAL_DATA.preparedFor }}</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Presented & Submitted By:</strong>
+                <span>{{ PROPOSAL_DATA.preparedBy }}</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Proponent Position:</strong>
+                <span>{{ PROPOSAL_DATA.proponentRole }}</span>
+              </div>
+              <div>
+                <strong class="text-slate-900 block">Scope of Coverage:</strong>
+                <span>All 18 Island Barangays of Caluya, Antique</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 1: Executive Summary -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5 flex flex-wrap items-center justify-between gap-1">
+              <span>1. Executive Summary & Archipelagic Context</span>
+              <span class="text-[10px] text-slate-400 lowercase font-normal font-mono">18 island barangays</span>
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed text-justify">
+              {{ PROPOSAL_DATA.executiveSummary }}
+            </p>
+          </div>
+
+          <!-- Section 2: Proponent Overview & Approach -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5 flex flex-wrap items-center justify-between gap-1">
+              <span>2. Proponent Approach: Respectful Presentation & Demonstration</span>
+              <span class="text-[10px] text-sky-800 font-bold uppercase">Working Prototype</span>
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div
+                v-for="(note, idx) in PROPOSAL_DATA.presentationNotes"
+                :key="idx"
+                class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between"
+              >
+                <div>
+                  <strong class="text-sky-950 block font-bold mb-1">{{ note.point }}</strong>
+                  <p class="text-slate-600 leading-relaxed text-[11.5px]">{{ note.detail }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: The 4 Strategic System Pillars -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5">
+              3. Strategic System Architecture & Pillars
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div
+                v-for="p in PROPOSAL_DATA.pillars"
+                :key="p.num"
+                class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2 flex flex-col justify-between"
+              >
+                <div>
+                  <div class="font-black text-sky-950 text-sm flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-sky-200 text-sky-950 flex items-center justify-center text-[10px] shrink-0 font-bold">{{ p.num }}</span>
+                    <span>{{ p.title }}</span>
+                  </div>
+                  <p class="text-slate-600 mt-2 leading-relaxed text-[11.5px]">{{ p.desc }}</p>
+                </div>
+                <div class="pt-2 border-t border-slate-200/80 space-y-1">
+                  <div class="font-semibold text-emerald-700 text-[11px]">
+                    Impact: {{ p.impact }}
+                  </div>
+                  <div class="font-bold text-sky-900 text-[11px]">
+                    Focus: {{ p.highlight }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Demonstrated Working Modules & Prototype Deliverables -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5 flex flex-wrap items-center justify-between gap-1">
+              <span>4. Demonstrated Prototype Capabilities & Working Modules</span>
+              <span class="text-[10px] text-emerald-800 font-bold bg-emerald-100 px-2 py-0.5 rounded">Live Software</span>
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div
+                v-for="(mod, idx) in PROPOSAL_DATA.prototypeModules"
+                :key="idx"
+                class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2"
+              >
+                <div class="font-black text-slate-950 text-sm flex items-center space-x-1.5 pb-1 border-b border-slate-200">
+                  <CheckCircle class="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>{{ mod.category }}</span>
+                </div>
+                <p class="text-[11px] text-slate-500 font-medium">{{ mod.summary }}</p>
+                <ul class="space-y-1 pt-1">
+                  <li v-for="(feat, fIdx) in mod.features" :key="fIdx" class="text-slate-700 text-[11px] flex items-start space-x-1.5">
+                    <span class="text-sky-600 font-bold shrink-0">•</span>
+                    <span>{{ feat }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5: Technical Specifications -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5">
+              5. Island-Resilient Technical Architecture & Security (genexis.dev)
+            </h4>
+            <div class="space-y-2 text-xs">
+              <div
+                v-for="(f, i) in PROPOSAL_DATA.technicalFeatures"
+                :key="i"
+                class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-start space-x-2"
+              >
+                <span class="font-bold text-slate-900 shrink-0">• {{ f.name }}:</span>
+                <span class="text-slate-600 leading-relaxed">{{ f.detail }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 6: Collaborative Consultation & Phasing Roadmap -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 uppercase tracking-wider border-b border-slate-200 pb-1.5">
+              6. Collaborative Phasing & Technical Handover Roadmap
+            </h4>
+            <div class="space-y-2 text-xs">
+              <div
+                v-for="(step, i) in PROPOSAL_DATA.collaborativeSteps"
+                :key="i"
+                class="p-3 rounded-lg bg-slate-50 border border-slate-200"
+              >
+                <div class="flex flex-wrap justify-between items-center font-bold text-slate-900 gap-1">
+                  <span>{{ step.step }}</span>
+                  <span class="text-sky-800 text-[11px] bg-sky-50 px-2 py-0.5 rounded border border-sky-200">{{ step.timeline }}</span>
+                </div>
+                <p class="mt-1 text-slate-600 text-[11.5px] leading-relaxed">{{ step.description }}</p>
+              </div>
+            </div>
+
+            <!-- Budget Table with overflow protection -->
+            <div class="pt-3">
+              <div class="overflow-x-auto w-full">
+                <table class="w-full text-xs text-left border border-slate-200 rounded-xl overflow-hidden min-w-[480px]">
+                  <thead class="bg-slate-100 text-slate-700">
+                    <tr>
+                      <th class="p-2.5 font-bold">Scope / Phase Item</th>
+                      <th class="p-2.5 font-bold text-right">Status / Scope Description</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100">
+                    <tr v-for="(b, idx) in PROPOSAL_DATA.budgetPhasing" :key="idx">
+                      <td class="p-2.5 text-slate-800 font-medium">{{ b.item }}</td>
+                      <td class="p-2.5 text-right font-mono font-bold text-sky-800">{{ b.cost }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7: Formal Submission & Endorsement Block -->
+          <div class="pt-8 border-t-2 border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-xs">
+            <div class="space-y-8 sm:space-y-12">
+              <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Presented & Submitted By:</div>
+              <div>
+                <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">{{ PROPOSAL_DATA.proponent }}</div>
+                <div class="text-slate-600 font-medium">{{ PROPOSAL_DATA.proponentRole }}</div>
+                <div class="text-[10px] text-sky-800 font-bold">{{ PROPOSAL_DATA.company }}</div>
+              </div>
+            </div>
+
+            <div class="space-y-8 sm:space-y-12">
+              <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Received for Evaluation & Review By:</div>
+              <div>
+                <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">{{ PROPOSAL_DATA.targetOfficial }}</div>
+                <div class="text-slate-600 font-medium">{{ PROPOSAL_DATA.targetRole }}</div>
+                <div class="text-[10px] text-slate-500">Sangguniang Bayan ng Caluya, Antique</div>
+              </div>
+            </div>
+
+            <div class="space-y-8 sm:space-y-12">
+              <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Attested & Recorded By:</div>
+              <div>
+                <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">Secretary to the Sangguniang Bayan</div>
+                <div class="text-slate-600 font-medium">Office of the Sangguniang Bayan Secretariat</div>
+                <div class="text-[10px] text-slate-500">Municipality of Caluya, Antique</div>
+              </div>
+            </div>
+
+            <div class="space-y-8 sm:space-y-12">
+              <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Copy Furnished & Noted By:</div>
+              <div>
+                <div class="font-black text-slate-900 border-t border-slate-400 pt-1 uppercase">{{ LGU_INFO.mayor.name }}</div>
+                <div class="text-slate-600 font-medium">Municipal Mayor</div>
+                <div class="text-[10px] text-slate-500">Municipality of Caluya, Antique</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
       <!-- Modal Bottom Bar -->
-      <div class="px-6 py-3.5 bg-white border-t border-slate-200 flex items-center justify-between text-xs flex-shrink-0">
-        <div class="flex items-center space-x-2 text-slate-500">
-          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span>Ready for Vice Mayor sponsorship & Sangguniang Bayan session</span>
+      <div class="px-4 sm:px-6 py-3 sm:py-3.5 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between text-xs flex-shrink-0 gap-2">
+        <div class="flex items-center space-x-2 text-slate-600 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+          <span class="truncate">genexis.dev prototype ready for demonstration • Proponent: <strong>{{ PROPOSAL_DATA.proponent }}</strong></span>
         </div>
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
           <button
             @click="handlePrint"
-            class="px-3.5 py-1.5 rounded-xl font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center space-x-1.5 cursor-pointer"
+            class="px-3 sm:px-3.5 py-1.5 rounded-xl font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center space-x-1.5 cursor-pointer text-xs"
           >
             <Printer class="w-3.5 h-3.5" />
             <span>Print / PDF Document</span>
           </button>
           <button
             @click="$emit('close')"
-            class="px-4 py-1.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer"
+            class="px-3.5 sm:px-4 py-1.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-800 text-white cursor-pointer text-xs"
           >
             Close
           </button>
@@ -928,7 +1448,7 @@
 </template>
 
 <script setup>
-// Gene - Oct 06, 2026: Vue 3 composition setup for ProposalModal tailored for Vice Mayor Hon. Genevive L. Reyes
+// Gene - Oct 06, 2026: Vue 3 composition setup for ProposalModal presenting genexis.dev prototype (Raffy Soquilon) to Hon. Belfe S. Duran
 import { ref } from 'vue';
 import { X, Printer, ChevronLeft, ChevronRight, CheckCircle, Award } from '@lucide/vue';
 import { PROPOSAL_DATA, LGU_INFO } from '../data/caluyaData';
@@ -945,18 +1465,8 @@ defineEmits(['close']);
 const viewMode = ref('deck');
 const currentSlide = ref(0);
 
-// Gene - Oct 06, 2026: Updated slide deck to feature Vice Mayor legislative agenda and draft SB resolution
+// Gene - Oct 06, 2026: Updated slide deck to present genexis.dev prototype by Raffy Soquilon for Hon. Belfe S. Duran without bossy legislative directives
 /*
-const slides = [
-  { title: "Executive Overview & Vision", subtitle: "Caluya Smart Island Digital Transformation 2026–2028" },
-  { title: "Core Problem: The Island Disconnect", subtitle: "Archipelagic Challenges Faced by Caluyanons" },
-  { title: "The 4 Strategic Modernization Pillars", subtitle: "Holistic Solution Architecture for Caluya LGU" },
-  { title: "Technical Architecture & Island Optimization", subtitle: "Designed for Real-World Remote Island Connectivity" },
-  { title: "Implementation Roadmap & Phasing", subtitle: "Milestones from Pilot to Full E-Governance" },
-  { title: "Budget Phasing & Return on Investment", subtitle: "Cost Efficiency & Maximum Community Value" }
-];
-*/
-
 const slides = [
   { title: "Executive Briefing for Vice Mayor & SB", subtitle: "Strategic Digital Transformation for all 18 Island Barangays" },
   { title: "Core Problem: The Island Disconnect", subtitle: "Archipelagic Travel Costs & Hazardous Sea Crossings" },
@@ -965,6 +1475,17 @@ const slides = [
   { title: "Draft Sangguniang Bayan Resolution", subtitle: "Resolution Approving the Caluya Smart Island Masterplan" },
   { title: "Technical Architecture & Island Optimization", subtitle: "Engineered for Low-Bandwidth Island Networks & Offline Resilience" },
   { title: "Implementation Roadmap & Public ROI", subtitle: "₱15M+ Annual Household Savings & SGLG Governance Seal" }
+];
+*/
+
+const slides = [
+  { title: "Executive Presentation & Vision", subtitle: "Presented by Raffy Soquilon (genexis.dev) to Vice Mayor Hon. Belfe S. Duran" },
+  { title: "Archipelagic Context & Island Challenges", subtitle: "Connecting Caluya's 18 Island Barangays across Semirara, Sibay & Outlying Islets" },
+  { title: "The 4 Strategic System Pillars", subtitle: "Zero-Travel E-Services, Sea Safety Lifelines & Low-Bandwidth Tech" },
+  { title: "Working Prototype Demonstration", subtitle: "What genexis.dev Has Engineered & Made Ready for LGU Evaluation" },
+  { title: "Universal Island Inclusion & Citizen Relief", subtitle: "₱15M+ Annual Transport Savings for Island Families" },
+  { title: "Island-Optimized Architecture", subtitle: "Vue 3 Lightweight Engineering Tailored for Remote Maritime Connectivity" },
+  { title: "Collaborative Consultation & Next Steps", subtitle: "Demonstration Walkthrough, Department Alignment & Turnkey Handover" }
 ];
 
 const handlePrint = () => {
