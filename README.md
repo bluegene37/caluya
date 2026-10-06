@@ -26,7 +26,7 @@ Caluya is an archipelagic first-class municipality in northern Antique composed 
 
 This project delivers:
 1. **A Comprehensive Citizen Gateway:** Complete access to 24/7 MDRRMO marine rescue, Rural Health Units (RHU 1 & RHU 2), medicine inventories, MSWDO social welfare, civil registry, e-BPLS business permits, real property tax calculators, and island tourism.
-2. **An Executive E-Governance Proposal & Legislative Pitch:** Tailored directly for the **Municipal Vice Mayor (Hon. Genevive L. Reyes)** and the **Sangguniang Bayan ng Caluya**, providing an interactive slide deck, printable formal brief, and draft municipal resolution for legislative sponsorship and funding under the 20% Municipal Development Fund (MDF) and 5% LDRRM Fund.
+2. **An Executive E-Governance Proposal & Legislative Pitch:** Tailored directly for the **Municipal Vice Mayor (Hon. Belfe S. Duran)** and the **Sangguniang Bayan ng Caluya**, providing an interactive slide deck, printable formal brief, and draft municipal resolution for legislative sponsorship and funding under the 20% Municipal Development Fund (MDF) and 5% LDRRM Fund.
 
 ---
 
@@ -34,7 +34,7 @@ This project delivers:
 
 Built into the header is an interactive **Vice Mayor Proposal** modal featuring:
 - **7-Slide Legislative Pitch Deck:** Clear presentation addressing island isolation, economic benefits (~₱15M annual citizen savings on boat fares), and phased rollout across all 18 barangays.
-- **Draft Sangguniang Bayan Resolution:** Modeled as **SB Resolution No. 2026-088 (Series of 2026)** sponsored by Vice Mayor Hon. Genevive L. Reyes and the Committee on Rules, Laws & Ordinances.
+- **Draft Sangguniang Bayan Resolution:** Modeled as **SB Resolution No. 2026-088 (Series of 2026)** sponsored by Vice Mayor Hon. Belfe S. Duran and the Committee on Rules, Laws & Ordinances.
 - **Print-Ready Document Letterhead:** Formal layout formatted with the official Caluya municipal seal, ready for council deliberations or PDF export (`window.print()`).
 - **Fiscal Feasibility:** Grounded in statutory mandates (RA 7160 Local Government Code, RA 11032 Ease of Doing Business, and DILG SGLG compliance).
 
@@ -205,5 +205,5 @@ This web application and digital governance proposal adhere to Republic of the P
 ## 🤝 Attribution & Credits
 
 - **Municipality of Caluya Official Portal:** Assets and official seal referenced from [DICT e-LGU Caluya News](https://elgu-caluya-antique-news.e.gov.ph/home).
-- **Prepared for:** Office of the Municipal Vice Mayor **Hon. Genevive L. Reyes** and the members of the **Sangguniang Bayan ng Caluya**, Province of Antique.
+- **Prepared for:** Office of the Municipal Vice Mayor **Hon. Belfe S. Duran** and the members of the **Sangguniang Bayan ng Caluya**, Province of Antique.
 - **Author Attribution:** Designed and developed by **Gene** (October 2026).

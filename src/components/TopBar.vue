@@ -5,7 +5,11 @@
     <!--
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2">
     -->
+    <!-- Gene - Oct 06, 2026: Reverted TopBar width from excessively wide 1850px back to max-w-7xl -->
+    <!--
     <div class="w-full max-w-[1850px] mx-auto px-2.5 sm:px-4 lg:px-6 py-1.5 flex flex-wrap items-center justify-between gap-2">
+    -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-2">
       <!-- Left: Philippine Standard Time & Republic Badge -->
       <div class="flex items-center space-x-3">
         <div class="flex items-center space-x-1.5 text-amber-400 font-semibold tracking-wide">

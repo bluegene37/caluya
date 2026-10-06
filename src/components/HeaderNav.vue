@@ -101,8 +101,13 @@
     </div>
     -->
 
-    <!-- Expanded Wide Menu Bar Container (No Wrapping) -->
+    <!-- Balanced Menu Bar Container -->
+    <!-- Gene - Oct 06, 2026: Adjusted menu bar width from excessively wide 1850px to standard max-w-7xl per user request -->
+    <!--
     <div class="w-full max-w-[1850px] mx-auto px-2.5 sm:px-4 lg:px-6">
+      <div class="flex items-center justify-between h-20 gap-2 xl:gap-4">
+    -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-2 xl:gap-4">
         
         <!-- Logo & Municipal Seal Brand -->
@@ -396,6 +401,8 @@ import { useRouter, useRoute } from 'vue-router';
 const router = useRouter();
 const route = useRoute();
 
+// Gene - Oct 06, 2026: Removed mobile-app from menu bar per user request to keep menu concise and balanced
+/*
 const navItems = [
   { id: 'home', path: '/', label: 'Home' },
   { id: 'rescue', path: '/rescue', label: '🚨 Rescue' },
@@ -403,6 +410,18 @@ const navItems = [
   { id: 'public-services', path: '/public-services', label: 'Public Assistance' },
   { id: 'services', path: '/services', label: 'e-Services' },
   { id: 'mobile-app', path: '/mobile-app', label: '📱 Mobile App' },
+  { id: 'islands', path: '/islands', label: 'Barangays' },
+  { id: 'tourism', path: '/tourism', label: 'Tourism' },
+  { id: 'transparency', path: '/transparency', label: 'Transparency' },
+  { id: 'leadership', path: '/leadership', label: 'Leadership' },
+];
+*/
+const navItems = [
+  { id: 'home', path: '/', label: 'Home' },
+  { id: 'rescue', path: '/rescue', label: '🚨 Rescue' },
+  { id: 'health', path: '/health', label: 'Health' },
+  { id: 'public-services', path: '/public-services', label: 'Public Assistance' },
+  { id: 'services', path: '/services', label: 'e-Services' },
   { id: 'islands', path: '/islands', label: 'Barangays' },
   { id: 'tourism', path: '/tourism', label: 'Tourism' },
   { id: 'transparency', path: '/transparency', label: 'Transparency' },

@@ -57,6 +57,9 @@
       </div>
     </section>
 
+    <!-- Gene - Oct 06, 2026: Embedded MobileAppSection directly on Home page per user request -->
+    <MobileAppSection />
+
     <!-- Quick Archipelagic Fact Strip -->
     <section class="py-12 bg-slate-900 text-white border-b border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,8 +87,12 @@
 
 <script setup>
 // Gene - Oct 06, 2026: Vue 3 composition setup for HomeView
-import { useRouter } from 'vue-router';
+// Gene - Oct 06, 2026: Added MobileAppSection import for Home page embedding
+/*
 import HeroSection from '../components/HeroSection.vue';
+*/
+import HeroSection from '../components/HeroSection.vue';
+import MobileAppSection from '../components/MobileAppSection.vue';
 import { 
   Compass, 
   Siren, 
@@ -206,7 +213,11 @@ const departments = [
   {
     path: '/leadership',
     title: 'LGU Leadership & Council',
+    // Gene - Oct 06, 2026: Updated Vice Mayor name to Hon. Belfe S. Duran per user verification
+    /*
     desc: 'Municipal Mayor, Vice Mayor Hon. Genevive L. Reyes, and Sangguniang Bayan councilors and committees.',
+    */
+    desc: 'Municipal Mayor, Vice Mayor Hon. Belfe S. Duran, and Sangguniang Bayan councilors and committees.',
     icon: Award,
     bgClass: 'bg-purple-50 border border-purple-200',
     iconClass: 'text-purple-600',

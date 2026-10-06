@@ -24,8 +24,23 @@ export const LGU_INFO = {
     title: "Municipal Vice Mayor & Presiding Officer",
   },
 */
+  // Gene - Oct 06, 2026: Updated Municipal Vice Mayor to Hon. Belfe S. Duran per user verification
+  /*
   viceMayor: {
     name: "Hon. Genevive L. Reyes",
+    title: "Municipal Vice Mayor & Presiding Officer",
+    subtitle: "Presiding Officer, Sangguniang Bayan ng Caluya",
+    message: "As Presiding Officer of the Sangguniang Bayan, our legislative mandate is to champion progressive ordinances, enact impactful development resolutions, and ensure equitable fiscal appropriations for all 18 island barangays. Modernizing Caluya through e-governance guarantees every islander equal, dignified access to public services, disaster protection, and economic empowerment.",
+    office: "Office of the Municipal Vice Mayor / Legislative Building, Poblacion",
+    committees: [
+      "Committee on Rules, Ordinances & Legal Matters",
+      "Committee on Appropriations & Ways and Means",
+      "Committee on Information & Communications Technology (ICT)"
+    ]
+  },
+  */
+  viceMayor: {
+    name: "Hon. Belfe S. Duran",
     title: "Municipal Vice Mayor & Presiding Officer",
     subtitle: "Presiding Officer, Sangguniang Bayan ng Caluya",
     message: "As Presiding Officer of the Sangguniang Bayan, our legislative mandate is to champion progressive ordinances, enact impactful development resolutions, and ensure equitable fiscal appropriations for all 18 island barangays. Modernizing Caluya through e-governance guarantees every islander equal, dignified access to public services, disaster protection, and economic empowerment.",
@@ -358,24 +373,41 @@ export const PROPOSAL_DATA = {
 export const PROPOSAL_DATA = {
   title: "Legislative & E-Governance Modernization Masterplan for Caluya",
   subTitle: "Bridging 18 Island Barangays Through Sangguniang Bayan Policy & Modern Digital Administration",
+  // Gene - Oct 06, 2026: Updated Vice Mayor and Presiding Officer to Hon. Belfe S. Duran per user verification
+  /*
   preparedFor: "Hon. Genevive L. Reyes, Municipal Vice Mayor & Presiding Officer, Sangguniang Bayan ng Caluya",
   targetOfficial: "Hon. Genevive L. Reyes",
+  */
+  preparedFor: "Hon. Belfe S. Duran, Municipal Vice Mayor & Presiding Officer, Sangguniang Bayan ng Caluya",
+  targetOfficial: "Hon. Belfe S. Duran",
   targetRole: "Municipal Vice Mayor & Presiding Officer",
   legislativeBody: "Sangguniang Bayan ng Caluya (18 Island Barangays)",
   preparedBy: "Caluya Digital Modernization & E-Governance Taskforce",
   date: "October 2026",
   docReference: "PROP-SB-CALUYA-2026-01",
   
+  // Gene - Oct 06, 2026: Updated vision statement with Vice Mayor Hon. Belfe S. Duran
+  /*
   vision: "To empower the Sangguniang Bayan under the leadership of Vice Mayor Genevive L. Reyes with a groundbreaking E-Governance ordinance and digital infrastructure that connects all 18 island barangays—eliminating perilous sea travel for municipal transactions, instituting 24/7 disaster lifelines, and advancing transparent council governance.",
+  */
+  vision: "To empower the Sangguniang Bayan under the leadership of Vice Mayor Belfe S. Duran with a groundbreaking E-Governance ordinance and digital infrastructure that connects all 18 island barangays—eliminating perilous sea travel for municipal transactions, instituting 24/7 disaster lifelines, and advancing transparent council governance.",
 
+  // Gene - Oct 06, 2026: Updated executiveSummary with Vice Mayor Hon. Belfe S. Duran
+  /*
   executiveSummary: "To the Honorable Municipal Vice Mayor Genevive L. Reyes and the Honorable Members of the Sangguniang Bayan ng Caluya: The Municipality of Caluya is an archipelagic jewel in Antique with 18 barangays distributed across Caluya Island, Semirara Island, Sibay Island, and surrounding islets. For decades, geography has posed severe equity challenges: citizens in Semirara and Sibay routinely risk stormy sea crossings and incur ₱400 to ₱800 per round trip in motorized banca fares just to process routine business permits, request civil certificates, or file for medical crisis aid at Poblacion. As the Presiding Officer of the legislative branch, the Vice Mayor possesses the constitutional and statutory power under RA 7160 to sponsor the 'Caluya E-Governance & Ease of Doing Business Ordinance of 2026', author a Sangguniang Bayan Resolution approving this modern web portal, and allocate funding under the 20% Municipal Development Fund (MDF) and 5% MDRRM Fund. This proposal presents the complete legislative and technological masterplan to transform Caluya into Western Visayas' model Smart Island Municipality.",
+  */
+  executiveSummary: "To the Honorable Municipal Vice Mayor Belfe S. Duran and the Honorable Members of the Sangguniang Bayan ng Caluya: The Municipality of Caluya is an archipelagic jewel in Antique with 18 barangays distributed across Caluya Island, Semirara Island, Sibay Island, and surrounding islets. For decades, geography has posed severe equity challenges: citizens in Semirara and Sibay routinely risk stormy sea crossings and incur ₱400 to ₱800 per round trip in motorized banca fares just to process routine business permits, request civil certificates, or file for medical crisis aid at Poblacion. As the Presiding Officer of the legislative branch, the Vice Mayor possesses the constitutional and statutory power under RA 7160 to sponsor the 'Caluya E-Governance & Ease of Doing Business Ordinance of 2026', author a Sangguniang Bayan Resolution approving this modern web portal, and allocate funding under the 20% Municipal Development Fund (MDF) and 5% MDRRM Fund. This proposal presents the complete legislative and technological masterplan to transform Caluya into Western Visayas' model Smart Island Municipality.",
 
   legislativeActions: [
     {
       measure: "Proposed Municipal Ordinance No. 2026-01",
       title: "The Caluya Smart Island E-Governance & Public Service Digitalization Act",
       scope: "Mandating all municipal offices (BPLO, LCR, Treasury, Assessor, MSWDO) to accept digital filings, recognize electronic receipts, and provide free public service Wi-Fi at island barangay halls.",
+      // Gene - Oct 06, 2026: Updated sponsor with Hon. Belfe S. Duran
+      /*
       sponsor: "Hon. Genevive L. Reyes (Vice Mayor & Presiding Officer)"
+      */
+      sponsor: "Hon. Belfe S. Duran (Vice Mayor & Presiding Officer)"
     },
     {
       measure: "Draft Sangguniang Bayan Resolution No. 2026-042",
@@ -480,7 +512,11 @@ export const PROPOSAL_DATA = {
     title: "EXCERPT FROM THE MINUTES OF THE REGULAR SESSION OF THE SANGGUNIANG BAYAN NG CALUYA, PROVINCE OF ANTIQUE",
     resolutionNo: "RESOLUTION NO. 2026-___",
     series: "Series of 2026",
+    // Gene - Oct 06, 2026: Updated draftResolution sponsor to Hon. Belfe S. Duran per user verification
+    /*
     sponsor: "HON. GENEVIVE L. REYES (Municipal Vice Mayor & Presiding Officer)",
+    */
+    sponsor: "HON. BELFE S. DURAN (Municipal Vice Mayor & Presiding Officer)",
     committee: "Committee on Rules, Ordinances & Legal Matters",
     titleFull: "A RESOLUTION COMMENDING AND ADOPTING THE CALUYA SMART ISLAND E-GOVERNANCE MASTERPLAN, ENDORSING THE OFFICIAL LGU WEB PORTAL, AND RECOMMENDING PRIORITY APPROPRIATIONS UNDER THE 20% MUNICIPAL DEVELOPMENT FUND (MDF).",
     whereasClauses: [
@@ -488,7 +524,11 @@ export const PROPOSAL_DATA = {
       "WHEREAS, Republic Act No. 11032, also known as the Ease of Doing Business and Efficient Government Service Delivery Act of 2018, mandates all local government units to streamline and digitize public service transactions;",
       "WHEREAS, the archipelagic geography of Caluya, comprising eighteen (18) barangays dispersed across Caluya, Semirara, Sibay, and outlying islets, requires our constituents to navigate hazardous seas and expend substantial travel funds to transact at the Municipal Hall in Poblacion;",
       "WHEREAS, the adoption of an official, island-resilient LGU Web Portal will immediately deliver zero-travel public services, real-time PAGASA sea gale alerts, 24/7 MDRRMC sea ambulance dispatch, and full transparency of Sangguniang Bayan ordinances;",
+      // Gene - Oct 06, 2026: Updated whereas clause with Vice Mayor Hon. Belfe S. Duran
+      /*
       "WHEREAS, the Sangguniang Bayan ng Caluya, under the leadership of Municipal Vice Mayor Hon. Genevive L. Reyes, affirms its firm commitment to modernizing local government administration through innovative digital public services;"
+      */
+      "WHEREAS, the Sangguniang Bayan ng Caluya, under the leadership of Municipal Vice Mayor Hon. Belfe S. Duran, affirms its firm commitment to modernizing local government administration through innovative digital public services;"
     ],
     resolvingClause: "NOW, THEREFORE, on motion of the Honorable Members of the Sangguniang Bayan, duly seconded: RESOLVED, AS IT IS HEREBY RESOLVED, to approve and adopt the Caluya Smart Island Digital Modernization Masterplan, and to authoritatively endorse the necessary budgetary appropriation under the CY 2026 Annual Investment Program (AIP)."
   }

@@ -285,7 +285,11 @@
                   <Award class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong class="text-emerald-900 block">Historic Opportunity for the Sangguniang Bayan:</strong>
+                    <!-- Gene - Oct 06, 2026: Updated Vice Mayor name to Hon. Belfe S. Duran per user verification -->
+                    <!--
                     <span>Through Vice Mayor Genevive L. Reyes's sponsorship, Caluya can become the first island municipality in Antique with zero-travel digital public services and live sea-lane disaster monitoring.</span>
+                    -->
+                    <span>Through Vice Mayor Belfe S. Duran's sponsorship, Caluya can become the first island municipality in Antique with zero-travel digital public services and live sea-lane disaster monitoring.</span>
                   </div>
                 </div>
               </div>
