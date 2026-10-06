@@ -63,6 +63,25 @@
               <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950">
                 {{ selectedIsland.name }}
               </h3>
+              <!-- Gene - Oct 06, 2026: Positioned curated island image directly near the description to visually ground the narrative -->
+              <!--
+              <p class="mt-4 text-slate-600 text-base leading-relaxed">
+                {{ selectedIsland.description }}
+              </p>
+              -->
+              <div v-if="selectedIsland.image" class="mt-4 rounded-2xl overflow-hidden aspect-[16/9] shadow-md border border-slate-200 group relative">
+                <img
+                  :src="selectedIsland.image"
+                  :alt="selectedIsland.name"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute bottom-2.5 left-2.5">
+                  <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/20">
+                    {{ selectedIsland.name }} • Archipelagic Landmark
+                  </span>
+                </div>
+              </div>
+
               <p class="mt-4 text-slate-600 text-base leading-relaxed">
                 {{ selectedIsland.description }}
               </p>

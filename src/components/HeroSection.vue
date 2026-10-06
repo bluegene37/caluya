@@ -362,7 +362,8 @@ const emit = defineEmits(['navigate', 'open-proposal']);
 const currentSlide = ref(0);
 let timer = null;
 
-// Curated high-resolution royalty-free photos depicting Caluya, Antique landmarks & themes
+// Gene - Oct 06, 2026: Updated hero slides with curated, royalty-free web imagery accurately matching descriptions (cultural street dance for Tatusan festival, coastal harbor port for Semirara island)
+/*
 const slides = [
   {
     tabName: "Liwagao Sandbar",
@@ -432,8 +433,80 @@ const slides = [
     image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2200&q=85",
     primaryCta: "Access Citizen e-Services",
     primaryIcon: FileCheck,
-    // Gene - Oct 06, 2026: Updated secondaryCta label to simply 'Proposal'
-    // secondaryCta: "Vice Mayor Proposal",
+    secondaryCta: "Proposal",
+    secondaryTarget: "proposal"
+  }
+];
+*/
+const slides = [
+  {
+    tabName: "Liwagao Sandbar",
+    badge: "🏝️ Eco-Tourism Jewel • Liwagao Island Sandbar",
+    title: "Pristine Sandbars & Crystal Waters of Caluya",
+    subtitle: "Where blinding white powdery sands meet the radiant turquoise tides of the Tablas Strait and Sulu Sea.",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=85",
+    primaryCta: "Discover 18 Island Barangays",
+    primaryIcon: Compass,
+    primaryTarget: "islands",
+    secondaryCta: "Review Modernization Plan",
+    secondaryTarget: "proposal"
+  },
+  {
+    tabName: "Tatusan Festival",
+    badge: "🦀 Cultural Heritage • Home of the Tatusan Festival",
+    title: "Honoring the Prized Coconut Crab ('Tatus')",
+    subtitle: "Celebrated every May in Poblacion with high-energy tribal street dancing, paraw regattas, and marine conservation.",
+    image: "https://images.unsplash.com/photo-1579957023433-7fad5b83efae?auto=format&fit=crop&w=2200&q=85",
+    primaryCta: "Explore Tatusan Culture",
+    primaryIcon: Sparkles,
+    primaryTarget: "tourism",
+    secondaryCta: "View Conservation Rules",
+    secondaryTarget: "transparency"
+  },
+  {
+    tabName: "Semirara Island",
+    badge: "⚡ Economic Powerhouse • Semirara Island Cluster",
+    title: "Industrial Vitality & Coastal Resiliency",
+    subtitle: "Powering regional energy progress while fostering vibrant island fisherfolk communities and rich marine reserves.",
+    image: "https://images.unsplash.com/photo-1579980255001-bac1874a4673?auto=format&fit=crop&w=2200&q=85",
+    primaryCta: "Semirara Public Services",
+    primaryIcon: FileCheck,
+    primaryTarget: "public-services",
+    secondaryCta: "24/7 Island Rescue (911)",
+    secondaryTarget: "rescue"
+  },
+  {
+    tabName: "Coral Sanctuaries",
+    badge: "🤿 Marine Protected Corridors • Sibato & Sibay Islets",
+    title: "Kaleidoscopic Coral Gardens & Sea Turtles",
+    subtitle: "Pristine reef sanctuaries strictly safeguarded by our dedicated Bantay-Dagat coastal guardians.",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2200&q=85",
+    primaryCta: "MDRRMO Sea Safety Board",
+    primaryIcon: Waves,
+    primaryTarget: "rescue",
+    secondaryCta: "Eco-Tour Guidelines",
+    secondaryTarget: "tourism"
+  },
+  {
+    tabName: "Agar-Agar Mariculture",
+    badge: "🌾 Island Mariculture • Premier Seaweed Capital",
+    title: "World-Class Seaweed Farming in Clear Lagoons",
+    subtitle: "Thousands of floating lines of Eucheuma seaweed sustaining generations of hardworking island fisherfolk families.",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2200&q=85",
+    primaryCta: "Fisherfolk & Farmer Aid",
+    primaryIcon: Anchor,
+    primaryTarget: "public-services",
+    secondaryCta: "Citizen e-Permits",
+    secondaryTarget: "services"
+  },
+  {
+    tabName: "Sunset Sea Lanes",
+    badge: "⚓ Smart Island Governance • Province of Antique",
+    title: "Bridging Our Islands Through Modern E-Governance",
+    subtitle: "Zero-travel municipal certificates, real-time sea medevac dispatch, and complete public financial transparency.",
+    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2200&q=85",
+    primaryCta: "Access Citizen e-Services",
+    primaryIcon: FileCheck,
     secondaryCta: "Proposal",
     secondaryTarget: "proposal"
   }

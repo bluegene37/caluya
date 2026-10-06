@@ -73,6 +73,8 @@ export const LGU_INFO = {
   }
 };
 
+// Gene - Oct 06, 2026: Enhanced ISLANDS_DATA with high-resolution, royalty-free web imagery accurately representing each island's landmarks and maritime character
+/*
 export const ISLANDS_DATA = [
   {
     id: "caluya-main",
@@ -119,6 +121,57 @@ export const ISLANDS_DATA = [
     badge: "Top Eco-Tourism Gem"
   }
 ];
+*/
+export const ISLANDS_DATA = [
+  {
+    id: "caluya-main",
+    name: "Caluya Island (Poblacion)",
+    category: "Seat of Government & Culture",
+    description: "The administrative and cultural heart of the municipality. Home to the historic Poblacion, Municipal Hall, white sand beaches of Imba and Sabang, and the vibrant staging grounds of the annual Tatusan Festival.",
+    image: "https://images.unsplash.com/photo-1579957023433-7fad5b83efae?auto=format&fit=crop&w=1200&q=80",
+    barangays: ["Poblacion", "Banago", "Dawis", "Hininga-an", "Imba", "Masanag", "Sabang", "Salamento"],
+    highlights: ["Municipal Hall & Government Center", "Imba White Sand Coast", "Tatusan Festival Grounds", "Agar-agar (Seaweed) Farming"],
+    ports: ["Port of Caluya (Poblacion)"],
+    status: "Normal Ferry Operations",
+    badge: "Administrative Capital"
+  },
+  {
+    id: "semirara",
+    name: "Semirara Island",
+    category: "Energy & Industrial Hub",
+    description: "The largest and most populous island of Caluya, featuring a powerhouse economy driven by Semirara Mining & Power Corp alongside thriving coastal fisherfolk communities, marine reserves, and scenic rolling hills.",
+    image: "https://images.unsplash.com/photo-1579980255001-bac1874a4673?auto=format&fit=crop&w=1200&q=80",
+    barangays: ["Semirara", "Alegria", "Tinogboc", "Sibolo"],
+    highlights: ["Semirara Energy Complex", "Bujang Bay Marine Reserve", "Tinogboc Coastal Scenic Trail", "Livelihood & Training Center"],
+    ports: ["Semirara Private Port / Caluya Sea Lane"],
+    status: "Regular Vessel Schedule",
+    badge: "Economic Powerhouse"
+  },
+  {
+    id: "sibay",
+    name: "Sibay Island",
+    category: "Eco-Marine & Fishing Haven",
+    description: "An emerald island paradise southeast of Caluya mainland. Rich in coral formations, untouched coastal cliffs, and hospitable island barangays sustained by sustainable artisanal fishing and sea agriculture.",
+    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=80",
+    barangays: ["Sibay", "Bacong", "Bonbon", "Dionela", "Harigue"],
+    highlights: ["Sibay Cliff & Lighthouse", "Bonbon Marine Sanctuary", "Artisanal Fishing Communities", "Crystal Diving Corridors"],
+    ports: ["Sibay Community Boat Pier"],
+    status: "Small Craft Advisory Monitored",
+    badge: "Eco-Heritage Reserve"
+  },
+  {
+    id: "sibato-liwagao",
+    name: "Sibato & Liwagao Islets",
+    category: "Pristine Eco-Tourism & Sanctuaries",
+    description: "Spellbinding white sandbars, powdery beaches, and turquoise lagoons. Liwagao offers world-class sandbar aesthetics and coconut crab habitats, while Sibato is renowned for vibrant coral gardens.",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    barangays: ["Sibato"],
+    highlights: ["Liwagao Long White Sandbar", "Coconut Crab (Tatus) Sanctuary", "Giant Clam Protected Marine Zone", "Sea Turtle Nesting Shorelines"],
+    ports: ["Charter Island-Hopping Bancas"],
+    status: "Open for Eco-Tours with Guide Permit",
+    badge: "Top Eco-Tourism Gem"
+  }
+];
 
 export const BARANGAYS_LIST = [
   { name: "Alegria", island: "Semirara Island", population: "3,041", captain: "Hon. Roberto V. Tan" },
@@ -141,6 +194,8 @@ export const BARANGAYS_LIST = [
   { name: "Tinogboc", island: "Semirara Island", population: "3,288", captain: "Hon. Gabriel Q. Santos" }
 ];
 
+// Gene - Oct 06, 2026: Updated TOURISM_DESTINATIONS images to accurately match the descriptions (Tatusan festival street dance, pristine sandbar, crystal mariculture lagoons, and coral reef sanctuary)
+/*
 export const TOURISM_DESTINATIONS = [
   {
     id: "tatusan-festival",
@@ -176,6 +231,45 @@ export const TOURISM_DESTINATIONS = [
     tag: "Marine Conservation",
     description: "Dense, kaleidoscopic coral gardens home to clownfish, sea turtles, and giant clams. Strictly monitored by LGU bantay-dagat for sustainable eco-snorkeling.",
     image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    details: "Guided eco-tours require registration at the Municipal Tourism Office in Poblacion."
+  }
+];
+*/
+export const TOURISM_DESTINATIONS = [
+  {
+    id: "tatusan-festival",
+    title: "Tatusan Festival",
+    subtitle: "Celebrated Every May in Poblacion",
+    tag: "Cultural Heritage",
+    description: "The crown jewel festival of Caluya honoring the 'Tatus' (Coconut Crab / Birgus latro). Features vibrant street dancing with crab-themed choreographies, culinary showcases, boat racing, and cultural pageantry.",
+    image: "https://images.unsplash.com/photo-1579957023433-7fad5b83efae?auto=format&fit=crop&w=1200&q=80",
+    details: "Established to advocate for the protection and sustainable harvesting of the endangered coconut crab while celebrating municipal identity."
+  },
+  {
+    id: "liwagao-island",
+    title: "Liwagao Island Sandbar",
+    subtitle: "Untouched Tropical Paradise",
+    tag: "Eco-Adventure",
+    description: "A breathtaking sandbar surrounded by neon aquamarine waters. Liwagao offers pristine swimming, drone photography vantage points, and a tranquil escape rivaling Boracay without the commercial crowds.",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    details: "Accessible via chartered banca from Caluya Poblacion (approx. 45 mins sea journey depending on tides)."
+  },
+  {
+    id: "agar-agar-farms",
+    title: "Seaweed (Agar-Agar) Farms",
+    subtitle: "Marine Agriculture Marvel",
+    tag: "Agri-Tourism",
+    description: "Caluya is recognized as one of the premier seaweed producers in Region VI. Explore shallow crystalline waters with thousands of floating lines of Eucheuma and Kappaphycus seaweeds, tended by smiling island farmers.",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    details: "Primary non-mining economic livelihood of island households, exporting agar-agar worldwide."
+  },
+  {
+    id: "sibato-coral-gardens",
+    title: "Sibato Island Reef Sanctuary",
+    subtitle: "Snorkeling & Marine Sanctuary",
+    tag: "Marine Conservation",
+    description: "Dense, kaleidoscopic coral gardens home to clownfish, sea turtles, and giant clams. Strictly monitored by LGU bantay-dagat for sustainable eco-snorkeling.",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
     details: "Guided eco-tours require registration at the Municipal Tourism Office in Poblacion."
   }
 ];

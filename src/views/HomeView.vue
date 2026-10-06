@@ -437,6 +437,8 @@
             :key="cluster.name"
             class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-teal-300 hover:shadow-md transition-all flex flex-col justify-between"
           >
+            <!-- Gene - Oct 06, 2026: Displayed curated imagery directly near island cluster description to provide visual context -->
+            <!--
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
@@ -449,6 +451,25 @@
                 {{ cluster.barangays }}
               </p>
               <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+                {{ cluster.desc }}
+              </p>
+            </div>
+            -->
+            <div>
+              <div v-if="cluster.image" class="aspect-[16/10] rounded-xl overflow-hidden mb-3.5 border border-slate-200/80 shadow-xs group">
+                <img :src="cluster.image" :alt="cluster.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
+                  Island Cluster
+                </span>
+                <span class="text-xs font-mono font-bold text-slate-500">5711</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">{{ cluster.name }}</h3>
+              <p class="mt-1 text-xs font-semibold text-teal-700">
+                {{ cluster.barangays }}
+              </p>
+              <p class="mt-2.5 text-xs text-slate-600 leading-relaxed">
                 {{ cluster.desc }}
               </p>
             </div>
@@ -654,12 +675,46 @@ const departments = [
   }
 ];
 
-// Gene - Oct 06, 2026: Island clusters summary for Caluya archipelagic geography section
+// Gene - Oct 06, 2026: Added curated royalty-free web imagery matching the description of each island cluster
+/*
 const islandClusters = [
   { name: 'Caluya Mainland', barangays: 'Poblacion, Masanag, Salacay, Harigue, Sabang, Ysulat', desc: 'Seat of Municipal Government, RHU 1, Port of Caluya, and historical center.' },
   { name: 'Semirara Island', barangays: 'Semirara, Tinogboc, Alegria', desc: 'Regional economic catalyst, airstrip, deep-water port, and RHU 2 medical station.' },
   { name: 'Sibay Island', barangays: 'Bacong, Imba, San Jose, Sibay', desc: 'Pristine agricultural hills, mariculture coastlines, and thriving fishing villages.' },
   { name: 'Sibato Island', barangays: 'Sibato', desc: 'Marine sanctuary corridors, coral reefs, and Bantay-Dagat coastal patrol base.' },
   { name: 'Liwagao Island', barangays: 'Liwagao', desc: 'World-renowned white powdery sandbar, crystal turquoise shallows, and coconut groves.' },
+];
+*/
+const islandClusters = [
+  { 
+    name: 'Caluya Mainland', 
+    barangays: 'Poblacion, Masanag, Salacay, Harigue, Sabang, Ysulat', 
+    desc: 'Seat of Municipal Government, RHU 1, Port of Caluya, and historical center.',
+    image: 'https://images.unsplash.com/photo-1579957023433-7fad5b83efae?auto=format&fit=crop&w=800&q=80'
+  },
+  { 
+    name: 'Semirara Island', 
+    barangays: 'Semirara, Tinogboc, Alegria', 
+    desc: 'Regional economic catalyst, airstrip, deep-water port, and RHU 2 medical station.',
+    image: 'https://images.unsplash.com/photo-1579980255001-bac1874a4673?auto=format&fit=crop&w=800&q=80'
+  },
+  { 
+    name: 'Sibay Island', 
+    barangays: 'Bacong, Imba, San Jose, Sibay', 
+    desc: 'Pristine agricultural hills, mariculture coastlines, and thriving fishing villages.',
+    image: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&q=80'
+  },
+  { 
+    name: 'Sibato Island', 
+    barangays: 'Sibato', 
+    desc: 'Marine sanctuary corridors, coral reefs, and Bantay-Dagat coastal patrol base.',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80'
+  },
+  { 
+    name: 'Liwagao Island', 
+    barangays: 'Liwagao', 
+    desc: 'World-renowned white powdery sandbar, crystal turquoise shallows, and coconut groves.',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
+  },
 ];
 </script>

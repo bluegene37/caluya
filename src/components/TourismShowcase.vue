@@ -66,8 +66,16 @@
 
             <div class="lg:col-span-5 relative">
               <div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg border border-white/20 group">
+                <!-- Gene - Oct 06, 2026: Updated featured image to vibrant cultural street dancing accurately matching Tatusan Festival description -->
+                <!--
                 <img
                   src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                  alt="Tatusan Festival Celebration"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                -->
+                <img
+                  src="https://images.unsplash.com/photo-1579957023433-7fad5b83efae?auto=format&fit=crop&w=800&q=80"
                   alt="Tatusan Festival Celebration"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
