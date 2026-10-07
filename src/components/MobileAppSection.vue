@@ -227,12 +227,24 @@
                 <Download class="w-3.5 h-3.5 text-sky-400" />
                 <span>App Store</span>
               </a>
+              <!-- Gene - Oct 07, 2026: Updated eGov portal link title to official domain e.gov.ph -->
+              <!--
               <a
                 :href="EGOV_APP_DATA.webPortal"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="px-2.5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all flex items-center space-x-1"
                 title="Visit eGov.gov.ph"
+              >
+                <ExternalLink class="w-3.5 h-3.5" />
+              </a>
+              -->
+              <a
+                :href="EGOV_APP_DATA.webPortal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-2.5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all flex items-center space-x-1"
+                title="Visit Official e.gov.ph"
               >
                 <ExternalLink class="w-3.5 h-3.5" />
               </a>
@@ -469,10 +481,33 @@
 
                 <!-- Gene - Oct 06, 2026: Screen 4: eGov PH National Services in Simulated Phone -->
                 <div v-else-if="activeScreen === 'egov'" class="space-y-2.5 animate-fadeIn">
+                  <!-- Gene - Oct 07, 2026: Enhanced phone simulator eGov banner with direct link to official portal https://e.gov.ph/ -->
+                  <!--
                   <div class="p-3 rounded-2xl bg-gradient-to-r from-sky-900 to-indigo-900 border border-sky-400/30 text-white">
                     <div class="flex items-center space-x-2">
                       <Building2 class="w-4 h-4 text-amber-400" />
                       <span class="font-bold text-xs uppercase tracking-wider">eGov PH National Services</span>
+                    </div>
+                    <p class="text-[10px] text-slate-200 mt-1 leading-snug">
+                      National portals accessible directly without pumpboat travel to mainland.
+                    </p>
+                  </div>
+                  -->
+                  <div class="p-3 rounded-2xl bg-gradient-to-r from-sky-900 to-indigo-900 border border-sky-400/30 text-white">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center space-x-2">
+                        <Building2 class="w-4 h-4 text-amber-400" />
+                        <span class="font-bold text-xs uppercase tracking-wider">eGov PH Super App</span>
+                      </div>
+                      <a
+                        :href="EGOV_APP_DATA.webPortal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="px-2 py-0.5 rounded bg-sky-500/80 hover:bg-sky-500 text-white text-[9px] font-bold flex items-center space-x-1"
+                      >
+                        <span>e.gov.ph</span>
+                        <ExternalLink class="w-2.5 h-2.5" />
+                      </a>
                     </div>
                     <p class="text-[10px] text-slate-200 mt-1 leading-snug">
                       National portals accessible directly without pumpboat travel to mainland.

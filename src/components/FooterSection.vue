@@ -228,6 +228,8 @@
               </div>
             </a>
 
+            <!-- Gene - Oct 07, 2026: Updated eGov Portal link label to highlight official domain e.gov.ph -->
+            <!--
             <a
               :href="EGOV_APP_DATA.webPortal"
               target="_blank"
@@ -235,6 +237,16 @@
               class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all shadow-md hover:scale-105"
             >
               <span>Official eGov Portal</span>
+              <ExternalLink class="w-3.5 h-3.5" />
+            </a>
+            -->
+            <a
+              :href="EGOV_APP_DATA.webPortal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all shadow-md hover:scale-105"
+            >
+              <span>Official eGov Portal (e.gov.ph)</span>
               <ExternalLink class="w-3.5 h-3.5" />
             </a>
           </div>

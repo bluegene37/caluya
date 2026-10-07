@@ -227,7 +227,11 @@
                 rel="noopener noreferrer"
                 class="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition-all shadow-md text-center"
               >
+                <!-- Gene - Oct 07, 2026: Updated eGov portal link text to official domain e.gov.ph -->
+                <!--
                 <span>Visit Official eGov.gov.ph</span>
+                -->
+                <span>Visit Official e.gov.ph</span>
                 <ExternalLink class="w-3.5 h-3.5" />
               </a>
             </div>
