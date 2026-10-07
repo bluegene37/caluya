@@ -12,22 +12,15 @@ export const LGU_INFO = {
   population: "42,895+ (Est. 2024 / PSA)",
   landArea: "148.90 sq km (Municipal Waters: 307,680+ hectares)",
   zipCode: "5711",
+  // Gene - Oct 07, 2026: Added official portrait image URLs for Mayor Hon. Rigil Kent G. Lim and Vice Mayor Hon. Belfe S. Duran
+  /*
   mayor: {
     name: "Hon. Rigil Kent G. Lim",
     title: "Municipal Mayor",
     message: "Welcome to the digital gateway of our beloved Caluya. As an island municipality with boundless potential, our administration is committed to bridging the seas through digital innovation—bringing honest, swift, and transparent public service directly to every household in all our 18 barangays across Caluya, Semirara, Sibay, and our sister islets.",
   },
-// Gene - Oct 06, 2026: Enhanced Vice Mayor and Sangguniang Bayan Presiding Officer profile
-/*
   viceMayor: {
-    name: "Hon. Genevieve Lim-Reyes",
-    title: "Municipal Vice Mayor & Presiding Officer",
-  },
-*/
-  // Gene - Oct 06, 2026: Updated Municipal Vice Mayor to Hon. Belfe S. Duran per user verification
-  /*
-  viceMayor: {
-    name: "Hon. Genevive L. Reyes",
+    name: "Hon. Belfe S. Duran",
     title: "Municipal Vice Mayor & Presiding Officer",
     subtitle: "Presiding Officer, Sangguniang Bayan ng Caluya",
     message: "As Presiding Officer of the Sangguniang Bayan, our legislative mandate is to champion progressive ordinances, enact impactful development resolutions, and ensure equitable fiscal appropriations for all 18 island barangays. Modernizing Caluya through e-governance guarantees every islander equal, dignified access to public services, disaster protection, and economic empowerment.",
@@ -39,10 +32,17 @@ export const LGU_INFO = {
     ]
   },
   */
+  mayor: {
+    name: "Hon. Rigil Kent G. Lim",
+    title: "Municipal Mayor",
+    image: "/images/mayor-rigil-kent-lim.jpg",
+    message: "Welcome to the digital gateway of our beloved Caluya. As an island municipality with boundless potential, our administration is committed to bridging the seas through digital innovation—bringing honest, swift, and transparent public service directly to every household in all our 18 barangays across Caluya, Semirara, Sibay, and our sister islets.",
+  },
   viceMayor: {
     name: "Hon. Belfe S. Duran",
     title: "Municipal Vice Mayor & Presiding Officer",
     subtitle: "Presiding Officer, Sangguniang Bayan ng Caluya",
+    image: "/images/vice-mayor-belfe-duran.jpg",
     message: "As Presiding Officer of the Sangguniang Bayan, our legislative mandate is to champion progressive ordinances, enact impactful development resolutions, and ensure equitable fiscal appropriations for all 18 island barangays. Modernizing Caluya through e-governance guarantees every islander equal, dignified access to public services, disaster protection, and economic empowerment.",
     office: "Office of the Municipal Vice Mayor / Legislative Building, Poblacion",
     committees: [

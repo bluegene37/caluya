@@ -24,12 +24,32 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           
           <div class="lg:col-span-4 flex flex-col items-center text-center">
+            <!-- Gene - Oct 07, 2026: Added official portrait image for Municipal Mayor Hon. Rigil Kent G. Lim -->
+            <!--
             <div class="relative w-44 h-44 rounded-2xl bg-gradient-to-tr from-sky-400 to-amber-300 p-1 shadow-2xl">
               <div class="w-full h-full rounded-2xl bg-slate-800 flex flex-col items-center justify-center overflow-hidden">
                 <UserCheck class="w-20 h-20 text-sky-300/80" />
                 <span class="text-[10px] text-slate-400 mt-2 font-mono">Official Portrait</span>
               </div>
               <div class="absolute -bottom-2 -right-2 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full shadow-md">
+                MAYOR
+              </div>
+            </div>
+            -->
+            <div class="relative w-44 h-44 rounded-2xl bg-gradient-to-tr from-sky-400 to-amber-300 p-1 shadow-2xl">
+              <div class="w-full h-full rounded-2xl bg-slate-800 overflow-hidden relative group">
+                <img
+                  v-if="LGU_INFO.mayor.image"
+                  :src="LGU_INFO.mayor.image"
+                  :alt="LGU_INFO.mayor.name"
+                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                <div v-else class="w-full h-full flex flex-col items-center justify-center">
+                  <UserCheck class="w-20 h-20 text-sky-300/80" />
+                  <span class="text-[10px] text-slate-400 mt-2 font-mono">Official Portrait</span>
+                </div>
+              </div>
+              <div class="absolute -bottom-2 -right-2 bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-md tracking-wider">
                 MAYOR
               </div>
             </div>
@@ -108,12 +128,32 @@
           
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div class="lg:col-span-4 flex flex-col items-center text-center">
+              <!-- Gene - Oct 07, 2026: Added official portrait image for Municipal Vice Mayor Hon. Belfe S. Duran -->
+              <!--
               <div class="relative w-44 h-44 rounded-2xl bg-gradient-to-tr from-amber-400 to-sky-300 p-1 shadow-2xl">
                 <div class="w-full h-full rounded-2xl bg-slate-800 flex flex-col items-center justify-center overflow-hidden">
                   <Scale class="w-20 h-20 text-amber-300/80" />
                   <span class="text-[10px] text-slate-400 mt-2 font-mono">Legislative Portrait</span>
                 </div>
                 <div class="absolute -bottom-2 -right-2 bg-sky-400 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-md">
+                  VICE MAYOR
+                </div>
+              </div>
+              -->
+              <div class="relative w-44 h-44 rounded-2xl bg-gradient-to-tr from-amber-400 to-sky-300 p-1 shadow-2xl">
+                <div class="w-full h-full rounded-2xl bg-slate-800 overflow-hidden relative group">
+                  <img
+                    v-if="LGU_INFO.viceMayor.image"
+                    :src="LGU_INFO.viceMayor.image"
+                    :alt="LGU_INFO.viceMayor.name"
+                    class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div v-else class="w-full h-full flex flex-col items-center justify-center">
+                    <Scale class="w-20 h-20 text-amber-300/80" />
+                    <span class="text-[10px] text-slate-400 mt-2 font-mono">Legislative Portrait</span>
+                  </div>
+                </div>
+                <div class="absolute -bottom-2 -right-2 bg-sky-400 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-md tracking-wider">
                   VICE MAYOR
                 </div>
               </div>
