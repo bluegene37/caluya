@@ -173,8 +173,23 @@
         <div class="mb-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-sky-950 to-slate-950 text-white shadow-xl border border-sky-500/30">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div class="lg:col-span-8 space-y-3">
+              <!-- Gene - Oct 07, 2026: Added official eGov PH Super App logo from https://e.gov.ph/ in ServicesHub spotlight banner -->
+              <!--
               <div class="inline-flex items-center space-x-2 px-3 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40">
                 <span>{{ EGOV_APP_DATA.republicNotice }}</span>
+              </div>
+              -->
+              <div class="flex flex-wrap items-center gap-3">
+                <div class="w-20 sm:w-24 h-11 rounded-xl bg-white p-1.5 shadow-md shrink-0 flex items-center justify-center border border-white/20">
+                  <img
+                    src="/images/egov-logo.png"
+                    alt="eGov PH Super App Official Logo"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+                <div class="inline-flex items-center space-x-2 px-3 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                  <span>{{ EGOV_APP_DATA.republicNotice }}</span>
+                </div>
               </div>
               <h4 class="text-xl sm:text-2xl font-black text-white">
                 {{ EGOV_APP_DATA.name }} ({{ EGOV_APP_DATA.developer }})

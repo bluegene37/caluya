@@ -188,10 +188,20 @@
           <!-- Gene - Oct 06, 2026: Added DICT eGov PH Super App Companion Card in MobileAppSection -->
           <div class="p-6 rounded-3xl bg-slate-800/90 border border-sky-400/30 backdrop-blur-md shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5">
             <div class="flex items-center space-x-3.5">
+              <!-- Gene - Oct 07, 2026: Replaced placeholder Caluya seal with authentic official eGov PH Super App logo from https://e.gov.ph/ -->
+              <!--
               <div class="w-13 h-13 rounded-2xl bg-white p-1.5 shadow-md shrink-0 flex items-center justify-center">
                 <img
                   src="/images/caluya-logo.png"
                   alt="eGov PH Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              -->
+              <div class="w-20 sm:w-24 h-13 rounded-2xl bg-white p-2 shadow-md shrink-0 flex items-center justify-center border border-white/20">
+                <img
+                  src="/images/egov-logo.png"
+                  alt="eGov PH Super App Official Logo"
                   class="w-full h-full object-contain"
                 />
               </div>

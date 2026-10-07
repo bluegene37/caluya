@@ -1350,6 +1350,8 @@ export const EGOV_APP_DATA = {
   ]
 };
 */
+// Gene - Oct 07, 2026: Added official eGov PH logo path (/images/egov-logo.png) to EGOV_APP_DATA
+/*
 export const EGOV_APP_DATA = {
   name: "eGov PH Super App",
   shortName: "eGov PH",
@@ -1357,6 +1359,26 @@ export const EGOV_APP_DATA = {
   republicNotice: "Official Super App of the Republic of the Philippines",
   tagline: "One App for All Government Transactions",
   description: "A centralized digital gateway connecting all national agencies and local government units. Integrates your Digital National ID (ePhilID), PhilHealth, SSS, GSIS, Pag-IBIG, eTravel, and local LGU services into a single unified mobile platform.",
+  webPortal: "https://e.gov.ph/",
+  googlePlayUrl: "https://play.google.com/store/apps/details?id=egov.app",
+  appleAppStoreUrl: "https://apps.apple.com/us/app/egovph/id6447682225",
+  highlights: [
+    { title: "Digital National ID (ePhilID)", desc: "Valid official government identification with verify-ready QR code." },
+    { title: "PhilHealth, SSS & GSIS In One Place", desc: "Instant view of membership records, contributions, and claims." },
+    { title: "eTravel QR Clearance", desc: "Fast-lane international & inter-island travel declaration." },
+    { title: "Interoperable LGU Services", desc: "Bridge Caluya local island services with national government databases." }
+  ]
+};
+*/
+export const EGOV_APP_DATA = {
+  name: "eGov PH Super App",
+  shortName: "eGov PH",
+  developer: "Department of Information and Communications Technology (DICT)",
+  republicNotice: "Official Super App of the Republic of the Philippines",
+  tagline: "One App for All Government Transactions",
+  description: "A centralized digital gateway connecting all national agencies and local government units. Integrates your Digital National ID (ePhilID), PhilHealth, SSS, GSIS, Pag-IBIG, eTravel, and local LGU services into a single unified mobile platform.",
+  logo: "/images/egov-logo.png",
+  svgLogo: "/images/egov-logo.svg",
   webPortal: "https://e.gov.ph/",
   googlePlayUrl: "https://play.google.com/store/apps/details?id=egov.app",
   appleAppStoreUrl: "https://apps.apple.com/us/app/egovph/id6447682225",

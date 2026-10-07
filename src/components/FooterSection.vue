@@ -177,10 +177,20 @@
         <!-- eGov PH App Showcase Banner -->
         <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-sky-950 to-indigo-950 border border-sky-500/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
           <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-3 sm:space-y-0 sm:space-x-4 max-w-2xl">
+            <!-- Gene - Oct 07, 2026: Replaced placeholder Caluya seal with authentic official eGov PH Super App logo from https://e.gov.ph/ -->
+            <!--
             <div class="w-14 h-14 rounded-2xl bg-white p-1.5 shadow-md shrink-0 flex items-center justify-center">
               <img
                 src="/images/caluya-logo.png"
                 alt="eGov PH Republic Logo"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            -->
+            <div class="w-20 sm:w-24 h-14 rounded-2xl bg-white p-2 shadow-md shrink-0 flex items-center justify-center border border-white/20">
+              <img
+                src="/images/egov-logo.png"
+                alt="eGov PH Super App Official Logo"
                 class="w-full h-full object-contain"
               />
             </div>
