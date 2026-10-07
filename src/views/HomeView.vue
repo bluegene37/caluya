@@ -195,6 +195,260 @@
       </div>
     </section>
 
+    <!-- Gene - Oct 07, 2026: Added Municipal Leadership & Sangguniang Bayan Council showcase cards with official portraits and council directory linking directly to the Leadership tab (/leadership) -->
+    <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-100 text-sky-800 border border-sky-200 mb-2">
+            <Award class="w-3.5 h-3.5 text-sky-700" />
+            <span>Local Governance • Municipality of Caluya</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
+            Municipal Leadership & Sangguniang Bayan
+          </h2>
+          <p class="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
+            Executive leadership and legislative council guiding Caluya’s 18 island barangays towards inclusive progress, transparent governance, and island-wide connectivity.
+          </p>
+        </div>
+
+        <!-- 3 Leadership Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          
+          <!-- Card 1: Municipal Mayor -->
+          <router-link
+            to="/leadership"
+            class="group relative bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-2xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer hover:-translate-y-1"
+          >
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-400" />
+            
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-200">
+                  <Award class="w-3.5 h-3.5 text-amber-600" />
+                  <span>Executive Office</span>
+                </span>
+                <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                  Municipal Mayor
+                </span>
+              </div>
+
+              <!-- Portrait & Identity -->
+              <div class="flex items-center space-x-4 mb-5">
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-slate-900 border-2 border-amber-400/60 shadow-lg shrink-0 group-hover:border-amber-500 transition-colors">
+                  <img
+                    v-if="LGU_INFO.mayor.image"
+                    :src="LGU_INFO.mayor.image"
+                    :alt="LGU_INFO.mayor.name"
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div v-else class="w-full h-full flex items-center justify-center">
+                    <UserCheck class="w-10 h-10 text-amber-400" />
+                  </div>
+                  <div class="absolute bottom-1 right-1 bg-amber-400 text-slate-950 text-[9px] font-black px-1.5 py-0.5 rounded shadow tracking-wider">
+                    MAYOR
+                  </div>
+                </div>
+
+                <div class="min-w-0">
+                  <h3 class="text-lg sm:text-xl font-black text-slate-900 group-hover:text-amber-700 transition-colors leading-snug">
+                    {{ LGU_INFO.mayor.name }}
+                  </h3>
+                  <p class="text-xs font-black uppercase tracking-wider text-amber-600 mt-0.5">
+                    {{ LGU_INFO.mayor.title }}
+                  </p>
+                  <p class="text-[11px] text-slate-500 mt-1">
+                    Municipality of Caluya, Antique
+                  </p>
+                </div>
+              </div>
+
+              <!-- Key Mandate / Message Snippet -->
+              <div class="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-100 text-slate-700 text-xs leading-relaxed italic mb-4 line-clamp-3">
+                "{{ LGU_INFO.mayor.message }}"
+              </div>
+
+              <div class="space-y-1.5 text-xs text-slate-600">
+                <div class="flex items-center space-x-2">
+                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Chief Executive Officer of the Municipality</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Administrative Head of All Municipal Services</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action -->
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-700 group-hover:text-amber-800">
+              <span class="inline-flex items-center space-x-1">
+                <span>View Mayor's Profile & Mandate</span>
+              </span>
+              <ArrowRight class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+            </div>
+          </router-link>
+
+          <!-- Card 2: Municipal Vice Mayor -->
+          <router-link
+            to="/leadership"
+            class="group relative bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-2xl hover:border-sky-400 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer hover:-translate-y-1"
+          >
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-sky-500 via-indigo-500 to-blue-600" />
+            
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-sky-50 text-sky-900 border border-sky-200">
+                  <Scale class="w-3.5 h-3.5 text-sky-600" />
+                  <span>Legislative Hall</span>
+                </span>
+                <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                  Vice Mayor
+                </span>
+              </div>
+
+              <!-- Portrait & Identity -->
+              <div class="flex items-center space-x-4 mb-5">
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-slate-900 border-2 border-sky-400/60 shadow-lg shrink-0 group-hover:border-sky-500 transition-colors">
+                  <img
+                    v-if="LGU_INFO.viceMayor.image"
+                    :src="LGU_INFO.viceMayor.image"
+                    :alt="LGU_INFO.viceMayor.name"
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div v-else class="w-full h-full flex items-center justify-center">
+                    <Scale class="w-10 h-10 text-sky-400" />
+                  </div>
+                  <div class="absolute bottom-1 right-1 bg-sky-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded shadow tracking-wider">
+                    VICE MAYOR
+                  </div>
+                </div>
+
+                <div class="min-w-0">
+                  <h3 class="text-lg sm:text-xl font-black text-slate-900 group-hover:text-sky-700 transition-colors leading-snug">
+                    {{ LGU_INFO.viceMayor.name }}
+                  </h3>
+                  <p class="text-xs font-black uppercase tracking-wider text-sky-600 mt-0.5">
+                    {{ LGU_INFO.viceMayor.title }}
+                  </p>
+                  <p class="text-[11px] text-slate-500 mt-1">
+                    {{ LGU_INFO.viceMayor.subtitle }}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Key Mandate / Message Snippet -->
+              <div class="p-3.5 rounded-2xl bg-sky-50/60 border border-sky-100 text-slate-700 text-xs leading-relaxed italic mb-4 line-clamp-3">
+                "{{ LGU_INFO.viceMayor.message }}"
+              </div>
+
+              <div class="space-y-1.5 text-xs text-slate-600">
+                <div class="flex items-center space-x-2">
+                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Presiding Officer, Sangguniang Bayan</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Sponsor of Caluya E-Governance Ordinance</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action -->
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-sky-700 group-hover:text-sky-800">
+              <span class="inline-flex items-center space-x-1">
+                <span>View Legislative Office & Mandate</span>
+              </span>
+              <ArrowRight class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+            </div>
+          </router-link>
+
+          <!-- Card 3: Sangguniang Bayan Council -->
+          <router-link
+            to="/leadership"
+            class="group relative bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-2xl hover:border-purple-400 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer hover:-translate-y-1"
+          >
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-purple-500 via-indigo-600 to-sky-500" />
+            
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-purple-50 text-purple-900 border border-purple-200">
+                  <Users class="w-3.5 h-3.5 text-purple-600" />
+                  <span>Legislative Council</span>
+                </span>
+                <span class="text-[11px] font-bold text-purple-700 uppercase tracking-wider">
+                  {{ LGU_INFO.sangguniangBayan.length }} Council Members
+                </span>
+              </div>
+
+              <!-- Header & Identity -->
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-purple-700 via-indigo-800 to-slate-900 flex flex-col items-center justify-center text-white shadow-lg shrink-0 border-2 border-purple-400/60 group-hover:border-purple-500 transition-colors">
+                  <Building2 class="w-9 h-9 text-purple-200 mb-1" />
+                  <span class="text-[9px] font-black tracking-wider uppercase bg-purple-500/80 px-1.5 py-0.5 rounded text-white">COUNCIL</span>
+                </div>
+
+                <div class="min-w-0">
+                  <h3 class="text-lg sm:text-xl font-black text-slate-900 group-hover:text-purple-700 transition-colors leading-snug">
+                    Sangguniang Bayan
+                  </h3>
+                  <p class="text-xs font-black uppercase tracking-wider text-purple-600 mt-0.5">
+                    Municipal Legislative Body
+                  </p>
+                  <p class="text-[11px] text-slate-500 mt-1">
+                    Representing All 18 Island Barangays
+                  </p>
+                </div>
+              </div>
+
+              <!-- Councilors Roster Preview -->
+              <div class="p-3.5 rounded-2xl bg-purple-50/60 border border-purple-100 mb-4">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-purple-950 mb-2 flex items-center justify-between">
+                  <span>Council Roster</span>
+                  <span class="text-purple-600 text-[10px] font-medium">10 Councilors</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-700">
+                  <div
+                    v-for="(councilor, idx) in LGU_INFO.sangguniangBayan.slice(0, 6)"
+                    :key="idx"
+                    class="flex items-center space-x-1.5 truncate"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                    <span class="truncate font-medium text-[11px]">{{ councilor }}</span>
+                  </div>
+                </div>
+                <div class="mt-2 pt-2 border-t border-purple-200/60 flex items-center justify-between text-[11px] text-purple-800 font-semibold">
+                  <span>+ {{ LGU_INFO.sangguniangBayan.length - 6 }} more (LNB & SKMF)</span>
+                  <span class="font-mono text-purple-600">→</span>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 text-xs text-slate-600">
+                <div class="flex items-center space-x-2">
+                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Enacting Ordinances & Municipal Resolutions</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Equitable Budget Allocation for All Islands</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action -->
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-purple-700 group-hover:text-purple-800">
+              <span class="inline-flex items-center space-x-1">
+                <span>Meet All Sangguniang Bayan Members</span>
+              </span>
+              <ArrowRight class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+            </div>
+          </router-link>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Executive Leadership & Sangguniang Bayan Sponsorship Card -->
     <section class="py-8 sm:py-12 bg-white border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -548,7 +802,8 @@ import {
 defineEmits(['open-proposal']);
 
 const router = useRouter();
-*/
+// Gene - Oct 07, 2026: Imported LGU_INFO, Scale, and UserCheck for HomeView leadership cards
+/*
 import { useRouter } from 'vue-router';
 import HeroSection from '../components/HeroSection.vue';
 import MobileAppSection from '../components/MobileAppSection.vue';
@@ -569,6 +824,31 @@ import {
   Building2,
   Calendar,
   CheckCircle2
+} from '@lucide/vue';
+*/
+import { useRouter } from 'vue-router';
+import HeroSection from '../components/HeroSection.vue';
+import MobileAppSection from '../components/MobileAppSection.vue';
+import { LGU_INFO } from '../data/caluyaData';
+import { 
+  Compass, 
+  Siren, 
+  HeartPulse, 
+  Users, 
+  FileCheck, 
+  Smartphone, 
+  MapPin, 
+  Sparkles, 
+  ShieldCheck, 
+  Award,
+  ArrowRight,
+  PhoneCall,
+  Waves,
+  Building2,
+  Calendar,
+  CheckCircle2,
+  Scale,
+  UserCheck
 } from '@lucide/vue';
 
 defineEmits(['open-proposal']);
